@@ -1,0 +1,19 @@
+{
+  "name": "test-for-the-first-time",
+  "version": "1.0.0",
+  "description": "Source :     **https://github.com/MisterDevo/TFTFT/tree/gh-pages**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MisterDevo/TFTFT.git"
+  },
+  "author": "misterdevo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MisterDevo/TFTFT/issues"
+  },
+  "homepage": "https://github.com/MisterDevo/TFTFT#readme"
+}
