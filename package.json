@@ -1,7 +1,7 @@
 {
   "name": "test-for-the-first-time",
   "version": "1.0.0",
-  "description": "Source :     **https://github.com/MisterDevo/TFTFT/tree/gh-pages**",
+  "description": "TFTFT : Test For The First Time http://misterdevo.github.io/TFTFT",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
