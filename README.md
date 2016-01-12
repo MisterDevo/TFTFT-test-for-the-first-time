@@ -1,5 +1,5 @@
 
-###### TFTFT david-dm : [![Dependency Status](https://david-dm.org/misterdevo/TFTFT.svg)](https://david-dm.org/misterdevo/TFTFT)
+###### TFTFT david-dm : [![Dependency Status](https://img.shields.io/david/misterdevo/TFTFT.svg)](https://david-dm.org/misterdevo/TFTFT)
 
 # Test For the First Time ( TFTFT )
 
