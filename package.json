@@ -4,6 +4,7 @@
   "description": "TFTFT : Test For The First Time",
   "main": "index.js",
   "scripts": {
+    "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
