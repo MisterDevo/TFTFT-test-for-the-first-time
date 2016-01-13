@@ -1,1 +1,3 @@
-
+test:
+  override:
+    - return 0
