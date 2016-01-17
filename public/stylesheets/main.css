@@ -8,7 +8,7 @@
 .logo {
         width: 150px;
         height: 32px;
-        background: url('../img/access-denied.gif') no-repeat center center;
+        background: url('../images/logo.png') no-repeat center center;
         background-size:100% 100%;
 }
 
