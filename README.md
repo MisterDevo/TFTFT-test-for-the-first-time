@@ -3,6 +3,7 @@
 ###### TFTFT david-dm : [![Dependency Status](https://img.shields.io/david/misterdevo/TFTFT.svg)](https://david-dm.org/misterdevo/TFTFT)
 ###### TFTFT circle-ci : [![CircleCI](https://img.shields.io/circleci/project/MisterDevo/TFTFT/master.svg)](https://circleci.com/gh/MisterDevo/TFTFT/tree/master) ( branch gh-pages : [![CircleCI branch](https://img.shields.io/circleci/project/MisterDevo/TFTFT/gh-pages.svg)](https://circleci.com/gh/MisterDevo/TFTFT/tree/gh-pages) )
 ###### TFTFT travis-ci : [![Travis](https://img.shields.io/travis/MisterDevo/TFTFT/master.svg)](https://travis-ci.org/MisterDevo/TFTFT/branches)
+###### TFTFT codeship : [![codeship](https://codeship.com/projects/b00bd7d0-9fa7-0133-a9c2-3206c6610001/status?branch=master)](https://codeship.com/projects/127941)
 ###### TFTFT coverall : [![Coverage Status](https://coveralls.io/repos/MisterDevo/TFTFT/badge.svg?branch=master&service=github)](https://coveralls.io/github/MisterDevo/TFTFT?branch=master)
 
 # Test For the First Time ( TFTFT )
