@@ -4,11 +4,14 @@
   "description": "TFTFT : Test For The First Time",
   "main": "index.js",
   "scripts": {
-    "prestart": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --dir public/cov",
+    "postinstall": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --dir public/cov",
     "start": "node ./bin/www",
     "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- -R nyan && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "coverage" : "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --dir test/coverage"
   },
+  "engines": {
+    "node": "4.2.5"
+  }
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MisterDevo/TFTFT.git"
