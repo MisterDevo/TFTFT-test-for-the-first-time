@@ -5,6 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+//istanbul-middleware HOOK
+var istanbulMiddleware = require('istanbul-middleware');
+istanbulMiddleware.hookLoader(__dirname, { verbose: true });
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -24,6 +28,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users.router);
+
+
+//istanbul-middleware pre-HANDLER
+var fs = require("fs");
+global.__coverage__ = JSON.parse(fs.readFileSync("test/coverage/coverage.json"));
+
+//istanbul-middleware HANDLER
+app.use('/coverage', istanbulMiddleware.createHandler({ verbose: true, resetOnGet: true }));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
