@@ -1,7 +1,7 @@
 
-###### [![TFTFT](https://raw.githubusercontent.com/MisterDevo/TFTFT/master/logo.png)](https://tftft.herokuapp.com/)
+###### [![TFTFT](https://raw.githubusercontent.com/MisterDevo/TFTFT/master/logo.png)](https://tftft.herokuapp.com/) Test For the First Time ( TFTFT ) ![TFTFT Version](https://img.shields.io/badge/Version-1.0.0-green.svg?style=flat-square)
 [![Throughput Graph](https://graphs.waffle.io/MisterDevo/TFTFT/throughput.svg)](https://waffle.io/MisterDevo/TFTFT/metrics)
-[![TFTFT Version](https://img.shields.io/badge/Deployment-Heroku_App-746cac.svg?style=flat-square)](https://tftft.herokuapp.com/) ![TFTFT Version](https://img.shields.io/badge/Version-1.0.0-green.svg?style=flat-square)
+[![TFTFT Version](https://img.shields.io/badge/Deployment-Heroku_App-746cac.svg?style=flat-square)](https://tftft.herokuapp.com/) 
 
 ###### TFTFT david-dm : [![Dependency Status](https://img.shields.io/david/misterdevo/TFTFT.svg)](https://david-dm.org/misterdevo/TFTFT)[![devDependency Status](http://img.shields.io/david/dev/misterdevo/TFTFT.svg)](http://david-dm.org/misterdevo/tftft#info=devDependencies)
 ###### TFTFT bitHound : [![bitHound Dependencies](https://www.bithound.io/github/MisterDevo/TFTFT/badges/dependencies.svg)](https://www.bithound.io/github/MisterDevo/TFTFT/master/dependencies/npm)[![bitHound Code](https://www.bithound.io/github/MisterDevo/TFTFT/badges/code.svg)](https://www.bithound.io/github/MisterDevo/TFTFT)
