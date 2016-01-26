@@ -11,9 +11,15 @@ define(['angular',
             function($routeProvider) {
                 $routeProvider
                     .when('/', {
+                      templateUrl: '../welcome.html'
+                    })
+                    .when('/coverage', {
+                      templateUrl: '../coverage.html'
+                    })
+                    .when('/login', {
                       templateUrl: '../login.html'
-                  })
-                  .otherwise({
+                    })
+                    .otherwise({
                         redirectTo: '/'
                     });
             }
