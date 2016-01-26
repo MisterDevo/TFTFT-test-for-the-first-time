@@ -2,10 +2,10 @@ FROM node
 
 MAINTAINER MisterDevo, mister.devo@gmail.com
 
-WORKDIR /opt/TFTFT
-ADD . opt/TFTFT
+WORKDIR /opt
+ADD . opt
 
-RUN cd /opt/TFTFT && npm install
+RUN cd /opt && npm install
 
 EXPOSE 3000
 CMD ["npm start"]
