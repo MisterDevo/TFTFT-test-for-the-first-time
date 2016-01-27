@@ -11,6 +11,6 @@ function testFunc(){
 }
 //module.exports = router;
 module.exports = {
-  router,
+  router : router,
   testFunc : testFunc
 };
