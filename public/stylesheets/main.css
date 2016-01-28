@@ -17,23 +17,22 @@
 .burning {
 	color: #000;
 	text-shadow: 0px -1px 4px white, 0px -2px 10px yellow, 0px -10px 20px #ff8000, 0px -18px 40px red;
-	font: 80px 'BlackJackRegular';
+	font: 50px 'BlackJackRegular';
 }
 
 .iframe-wrapper{
-  position: inherit;
-  width: 100%;
-  height: 100%
+    position: inherit;
+    width: 100%;
+    height: 100%
     padding: 0 15px;
-    min-height: 568px;
-    background-color: #fff;
+    min-height: 500px;
+    background-color: #f8f8f8;
 }
 @media(min-width:768px) {
     .iframe-wrapper{
       position: inherit;
-
-        padding: 0 30px;
-        border-left: 1px solid #e7e7e7;
+      padding: 0 30px;
+      border: 0;
     }
 }
 
@@ -48,8 +47,7 @@ body {
 
 #page-wrapper {
     padding: 0 15px;
-    min-height: 568px;
-    background-color: #fff;
+    background-color: #f8f8f8;
 }
 
 @media(min-width:768px) {
@@ -57,7 +55,7 @@ body {
         position: inherit;
         margin: 0 0 0 200px;
         padding: 0 30px;
-        border-left: 1px solid #e7e7e7;
+
     }
 }
 
