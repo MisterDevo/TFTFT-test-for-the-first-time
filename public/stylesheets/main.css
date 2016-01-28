@@ -15,9 +15,11 @@
 
 
 .burning {
+
+  text-align: center;
 	color: #000;
 	text-shadow: 0px -1px 4px white, 0px -2px 10px yellow, 0px -10px 20px #ff8000, 0px -18px 40px red;
-	font: 50px 'BlackJackRegular';
+	/*font: 50px 'BlackJackRegular';*/
 }
 
 .iframe-wrapper{
@@ -36,9 +38,48 @@
     }
 }
 
+/*******************************/
+.navbar-default{
+  background-color : #000;
+  border-color: #000;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #111;
+}
+a, a:focus, a:hover {
+    color: #fff;
+}
+.panel {
+    background-color: #000;
+    border: 0 ;
+}
+.panel-default>.panel-heading {
+    color: #000;
+    background-color: #000;
+    border: 0
+}
+.form-control {
+  background-color: #333;
+
+}
+.btn-success {
+    color: #000;
+    background-color: #333;
+    border: 1px solid #ccc;
+    /*border-color: #111;*/
+}
+.btn-success:hover, .btn-success:focus {
+    color: #000;
+    background-color: #111;
+    border-color: #333;
+}
+/*******************************/
+
+
 
 body {
-    background-color: #f8f8f8;
+    background-color: #000;
 }
 
 #wrapper {
@@ -47,7 +88,7 @@ body {
 
 #page-wrapper {
     padding: 0 15px;
-    background-color: #f8f8f8;
+    background-color: #000;
 }
 
 @media(min-width:768px) {
@@ -127,7 +168,7 @@ body {
 }
 
 .sidebar ul li {
-    border-bottom: 1px solid #e7e7e7;
+    border-bottom: 1px solid #444;
 }
 
 .sidebar ul li a.active {
