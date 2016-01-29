@@ -10,15 +10,15 @@ block content
           span.icon-bar
         a.navbar-brand(href='/#/')
           .logo
-
+      | MisterDevo presents #{title}
       ul.nav.navbar-top-links.navbar-right
         li
-          a(href='/login.html')
+          a(href='/#login')
             |  Login
         li
           a(href='https://github.com/MisterDevo/TFTFT')
             i.fa.fa-github-alt.fa-fw.fa-spin
-            
+
 
 
       .navbar-default.sidebar(role='navigation')
@@ -31,14 +31,10 @@ block content
                 span.fa.arrow
               ul.nav.nav-second-level
                 li
-                  a(href='./cov/lcov-report')
+                  a(href='#coverage')
                     i.glyphicon.glyphicon-link
-                    |  Coverage
-                li
-                  a(href='./#proj2')
-                    i.glyphicon.glyphicon-link
-                    |  proj2
+                    |  Istanbul
 
-    #page-wrapper
-      .row
-        h1 Welcome to #{title}
+  #page-wrapper
+    .row
+      div(ng-view='')

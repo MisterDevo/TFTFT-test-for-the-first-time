@@ -13,9 +13,6 @@ html
 
 
 
-    body
+    body.burning
         block content
-        script(src="javascripts/vendor/jquery.min.js")
-        script(src="javascripts/vendor/metisMenu.min.js")
-        script(src="javascripts/sb-admin-2.js")
-        script(src="javascripts/vendor/bootstrap.min.js")
+        script(data-main="javascripts/main", src="javascripts/vendor/requirejs.min.js")
