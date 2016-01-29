@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 function testFunc(){
-  return "TFTFT"
+  return "TFTFT";
 }
 //module.exports = router;
 module.exports = {
