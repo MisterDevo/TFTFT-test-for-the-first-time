@@ -1,3 +1,5 @@
+Version 1.0.0 released 01/29/2016
+
 ###### [![TFTFT](https://raw.githubusercontent.com/MisterDevo/TFTFT/master/logo.png)](https://tftft.herokuapp.com/) [![dockeri.co](http://dockeri.co/image/misterdevo/tftft)](https://hub.docker.com/r/misterdevo/tftft/)
 
 ###### Test For the First Time ( TFTFT ) ![TFTFT Version](https://img.shields.io/badge/Version-1.0.0-green.svg?style=flat-square) TFTFT BadgeFury [![GitHub version](https://badge.fury.io/gh/misterdevo%2FTFTFT.svg)](https://badge.fury.io/gh/misterdevo%2FTFTFT)
