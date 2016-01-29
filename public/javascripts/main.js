@@ -6,11 +6,18 @@ require.config({
     metisMenu: 'vendor/metisMenu.min',
     angular: 'vendor/angular.min',
     angularRoute: 'vendor/angular-route.min',
+		angularResource: "vendor/angular-resource.min",
+
     bootstrapUi: "vendor/ui-bootstrap-tpls-0.12.0.min"
 	},
 	shim: {
     'angular' : {'exports' : 'angular'},
     'angularRoute': ['angular'],
+		'angularResource': {
+            deps: ['angular'],
+            exports: 'angularResource'
+        },
+
     'sbadmin2': ['jquery','metisMenu'],
 
     bootstrap: {
