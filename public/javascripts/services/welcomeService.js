@@ -4,14 +4,14 @@ define(['angular'], function(angular) { angular.module('services', [])
 
           var host = 'api/welcome';
           return {
-              messages: $resource(host, {}, {
-                msg: {
-                  method: 'GET',
-                  params: { id: '@_id' },
-                  url: host + '/:id'
-              },
+                    messages: $resource(host, {}, {
+                      msg: {
+                        method: 'GET',
+                        params: { id: '@_id' },
+                        url: host + '/:id'
+                    },
               })
-          }
+          };
       }]);
 
 });

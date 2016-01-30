@@ -31,6 +31,6 @@ define(['angular',
                         redirectTo: '/'
                     });
             }
-        ])
-  }
-)
+        ]);
+    }
+);
