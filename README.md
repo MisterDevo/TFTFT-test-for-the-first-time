@@ -6,6 +6,8 @@
 ###### TFTFT travis-ci : [![Travis](https://img.shields.io/travis/MisterDevo/TFTFT/master.svg)](https://travis-ci.org/MisterDevo/TFTFT/branches) / TFTFT coveralls : [![Coverage Status](https://coveralls.io/repos/github/MisterDevo/TFTFT/badge.svg?branch=master)](https://coveralls.io/github/MisterDevo/TFTFT?branch=master) / TFTFT heroku : [![TFTFT Version](https://img.shields.io/badge/Deployment-Heroku_App-746cac.svg?style=flat-square)](https://tftft.herokuapp.com/)
 
 ###### TFTFT shippable : [![Shippable](https://api.shippable.com/projects/56a61fc31895ca4474728105/badge/master)](https://app.shippable.com/subscriptions/56a613901895ca4474727fd3)
+
+
 ###### TFTFT circle-ci : [![CircleCI](https://img.shields.io/circleci/project/MisterDevo/TFTFT/master.svg)](https://circleci.com/gh/MisterDevo/TFTFT/tree/master) ( branch gh-pages : [![CircleCI branch](https://img.shields.io/circleci/project/MisterDevo/TFTFT/gh-pages.svg)](https://circleci.com/gh/MisterDevo/TFTFT/tree/gh-pages))
 ###### TFTFT codeship : [![codeship](https://codeship.com/projects/b00bd7d0-9fa7-0133-a9c2-3206c6610001/status?branch=master)](https://codeship.com/projects/127941)
 ###### TFTFT code-climate : [![Code Climate](https://codeclimate.com/github/MisterDevo/TFTFT/badges/gpa.svg)](https://codeclimate.com/github/MisterDevo/TFTFT)
