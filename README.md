@@ -7,8 +7,6 @@
 
 ###### TFTFT shippable : [![Shippable](https://api.shippable.com/projects/56a61fc31895ca4474728105/badge/master)](https://app.shippable.com/subscriptions/56a613901895ca4474727fd3)
 
-
-###### TFTFT circle-ci : [![CircleCI](https://img.shields.io/circleci/project/MisterDevo/TFTFT/master.svg)](https://circleci.com/gh/MisterDevo/TFTFT/tree/master) ( branch gh-pages : [![CircleCI branch](https://img.shields.io/circleci/project/MisterDevo/TFTFT/gh-pages.svg)](https://circleci.com/gh/MisterDevo/TFTFT/tree/gh-pages))
 ###### TFTFT codeship : [![codeship](https://codeship.com/projects/b00bd7d0-9fa7-0133-a9c2-3206c6610001/status?branch=master)](https://codeship.com/projects/127941)
 ###### TFTFT code-climate : [![Code Climate](https://codeclimate.com/github/MisterDevo/TFTFT/badges/gpa.svg)](https://codeclimate.com/github/MisterDevo/TFTFT)
 
