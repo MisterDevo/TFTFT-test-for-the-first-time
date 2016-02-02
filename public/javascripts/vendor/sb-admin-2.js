@@ -1,6 +1,7 @@
 $(function() {
 
     $('#side-menu').metisMenu();
+    $('.sidebar').css('visibility' , 'visible');
 
 });
 
