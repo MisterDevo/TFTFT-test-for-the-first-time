@@ -1,12 +1,9 @@
-define(['angular',
-    'angularRoute',
-    'angularResource',
-    'bootstrapUi',
-    'metisMenu',
-    'controllers/welcomeController',
-    'services/welcomeService',
-    'directives/welcomeDirective'
-  ], function(angular) {
+define(['angularRoute',
+        'angularResource',
+        'controllers/welcomeController',
+        'services/welcomeService',
+        'directives/welcomeDirective'
+  ], function() {
         return angular.module('TFTFT', ['ngRoute',
                                         'ngResource',
                                         'controllers',
