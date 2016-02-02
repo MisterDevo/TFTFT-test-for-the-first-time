@@ -1,4 +1,4 @@
-define(['angular'], function(angular) { angular.module('services', [])
+angular.module('services', [])
 
       .factory('welcomeService', ['$resource', function ($resource) {
 
@@ -14,4 +14,3 @@ define(['angular'], function(angular) { angular.module('services', [])
           };
       }]);
 
-});
