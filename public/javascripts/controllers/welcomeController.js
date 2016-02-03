@@ -1,4 +1,4 @@
-define(['angular'], function(angular){ angular.module('controllers', [])
+angular.module('controllers', [])
         .controller('welcomeController', ['$scope', 'welcomeService',
                 function ($scope, welcomeService) {
 
@@ -6,4 +6,3 @@ define(['angular'], function(angular){ angular.module('controllers', [])
                   $scope.messages = welcomeService.messages.query();
 
         }]);
-});

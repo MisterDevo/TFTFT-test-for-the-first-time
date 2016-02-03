@@ -1,4 +1,4 @@
-define(['angular'], function(angular){ angular.module('directives', [])
+angular.module('directives', [])
     .directive('welcome', function () {
         return {
             restrict: 'E',
@@ -6,5 +6,4 @@ define(['angular'], function(angular){ angular.module('directives', [])
             link: function(scope, element, attrs) {
             }
         };
-	});
 });
