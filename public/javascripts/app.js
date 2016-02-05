@@ -22,7 +22,7 @@ define(['angularRoute',
                       templateUrl: '../coverage.html'
                     })
                     .when('/login', {
-                      templateUrl: '../login.html'
+                      templateUrl: '../login.html',
                       controller: 'loginController'
                     })
                     .otherwise({
