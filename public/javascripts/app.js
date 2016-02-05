@@ -1,6 +1,6 @@
 define(['angularRoute',
         'angularResource',
-        'controllers/welcomeController',
+        'controllers/appControllers',
         'services/welcomeService',
         'directives/welcomeDirective'
   ], function() {
@@ -23,6 +23,7 @@ define(['angularRoute',
                     })
                     .when('/login', {
                       templateUrl: '../login.html'
+                      controller: 'loginController'
                     })
                     .otherwise({
                         redirectTo: '/'
