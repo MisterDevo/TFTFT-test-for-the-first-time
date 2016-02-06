@@ -1,8 +1,10 @@
-angular.module('controllers', [])
-        .controller('welcomeController', ['$scope', 'welcomeService',
-                function ($scope, welcomeService) {
-
-                  //$scope.messages = [{text:'first message'}, {text:'second message'}];
-                  $scope.messages = welcomeService.messages.query();
-
-        }]);
+define([], 
+    function() {
+        return ['$scope', 'welcomeService', function($scope, welcomeService) {
+            
+            $scope.messages = welcomeService.messages.query();
+            
+            
+            $scope.$apply();
+	}];
+});
