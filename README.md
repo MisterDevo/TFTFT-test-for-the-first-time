@@ -12,6 +12,8 @@
 
 ###### TFTFT Gemnasium : [![Dependency Status](https://gemnasium.com/MisterDevo/TFTFT.svg)](https://gemnasium.com/MisterDevo/TFTFT)
 
+###### TFTFT IssueStats : [![Issue Stats](http://issuestats.com/github/misterdevo/tftft/badge/pr)](http://issuestats.com/github/misterdevo/tftft) [![Issue Stats](http://issuestats.com/github/misterdevo/tftft/badge/issue)](http://issuestats.com/github/misterdevo/tftft)
+
 # Test For the First Time ( TFTFT )
 
 **Demo Frontends :** Source :     **https://github.com/MisterDevo/TFTFT/tree/gh-pages**
