@@ -32,7 +32,8 @@
     "serve-favicon": "~2.3.0",
     "istanbul": "^0.4.2",
     "mocha": "^2.3.4",
-    "supertest": "^1.1.0"
+    "supertest": "^1.1.0",
+    "webdriverio": "^4.0.3"
   },
   "devDependencies": {
     "coveralls": "^2.11.6",
