@@ -9,8 +9,8 @@ exports.config = {
   // according to your user and key information. However if you are using a private Selenium
   // backend you should define the host address, port, and path here.
   //
-  host: '0.0.0.0',
-  port: 4444,
+  host: 'ondemand.saucelabs.com',
+  port: 80,
   path: '/wd/hub',
   //
   // =================
@@ -20,8 +20,8 @@ exports.config = {
   // should work too though). These services define specific user and key (or access key)
   // values you need to put in here in order to connect to these services.
   //
-  //user: 'webdriverio',
-  //key:  'xxxxxxxxxxxxxxxx-xxxxxx-xxxxx-xxxxxxxxx',
+  user: process.env.SAUCE_USERNAME,
+  key:  process.env.SAUCE_ACCESS_KEY,
   //
   // If you are using Sauce Labs WebdriverIO takes care about updating the job information
   // once the test is done. This option is set to `true` per default.
