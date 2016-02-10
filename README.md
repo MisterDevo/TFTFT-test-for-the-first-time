@@ -14,7 +14,16 @@
 
 ###### TFTFT IssueStats : [![Issue Stats](http://issuestats.com/github/misterdevo/tftft/badge/pr)](http://issuestats.com/github/misterdevo/tftft) [![Issue Stats](http://issuestats.com/github/misterdevo/tftft/badge/issue)](http://issuestats.com/github/misterdevo/tftft)
 
-# Test For the First Time ( TFTFT )
+ 
+# Test For the First Time ( TFTFT )  
+
+**Demo Backends :**  
+* TFTFT EndToEnd : _Local Selenium Server with selenium-standalone :_
+```javascript
+npm install selenium-standalone;
+./node_modules/.bin/selenium-standalone install;
+./node_modules/.bin/selenium-standalone start;
+```
 
 **Demo Frontends :** Source :     **https://github.com/MisterDevo/TFTFT/tree/gh-pages**
 
