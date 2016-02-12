@@ -8,6 +8,9 @@ var options = {
             platform: 'XP',
             tags: ['TFTFT Pages'],
             name: 'TFTFT',
+            build: 'build-1.0',
+            passed: 'true',
+
         //
         //     // If using Open Sauce (https://saucelabs.com/opensauce/),
         //     // capabilities must be tagged as "public" for the jobs's status
