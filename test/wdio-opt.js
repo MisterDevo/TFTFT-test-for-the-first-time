@@ -23,7 +23,7 @@ module.exports = {
         desiredCapabilities: {
             browserName: 'chrome',
             version: '47.0',
-            //platform: 'Windows 10',
+            platform: 'Linux',
             tags: ['TFTFT Pages'],
             name: 'TFTFT',
             build: 'build-1.0.1',
