@@ -32,7 +32,7 @@ $ export SAUCE_ACCESS_KEY=[secure]
 
 **_Local Selenium Server with selenium-standalone :_**  
 In `test/test-spec.js`  
-* Remove or comment the line : `options = require('wdio-opt');`  
+* Remove or comment the line : `options = require('./wdio-opt.js');`  
 * Make your own config with : `var options = {};`  
 * Start your selenium server  
 ```javascript
