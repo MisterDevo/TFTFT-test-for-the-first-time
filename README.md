@@ -19,29 +19,30 @@
 
 # Test For the First Time ( TFTFT )  
 
-**Demo Backends :**  
-* TFTFT EndToEnd : Up to Developer !  
+### **Demo Backends :**  
+#### TFTFT EndToEnd : Up to Developer !  
 
 
-_SauceLabs Selenium Server with user auth :_  
+**_SauceLabs Selenium Server with user auth :_**  
 Config in `test/wdio-opt.js` 
 ```
 $ export SAUCE_USERNAME=[secure]
 $ export SAUCE_ACCESS_KEY=[secure]
 ```
 
-_Local Selenium Server with selenium-standalone :_  
+**_Local Selenium Server with selenium-standalone :_**  
 In `test/test-spec.js`  
-Remove or comment the line : `options = require('wdio-opt');`  
-Make your own config with : `var options = {};`  
-Start your selenium server  
+* Remove or comment the line : `options = require('wdio-opt');`  
+* Make your own config with : `var options = {};`  
+* Start your selenium server  
 ```javascript
 npm install selenium-standalone;
 ./node_modules/.bin/selenium-standalone install;
 ./node_modules/.bin/selenium-standalone start;
 ```
 
-**Demo Frontends :** Source :     **https://github.com/MisterDevo/TFTFT/tree/gh-pages**
+### **Demo Frontends :**  
+Source :     **https://github.com/MisterDevo/TFTFT/tree/gh-pages**
 
 * TFTFT Gh-pages -> http://misterdevo.github.io/TFTFT  
 * TFTFT WebGL -> http://misterdevo.github.io/TFTFT/webgl.html
