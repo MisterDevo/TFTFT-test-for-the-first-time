@@ -15,6 +15,7 @@ describe('TFTFT page', function() {
     });
     it('should have the right title - the fancy generator way', function (done) {
         client
+          .sync()
           .url('/')
           .getTitle(function(err, title) {
                 assert(err === undefined);
