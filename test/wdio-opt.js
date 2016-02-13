@@ -8,11 +8,11 @@ module.exports = {
         desiredCapabilities: {
             browserName: 'chrome',
             //browserName: 'firefox',
-            version: '27',
-            platform: 'XP',
+            version: '48.0',
+            platform: 'Windows 10',
             tags: ['TFTFT Pages'],
             name: 'TFTFT',
-            build: 'build-1.0',
+            build: 'build-1.0.1',
             passed: 'true',
 
             'public': true
