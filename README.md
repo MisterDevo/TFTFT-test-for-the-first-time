@@ -24,12 +24,15 @@
 
 
 _SauceLabs Selenium Server with user auth :_  
+Config in `test/wdio-opt.js` 
 ```
-process.env.SAUCE_USERNAME
-process.env.SAUCE_ACCESS_KEY
+$ export SAUCE_USERNAME=[secure]
+$ export SAUCE_ACCESS_KEY=[secure]
 ```
 
-_Local Selenium Server with selenium-standalone :_
+_Local Selenium Server with selenium-standalone :_  
+Remove the line : `options = require('wdio-opt');` in `test/test-spec.js`  
+Make your own config and start your selenium server
 ```javascript
 npm install selenium-standalone;
 ./node_modules/.bin/selenium-standalone install;
