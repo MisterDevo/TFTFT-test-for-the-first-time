@@ -1,7 +1,7 @@
 var assert = require('assert');
 var webdriverio = require('webdriverio');
 
-var options = require('/wdio-opt');
+var options = require('wdio-opt');
 //var options = {};
 
 describe('TFTFT page', function() {
