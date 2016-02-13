@@ -1,4 +1,4 @@
-exports.options = {
+module.exports = {
         host: 'ondemand.saucelabs.com',
         port: 80,
         user: process.env.SAUCE_USERNAME,
