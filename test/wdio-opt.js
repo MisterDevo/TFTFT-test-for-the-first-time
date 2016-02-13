@@ -5,26 +5,28 @@ module.exports = {
         key: process.env.SAUCE_ACCESS_KEY,
         logLevel: 'silent',
 
-        desiredCapabilities: [{
-            browserName: 'chrome',
-            version: '48.0',
-            platform: 'Windows 10',
+        ChromeBrowser: {
+            desiredCapabilities: {
+                browserName: 'chrome',
+                version: '48.0',
+                platform: 'Windows 10'
+            }
+        },
+        FirefoxBrowser: {
+            desiredCapabilities: {
+                browserName: 'firefox',
+                version: '44.0',
+                platform: 'Windows 10'
+            }
+        },
+        
+        desiredCapabilities: {
             tags: ['TFTFT Pages'],
             name: 'TFTFT',
             build: 'build-1.0.1',
             passed: 'true',
 
             'public': true
-        },{
-            browserName: 'firefox',
-            version: '44.0',
-            platform: 'Windows 10',
-            tags: ['TFTFT Pages'],
-            name: 'TFTFT',
-            build: 'build-1.0.1',
-            passed: 'true',
-
-            'public': true
-        }]
+        }
         
     }
