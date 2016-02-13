@@ -5,9 +5,8 @@ module.exports = {
         key: process.env.SAUCE_ACCESS_KEY,
         logLevel: 'silent',
 
-        desiredCapabilities: {
+        desiredCapabilities: [{
             browserName: 'chrome',
-            //browserName: 'firefox',
             version: '48.0',
             platform: 'Windows 10',
             tags: ['TFTFT Pages'],
@@ -16,5 +15,16 @@ module.exports = {
             passed: 'true',
 
             'public': true
-        }
+        },{
+            browserName: 'firefox',
+            version: '44.0',
+            platform: 'Windows 10',
+            tags: ['TFTFT Pages'],
+            name: 'TFTFT',
+            build: 'build-1.0.1',
+            passed: 'true',
+
+            'public': true
+        }]
+        
     }
