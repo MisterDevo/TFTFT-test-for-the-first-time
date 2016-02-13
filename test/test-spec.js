@@ -10,7 +10,7 @@ describe('TFTFT page', function() {
     var client = {};
 
     before(function(done){
-          client = webdriverio.remote(options).init();
+          client = webdriverio.multiremote(options).init();
           client.url('https://tftft.herokuapp.com').call(done);
     });
     it('should have the right title - the fancy generator way', function (done) {
