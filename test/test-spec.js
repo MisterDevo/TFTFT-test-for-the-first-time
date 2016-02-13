@@ -10,12 +10,11 @@ describe('TFTFT page', function() {
     var client = {};
 
     before(function(done){
-          client = webdriverio.multiremote(options).init();
+          client = webdriverio.remote(options).init();
           client.url('https://tftft.herokuapp.com').call(done);
     });
     it('should have the right title - the fancy generator way', function (done) {
         client
-          .sync()
           .url('/')
           .getTitle(function(err, title) {
                 assert(err === undefined);
