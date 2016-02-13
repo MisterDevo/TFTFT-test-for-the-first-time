@@ -21,8 +21,8 @@ module.exports = {
         },
         
         desiredCapabilities: {
-            browserName: 'firefox',
-            version: '44.0',
+            browserName: 'chrome',
+            version: '47.0',
             //platform: 'Windows 10',
             tags: ['TFTFT Pages'],
             name: 'TFTFT',
