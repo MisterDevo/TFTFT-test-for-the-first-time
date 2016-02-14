@@ -1,7 +1,9 @@
 var assert = require('assert');
 var webdriverio = require('webdriverio');
 
-var options = {};
+var options = {
+//  baseUrl:'http://localhost:3000'
+};
 options = require('./wdio-opt.js');
 
 describe('TFTFT page', function() {
@@ -10,18 +12,22 @@ describe('TFTFT page', function() {
     var client = {};
 
     before(function(done){
-          client = webdriverio.remote(options).init();
-          client.url('https://tftft.herokuapp.com').call(done);
+          client = webdriverio.remote(options).init().call(done);
     });
-    it('should have the right title - the fancy generator way', function (done) {
-        client
-          .url('/')
-          .getTitle(function(err, title) {
-                assert(err === undefined);
-                assert(title === 'TFTFT - Test For The First Time');
-          })
-          .call(done);
+    
+    describe('verif title', function() {
+        
+        it('should have the right title - the fancy generator way', function (done) {
+            
+            client
+              .url('/')
+              .getTitle().then(function(title){
+                  assert.equal(title, 'TFTFT - Test For The First Time');
+              })
+              .call(done);
+        });
     });
+
 
     after(function(done) {
         client.end().call(done);
