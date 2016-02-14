@@ -5,6 +5,8 @@ module.exports = {
         key: process.env.SAUCE_ACCESS_KEY,
         logLevel: 'silent',
 
+        baseUrl:'https://tftft.herokuapp.com',
+        
         ChromeBrowser: {
             desiredCapabilities: {
                 browserName: 'chrome',
