@@ -21,7 +21,7 @@ block content
         .sidebar-nav.navbar-collapse.collapse
           ul#side-menu.nav
             li
-              a(href='#project')
+              a(id='project-link' href='#project')
                 i.fa.fa-folder-open.fa-fw
                 |  TFTFT Project
                 span.fa.arrow
@@ -30,6 +30,10 @@ block content
                   a(href='#coverage')
                     i.glyphicon.glyphicon-link
                     |  Istanbul
+                li
+                  a(id='saucelabs-link', href='#saucelabs')
+                    i.glyphicon.glyphicon-link
+                    |  SauceLabs
 
     nav.navbar.navbar-default.navbar-fixed-bottom
       ul.nav.navbar-top-links.navbar-right

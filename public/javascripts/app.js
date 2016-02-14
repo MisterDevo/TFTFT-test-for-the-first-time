@@ -21,6 +21,9 @@ define(['angularRoute',
                     .when('/coverage', {
                       templateUrl: '../coverage.html'
                     })
+                    .when('/saucelabs', {
+                      templateUrl: '../saucelabs.html'
+                    })
                     .when('/login', {
                       templateUrl: '../login.html',
                       controller: 'loginController'
