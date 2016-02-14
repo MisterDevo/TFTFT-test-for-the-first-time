@@ -30,6 +30,7 @@ describe('TFTFT page', function() {
     describe('saucelabs view', function() {
         it('should display correct saucelabs link', function (done) {
             client
+              .waitForExist('#project-link',1000)
               .click('#project-link')
               .getAttribute('#saucelabs-link','href')
               .then(function(attr){
