@@ -1,10 +1,19 @@
 var assert = require('assert');
 var webdriverio = require('webdriverio');
 
+
+
 var options = {
 //  baseUrl:'http://localhost:3000'
 };
 options = require('./wdio-opt.js');
+
+var SauceLabs = require("saucelabs");
+var saucelabs = new SauceLabs({
+      username: options.user,
+      password: options.key
+    });
+
 
 describe('TFTFT page', function() {
 
@@ -12,7 +21,11 @@ describe('TFTFT page', function() {
     var client = {};
 
     before(function(done){
-          client = webdriverio.remote(options).init().call(done);
+          client = webdriverio.remote(options).init();
+          client.sessions().then(function(list){
+              client.sessionID = list.sessionId;
+          })
+          .call(done);
     });
 
     describe('verif title on first page', function() {
@@ -52,6 +65,16 @@ describe('TFTFT page', function() {
     });
 
     after(function(done) {
-        client.end().call(done);
+        //client.end().call(done);
+
+        var title = this.currentTest.title,
+        passed = (this.currentTest.state === 'passed') ? true : false;
+
+        client.end();
+
+        saucelabs.updateJob(client.sessionID, {
+          name: title,
+          passed: passed
+        }, done);
     });
 });

@@ -42,7 +42,7 @@ module.exports = {
             tags: ['TFTFT', process.env._BROWSER, process.env._PLATFORM, process.env._VERSION],
             name: 'TFTFT',
             build: 'build-1.0.1',
-            passed: 'true',
+            passed: 'false',
 
             'public': true
         }

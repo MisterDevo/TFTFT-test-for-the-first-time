@@ -27,11 +27,11 @@
     "cookie-parser": "~1.4.1",
     "debug": "~2.2.0",
     "express": "~4.13.1",
+    "istanbul": "^0.4.2",
     "jade": "~1.11.0",
+    "mocha": "^2.3.4",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0",
-    "istanbul": "^0.4.2",
-    "mocha": "^2.3.4",
     "supertest": "^1.1.0",
     "webdriverio": "^4.0.3"
   },
@@ -39,6 +39,7 @@
     "coveralls": "^2.11.6",
     "istanbul": "^0.4.2",
     "mocha": "^2.3.4",
+    "saucelabs": "^1.1.0",
     "supertest": "^1.1.0",
     "webdriverio": "^4.0.3"
   }
