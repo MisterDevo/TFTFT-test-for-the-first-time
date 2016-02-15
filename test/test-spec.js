@@ -23,7 +23,7 @@ describe('TFTFT EndToEnd Test', function() {
     before(function(done){
           client = webdriverio.remote(options).init();
           client.sessions().then(function(list){
-              client.sessionID = list.sessionId;
+              client.sessionID = list[0].id;
           })
           .call(done);
     });
@@ -66,15 +66,10 @@ describe('TFTFT EndToEnd Test', function() {
 
     after(function(done) {
         //client.end().call(done);
-
-        var title = this.currentTest.title,
-        passed = (this.currentTest.state === 'passed') ? true : false;
-
         client.end();
 
         saucelabs.updateJob(client.sessionID, {
-          name: title,
-          passed: passed
+          passed: true
         }, done);
     });
 });
