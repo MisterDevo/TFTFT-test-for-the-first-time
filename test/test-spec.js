@@ -23,7 +23,7 @@ describe('TFTFT EndToEnd Test', function() {
     before(function(done){
           client = webdriverio.remote(options).init();
           client.sessions().then(function(list){
-              client.sessionID = list[0].id;
+              client.sessionID = list.value[0].id;
           })
           .call(done);
     });
