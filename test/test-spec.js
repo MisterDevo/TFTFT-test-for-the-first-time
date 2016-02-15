@@ -6,13 +6,20 @@ var options = {
 };
 options = require('./wdio-opt.js');
 
+
 describe('TFTFT EndToEnd Test', function() {
 
     this.timeout(60000);
     var client = {};
 
     before(function(done){
-          client = webdriverio.remote(options).init().call(done);
+          client = webdriverio.remote(options).init();
+          if(options.saucelabs){
+            options.saucelabs.getJobs(function (err, jobs) {
+              client.sessionID = jobs[0].id;
+            });
+          }
+          client.call(done);
     });
 
     describe('verif title on first page', function() {
@@ -30,7 +37,7 @@ describe('TFTFT EndToEnd Test', function() {
     describe('saucelabs view', function() {
         it('should display correct saucelabs link', function (done) {
             client
-              .waitForExist('#project-link',1000)
+              .pause(5000)
               .click('#project-link')
               .getAttribute('#saucelabs-link','href')
               .then(function(attr){
@@ -42,6 +49,7 @@ describe('TFTFT EndToEnd Test', function() {
         it('should display saucelabs matrix with correct url', function (done) {
             client
               .url('/#saucelabs')
+              .pause(5000)
               .getAttribute('#sl-img','src')
               .then(function(attr){
                   assert.equal(attr,'https://saucelabs.com/browser-matrix/misterdevo.svg');
@@ -51,6 +59,12 @@ describe('TFTFT EndToEnd Test', function() {
     });
 
     after(function(done) {
-        client.end().call(done);
+        if(options.saucelabs){
+          options.saucelabs.updateJob(client.sessionID,
+                                { passed: true },
+                                function(){ client.end().call(done); });
+        } else {
+            client.end().call(done);
+        }
     });
 });
