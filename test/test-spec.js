@@ -15,7 +15,7 @@ var saucelabs = new SauceLabs({
     });
 
 
-describe('TFTFT page', function() {
+describe('TFTFT EndToEnd Test', function() {
 
     this.timeout(60000);
     var client = {};
