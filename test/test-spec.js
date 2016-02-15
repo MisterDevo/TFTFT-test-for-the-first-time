@@ -1,18 +1,10 @@
 var assert = require('assert');
 var webdriverio = require('webdriverio');
 
-
-
 var options = {
 //  baseUrl:'http://localhost:3000'
 };
 options = require('./wdio-opt.js');
-
-var SauceLabs = require("saucelabs");
-var saucelabs = new SauceLabs({
-      username: options.user,
-      password: options.key
-    });
 
 
 describe('TFTFT EndToEnd Test', function() {
@@ -22,10 +14,12 @@ describe('TFTFT EndToEnd Test', function() {
 
     before(function(done){
           client = webdriverio.remote(options).init();
-          client.sessions().then(function(list){
-              client.sessionID = list[0].id;
-          })
-          .call(done);
+          if(options.saucelabs){
+            options.saucelabs.getJobs(function (err, jobs) {
+              client.sessionID = jobs[0].id;
+            });
+          }
+          client.call(done);
     });
 
     describe('verif title on first page', function() {
@@ -66,10 +60,12 @@ describe('TFTFT EndToEnd Test', function() {
 
     after(function(done) {
         //client.end().call(done);
-        client.end();
-
-        saucelabs.updateJob(client.sessionID, {
-          passed: true
-        }, done);
+        if(options.saucelabs){
+          options.saucelabs.updateJob(client.sessionID,
+                                { passed: true },
+                                function(){ client.end().call(done); });
+        } else {
+            client.end().call(done);
+        }
     });
 });
