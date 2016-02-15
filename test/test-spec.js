@@ -30,7 +30,7 @@ describe('TFTFT page', function() {
     describe('saucelabs view', function() {
         it('should display correct saucelabs link', function (done) {
             client
-              .waitForExist('#project-link',5000)
+              .pause(5000)
               .click('#project-link')
               .getAttribute('#saucelabs-link','href')
               .then(function(attr){
@@ -42,7 +42,7 @@ describe('TFTFT page', function() {
         it('should display saucelabs matrix with correct url', function (done) {
             client
               .url('/#saucelabs')
-              .waitForExist('#sl-img',5000)
+              .pause(5000)
               .getAttribute('#sl-img','src')
               .then(function(attr){
                   assert.equal(attr,'https://saucelabs.com/browser-matrix/misterdevo.svg');
