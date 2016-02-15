@@ -6,32 +6,45 @@ module.exports = {
         logLevel: 'silent',
 
         baseUrl:'https://tftft-misterdevo.c9users.io',
-        
-        ChromeBrowser: {
-            desiredCapabilities: {
-                browserName: 'chrome',
-                version: '48.0',
-                platform: 'Windows 10'
-            }
-        },
-        FirefoxBrowser: {
-            desiredCapabilities: {
-                browserName: 'firefox',
-                version: '44.0',
-                platform: 'Windows 10'
-            }
-        },
-        
+
+        // ChromeBrowser: {
+        //     desiredCapabilities: {
+        //         browserName: 'chrome',
+        //         version: '48.0',
+        //         platform: 'Windows 10'
+        //     }
+        // },
+        // FirefoxBrowser: {
+        //     desiredCapabilities: {
+        //         browserName: 'firefox',
+        //         version: '44.0',
+        //         platform: 'Windows 10'
+        //     }
+        // },
+        //
+        // desiredCapabilities: {
+        //     browserName: 'chrome',
+        //     version: '47.0',
+        //     platform: 'OS X 10.11',
+        //     tags: ['TFTFT Pages'],
+        //     name: 'TFTFT',
+        //     build: 'build-1.0.1',
+        //     passed: 'true',
+        //
+        //     'public': true
+        // }
+
         desiredCapabilities: {
-            browserName: 'chrome',
-            version: '47.0',
-            platform: 'OS X 10.11',
-            tags: ['TFTFT Pages'],
+            browserName: process.env._BROWSER,
+            platform: process.env._PLATFORM,
+            version: process.env._VERSION,
+
+            tags: ['TFTFT', process.env._BROWSER, process.env._PLATFORM, process.env._VERSION],
             name: 'TFTFT',
             build: 'build-1.0.1',
             passed: 'true',
 
             'public': true
         }
-        
+
     }
