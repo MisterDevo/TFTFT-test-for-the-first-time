@@ -59,7 +59,6 @@ describe('TFTFT EndToEnd Test', function() {
     });
 
     after(function(done) {
-        //client.end().call(done);
         if(options.saucelabs){
           options.saucelabs.updateJob(client.sessionID,
                                 { passed: true },
