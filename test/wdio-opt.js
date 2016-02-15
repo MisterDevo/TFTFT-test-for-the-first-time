@@ -35,8 +35,8 @@ module.exports = {
         // }
 
         desiredCapabilities: {
-            browserName: process.env._BROWSER,
-            platform: process.env._PLATFORM,
+            browserName: (process.env._BROWSER || '').replace(/_/g, ' '),
+            platform: (process.env._PLATFORM || '').replace(/_/g, ' '),
             version: process.env._VERSION,
 
             tags: ['TFTFT', process.env._BROWSER, process.env._PLATFORM, process.env._VERSION],
