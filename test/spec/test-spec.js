@@ -1,13 +1,12 @@
 var assert = require('assert');
+var webdriverio = require('webdriverio');
+
+var options = {
+  baseUrl:'http://localhost:3000'
+};
+//options = require('./wdio-opt.js');
 
 describe('TFTFT EndToEnd Test', function() {
-    
-    var webdriverio = require('webdriverio');
-    
-    var options = {
-    //  baseUrl:'http://localhost:3000'
-    };
-    options = require('./wdio-opt.js');
 
     this.timeout(60000);
     var client = {};

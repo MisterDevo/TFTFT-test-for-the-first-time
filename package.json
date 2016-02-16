@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "TFTFT : Test For The First Time",
   "scripts": {
-    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --dir public/cov -- -g EndToEnd -i -R list",
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --dir public/cov -- -R list",
     "postinstall": "npm run coverage",
     "start": "node ./bin/www",
-    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly"
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- test/**/*.js test/*.js"
   },
   "engines": {
     "node": "4.2.5"
