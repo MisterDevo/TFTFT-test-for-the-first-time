@@ -50,7 +50,7 @@ module.exports = {
 
             tags: ['TFTFT', process.env._BROWSER, process.env._PLATFORM, process.env._VERSION],
             name: 'TFTFT',
-            build: 'dev1.0.1',
+            build: process.env.TRAVIS_JOB_NUMBER,
             passed: 'false',
 
             'public': true
