@@ -2,7 +2,6 @@
   "name": "test-for-the-first-time",
   "version": "1.0.0",
   "description": "TFTFT : Test For The First Time",
-  "main": "index.js",
   "scripts": {
     "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --dir public/cov -- -g EndToEnd -i -R list",
     "postinstall": "npm run coverage",
