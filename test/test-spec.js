@@ -16,7 +16,12 @@ describe('TFTFT EndToEnd Test', function() {
           client = webdriverio.remote(options).init();
           if(options.saucelabs){
             options.saucelabs.getJobs(function (err, jobs) {
-              client.sessionID = jobs[0].id;
+              for (var k in jobs) {
+                if(jobs[k].tags[0]===options.desiredCapabilities.tags[0]){
+                  client.sessionID = jobs[k].id;
+                  break;
+                }
+              }
             });
           }
           client.call(done);
@@ -58,10 +63,17 @@ describe('TFTFT EndToEnd Test', function() {
         });
     });
 
+    var passed = true;
+    afterEach(function() {
+        if(this.currentTest.state === 'failed') {
+          passed = false;
+        }
+    });
+
     after(function(done) {
         if(options.saucelabs){
           options.saucelabs.updateJob(client.sessionID,
-                                { passed: true },
+                                { passed: passed },
                                 function(){ client.end().call(done); });
         } else {
             client.end().call(done);
