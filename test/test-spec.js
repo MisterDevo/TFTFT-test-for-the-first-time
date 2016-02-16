@@ -18,7 +18,7 @@ describe('TFTFT EndToEnd Test', function() {
             options.saucelabs.getJobs(function (err, jobs) {
               for (var k in jobs) {
                 if(jobs[k].tags===options.tags){
-                  client.sessionID = jobs[0].id;
+                  client.sessionID = jobs[k].id;
                   break;
                 }
               }
