@@ -23,6 +23,6 @@ env:
     - _BROWSER: "firefox"
       _PLATFORM: "OS_X_10.11"
       _VERSION: "44"
-    - _BROWSER: "internet_explorer"
+    - _BROWSER: "safari"
       _PLATFORM: "OS_X_10.11"
-      _VERSION: "10"
+      _VERSION: "9"
