@@ -63,8 +63,14 @@ describe('TFTFT EndToEnd Test', function() {
         });
     });
 
+    var passed = true;
+    afterEach(function() {
+        if(this.currentTest.state === 'failed') {
+          passed = false;
+        }             
+    }
+
     after(function(done) {
-        var passed = (this.currentTest.state == 'failed') ? false : true;
         if(options.saucelabs){
           options.saucelabs.updateJob(client.sessionID,
                                 { passed: passed },
