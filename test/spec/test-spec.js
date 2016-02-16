@@ -12,18 +12,7 @@ describe('TFTFT EndToEnd Test', function() {
     var client = {};
 
     before(function(done){
-          client = webdriverio.remote(options).init();
-          if(options.saucelabs){
-            options.saucelabs.getJobs(function (err, jobs) {
-              for (var k in jobs) {
-                if(jobs[k].tags[0]===options.desiredCapabilities.tags[0]){
-                  client.sessionID = jobs[k].id;
-                  break;
-                }
-              }
-            });
-          }
-          client.call(done);
+        client = webdriverio.remote(options).init().call(done);
     });
 
     describe('verif title on first page', function() {
@@ -71,9 +60,16 @@ describe('TFTFT EndToEnd Test', function() {
 
     after(function(done) {
         if(options.saucelabs){
-          options.saucelabs.updateJob(client.sessionID,
-                                { passed: passed },
-                                function(){ client.end().call(done); });
+          options.saucelabs.getJobs(function (err, jobs) {
+            for (var k in jobs) {
+              if(jobs[k].tags[0]===options.desiredCapabilities.tags[0]){
+                options.saucelabs.updateJob(jobs[k].id,
+                                      { passed: passed },
+                                      function(){ client.end().call(done); });
+                break;
+              }
+            }
+          });
         } else {
             client.end().call(done);
         }
