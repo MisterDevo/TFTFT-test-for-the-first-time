@@ -67,8 +67,8 @@ describe('TFTFT EndToEnd Test', function() {
     afterEach(function() {
         if(this.currentTest.state === 'failed') {
           passed = false;
-        }             
-    }
+        }
+    });
 
     after(function(done) {
         if(options.saucelabs){
