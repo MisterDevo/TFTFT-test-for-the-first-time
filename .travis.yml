@@ -50,7 +50,3 @@ env:
     - _BROWSER: "opera"
       _PLATFORM: "Windows_7"
       _VERSION: "12"
-
-
-
-opera 12
