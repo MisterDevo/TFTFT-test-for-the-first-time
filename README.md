@@ -1,9 +1,13 @@
 ![TFTFT-logo](https://raw.githubusercontent.com/MisterDevo/TFTFT/master/logo.png) [![dockeri.co](http://dockeri.co/image/misterdevo/tftft)](https://hub.docker.com/r/misterdevo/tftft/)
-###### TFTFT BadgeFury : [![GitHub version](https://badge.fury.io/gh/misterdevo%2Ftftft.svg)](https://badge.fury.io/gh/misterdevo%2Ftftft) ... TFTFT Shippable : [![Shippable](https://api.shippable.com/projects/56a61fc31895ca4474728105/badge/master)](https://app.shippable.com/subscriptions/56a613901895ca4474727fd3) => TFTFT Docker
+###### TFTFT BadgeFury : [![GitHub version](https://badge.fury.io/gh/misterdevo%2Ftftft.svg)](https://badge.fury.io/gh/misterdevo%2Ftftft)
+
+###### TFTFT Codeship : [![codeship](https://codeship.com/projects/b00bd7d0-9fa7-0133-a9c2-3206c6610001/status?branch=master)](https://codeship.com/projects/127941) => TFTFT Heroku : [![TFTFT Version](https://img.shields.io/badge/Deployment-Heroku_App-746cac.svg?style=flat-square)](https://tftft.herokuapp.com/)
+
+###### TFTFT Shippable : [![Shippable](https://api.shippable.com/projects/56a61fc31895ca4474728105/badge/master)](https://app.shippable.com/subscriptions/56a613901895ca4474727fd3) => TFTFT Docker
+
 ###### TFTFT Travis-ci : [![Travis](https://img.shields.io/travis/MisterDevo/TFTFT/master.svg)](https://travis-ci.org/MisterDevo/TFTFT/branches) => TFTFT Coveralls : [![Coverage Status](https://coveralls.io/repos/github/MisterDevo/TFTFT/badge.svg?branch=master)](https://coveralls.io/github/MisterDevo/TFTFT?branch=master)
 ###### => TFTFT SauceLabs : [![Sauce Test Status](https://saucelabs.com/browser-matrix/misterdevo.svg)](https://saucelabs.com/u/misterdevo)
 
-###### TFTFT Codeship : [![codeship](https://codeship.com/projects/b00bd7d0-9fa7-0133-a9c2-3206c6610001/status?branch=master)](https://codeship.com/projects/127941) => TFTFT Heroku : [![TFTFT Version](https://img.shields.io/badge/Deployment-Heroku_App-746cac.svg?style=flat-square)](https://tftft.herokuapp.com/)
 ###### TFTFT Waffle : [![Stories in Ready](https://badge.waffle.io/MisterDevo/TFTFT.png?label=ready&title=Ready)](https://waffle.io/MisterDevo/TFTFT) [![Stories in progress](https://badge.waffle.io/MisterDevo/TFTFT.png?label=in%20progress&title=in%20progress)](https://waffle.io/MisterDevo/TFTFT)[![Throughput Graph](https://graphs.waffle.io/MisterDevo/TFTFT/throughput.svg)](https://waffle.io/MisterDevo/TFTFT/metrics)
 
 ###### TFTFT David-dm : [![Dependency Status](https://img.shields.io/david/misterdevo/TFTFT.svg)](https://david-dm.org/misterdevo/TFTFT)[![devDependency Status](http://img.shields.io/david/dev/misterdevo/TFTFT.svg)](http://david-dm.org/misterdevo/tftft#info=devDependencies)
@@ -24,7 +28,7 @@
 
 
 **_SauceLabs Selenium Server with user auth :_**  
-Config in `test/wdio-opt.js` 
+Config in `test/wdio-opt.js`
 ```
 $ export SAUCE_USERNAME=[secure]
 $ export SAUCE_ACCESS_KEY=[secure]
