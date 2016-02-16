@@ -1,9 +1,9 @@
-![TFTFT-logo](https://raw.githubusercontent.com/MisterDevo/TFTFT/master/logo.png) [![dockeri.co](http://dockeri.co/image/misterdevo/tftft)](https://hub.docker.com/r/misterdevo/tftft/)
+![TFTFT-logo](https://raw.githubusercontent.com/MisterDevo/TFTFT/master/logo.png) 
 ###### TFTFT BadgeFury : [![GitHub version](https://badge.fury.io/gh/misterdevo%2Ftftft.svg)](https://badge.fury.io/gh/misterdevo%2Ftftft)
 
-###### TFTFT Codeship : [![codeship](https://codeship.com/projects/b00bd7d0-9fa7-0133-a9c2-3206c6610001/status?branch=master)](https://codeship.com/projects/127941) => TFTFT Heroku : [![TFTFT Version](https://img.shields.io/badge/Deployment-Heroku_App-746cac.svg?style=flat-square)](https://tftft.herokuapp.com/)
+###### TFTFT Codeship : [![codeship](https://codeship.com/projects/b00bd7d0-9fa7-0133-a9c2-3206c6610001/status?branch=master)](https://codeship.com/projects/127941) => TFTFT Heroku : [![TFTFT Version](https://img.shields.io/badge/Demo-Heroku_App-746cac.svg?style=flat-square)](https://tftft.herokuapp.com/)
 
-###### TFTFT Shippable : [![Shippable](https://api.shippable.com/projects/56a61fc31895ca4474728105/badge/master)](https://app.shippable.com/subscriptions/56a613901895ca4474727fd3) => TFTFT Docker
+###### TFTFT Shippable : [![Shippable](https://api.shippable.com/projects/56a61fc31895ca4474728105/badge/master)](https://app.shippable.com/subscriptions/56a613901895ca4474727fd3) => TFTFT Docker [![dockeri.co](http://dockeri.co/image/misterdevo/tftft)](https://hub.docker.com/r/misterdevo/tftft/)
 
 ###### TFTFT Travis-ci : [![Travis](https://img.shields.io/travis/MisterDevo/TFTFT/master.svg)](https://travis-ci.org/MisterDevo/TFTFT/branches) => TFTFT Coveralls : [![Coverage Status](https://coveralls.io/repos/github/MisterDevo/TFTFT/badge.svg?branch=master)](https://coveralls.io/github/MisterDevo/TFTFT?branch=master)
 ###### => TFTFT SauceLabs : [![Sauce Test Status](https://saucelabs.com/browser-matrix/misterdevo.svg)](https://saucelabs.com/u/misterdevo)
