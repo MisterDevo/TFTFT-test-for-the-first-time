@@ -5,5 +5,20 @@ language: node_js
 node_js:
     - 4.3.0
 
+# The path for Xunit to output test reports
+env:
+      - XUNIT_FILE=shippable/testresults/result.xml
+
+# Create directories for test and coverage reports
+before_script:
+      - mkdir -p shippable/testresults
+      - mkdir -p shippable/codecoverage
+
+# Running the tests with grunt
 script:
-    - npm run coverage
+      - npm run coverage
+
+# Tell istanbul to generate a coverage report
+after_script:
+      - ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -u tdd
+      - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
