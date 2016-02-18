@@ -23,7 +23,7 @@ describe('TFTFT EndToEnd Test', function() {
               .then(function(title){
                   assert.equal(title, 'TFTFT - Test For The First Time');
               })
-              .waitForExist('#project-link')
+              .waitForExist('#project-link', 5000)
               .call(done);
         });
     });
@@ -42,7 +42,7 @@ describe('TFTFT EndToEnd Test', function() {
         it('should display correct url', function (done) {
             client
               .url('/#mochawesome')
-              .waitForExist('#frame-mochawesome')
+              .waitForExist('#frame-mochawesome', 5000)
               .getAttribute('#frame-mochawesome','src')
               .then(function(attr){
                   assert.equal(attr, options.baseUrl + '/report/tests.html');
@@ -65,7 +65,7 @@ describe('TFTFT EndToEnd Test', function() {
         it('should display correct url', function (done) {
             client
               .url('/#coverage')
-              .waitForExist('#frame-coverage')
+              .waitForExist('#frame-coverage', 5000)
               .getAttribute('#frame-coverage','src')
               .then(function(attr){
                   assert.equal(attr, options.baseUrl + '/cov/lcov-report/index.html');
@@ -88,7 +88,7 @@ describe('TFTFT EndToEnd Test', function() {
         it('should display saucelabs matrix with correct url', function (done) {
             client
               .url('/#saucelabs')
-              .waitForExist('#sl-img')
+              .waitForExist('#sl-img', 5000)
               .getAttribute('#sl-img','src')
               .then(function(attr){
                   assert.equal(attr,'https://saucelabs.com/browser-matrix/misterdevo.svg');
