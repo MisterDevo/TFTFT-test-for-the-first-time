@@ -19,11 +19,13 @@ describe('TFTFT EndToEnd Test', function() {
         it('should have the right title', function (done) {
             client
               .url('/')
-              .pause(5000)
+              .waitForExist('title', 5000)
               .getTitle()
               .then(function(title){
                   assert.equal(title, 'TFTFT - Test For The First Time');
               })
+              .waitForExist('#project-link', 5000)
+              .click('#project-link')
               .call(done);
         });
     });
@@ -31,7 +33,6 @@ describe('TFTFT EndToEnd Test', function() {
     describe('mochawesome view', function() {
         it('should display correct mochawesome link', function (done) {
             client
-              .click('#project-link')
               .getAttribute('#mochawesome-link','href')
               .then(function(attr){
                   assert.equal(attr,  options.baseUrl + '/#mochawesome');
@@ -54,7 +55,6 @@ describe('TFTFT EndToEnd Test', function() {
     describe('coverage view', function() {
         it('should display correct coverage link', function (done) {
             client
-              .click('#project-link')
               .getAttribute('#coverage-link','href')
               .then(function(attr){
                   assert.equal(attr,  options.baseUrl + '/#coverage');
@@ -77,7 +77,6 @@ describe('TFTFT EndToEnd Test', function() {
     describe('saucelabs view', function() {
         it('should display correct saucelabs link', function (done) {
             client
-              .click('#project-link')
               .getAttribute('#saucelabs-link','href')
               .then(function(attr){
                   assert.equal(attr,  options.baseUrl + '/#saucelabs');
