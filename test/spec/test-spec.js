@@ -19,11 +19,11 @@ describe('TFTFT EndToEnd Test', function() {
         it('should have the right title', function (done) {
             client
               .url('/')
+              .pause(5000)
               .getTitle()
               .then(function(title){
                   assert.equal(title, 'TFTFT - Test For The First Time');
               })
-              .pause(5000)
               .call(done);
         });
     });
