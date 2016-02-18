@@ -2,9 +2,9 @@ var assert = require('assert');
 var webdriverio = require('webdriverio');
 
 var options = {
-//  baseUrl:'http://localhost:3000'
+  baseUrl:'http://localhost:3000'
 };
-options = require('./wdio-opt.js');
+//options = require('./wdio-opt.js');
 
 describe('TFTFT EndToEnd Test', function() {
 
@@ -23,6 +23,53 @@ describe('TFTFT EndToEnd Test', function() {
               .then(function(title){
                   assert.equal(title, 'TFTFT - Test For The First Time');
               })
+              .waitForExist('#project-link')
+              .call(done);
+        });
+    });
+
+    describe('mochawesome view', function() {
+        it('should display correct mochawesome link', function (done) {
+            client
+              .click('#project-link')
+              .getAttribute('#mochawesome-link','href')
+              .then(function(attr){
+                  assert.equal(attr,  options.baseUrl + '/#mochawesome');
+              })
+              .call(done);
+        });
+
+        it('should display correct url', function (done) {
+            client
+              .url('/#mochawesome')
+              .waitForExist('#frame-mochawesome')
+              .getAttribute('#frame-mochawesome','src')
+              .then(function(attr){
+                  assert.equal(attr, options.baseUrl + '/report/tests.html');
+              })
+              .call(done);
+        });
+    });
+
+    describe('coverage view', function() {
+        it('should display correct coverage link', function (done) {
+            client
+              .click('#project-link')
+              .getAttribute('#coverage-link','href')
+              .then(function(attr){
+                  assert.equal(attr,  options.baseUrl + '/#coverage');
+              })
+              .call(done);
+        });
+
+        it('should display correct url', function (done) {
+            client
+              .url('/#coverage')
+              .waitForExist('#frame-coverage')
+              .getAttribute('#frame-coverage','src')
+              .then(function(attr){
+                  assert.equal(attr, options.baseUrl + '/cov/lcov-report/index.html');
+              })
               .call(done);
         });
     });
@@ -30,7 +77,6 @@ describe('TFTFT EndToEnd Test', function() {
     describe('saucelabs view', function() {
         it('should display correct saucelabs link', function (done) {
             client
-              .pause(5000)
               .click('#project-link')
               .getAttribute('#saucelabs-link','href')
               .then(function(attr){
@@ -42,7 +88,7 @@ describe('TFTFT EndToEnd Test', function() {
         it('should display saucelabs matrix with correct url', function (done) {
             client
               .url('/#saucelabs')
-              .pause(5000)
+              .waitForExist('#sl-img')
               .getAttribute('#sl-img','src')
               .then(function(attr){
                   assert.equal(attr,'https://saucelabs.com/browser-matrix/misterdevo.svg');
