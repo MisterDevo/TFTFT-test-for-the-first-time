@@ -15,31 +15,19 @@ describe('TFTFT EndToEnd Test', function() {
         client = webdriverio.remote(options).init().call(done);
     });
 
-    //fixing MicrosoftEdge failing on waitForExist
-    var waitOrPause = function(selector){
-      if (options.desiredCapabilities && options.desiredCapabilities.browserName==='MicrosoftEdge'){
-          client.pause(5000);
-      } else {
-          client.waitForExist(selector, 5000);
-      }
-      return client;
-    }
 
     describe('verif title on first page', function() {
         it('should have the right title', function (done) {
             client
-              .url('/').then(function(){
-                    waitOrPause('title')
-                    .getTitle()
-                    .then(function(title){
-                        assert.equal(title, 'TFTFT - Test For The First Time');
-
-                        waitOrPause('#project-link')
-                        //.waitForExist('#project-link', 5000)
-                          .click('#project-link')
-                          .call(done);
-                    })
-            })
+              .url('/')
+              .pause(5000)
+              .getTitle()
+              .then(function(title){
+                  assert.equal(title, 'TFTFT - Test For The First Time');
+                  client.pause(3000)
+                  .click('#project-link')
+                  .call(done);
+              })
         });
     });
 
@@ -55,15 +43,13 @@ describe('TFTFT EndToEnd Test', function() {
 
         it('should display correct url', function (done) {
             client
-              .url('/#mochawesome').then(function(){
-                  waitOrPause('#frame-mochawesome')
-                  //.waitForExist('#frame-mochawesome', 5000)
-                  .getAttribute('#frame-mochawesome','src')
-                  .then(function(attr){
-                      assert.equal(attr, options.baseUrl + '/report/tests.html');
-                  })
-                  .call(done);
+              .url('/#mochawesome')
+              .pause(3000)
+              .getAttribute('#frame-mochawesome','src')
+              .then(function(attr){
+                  assert.equal(attr, options.baseUrl + '/report/tests.html');
               })
+              .call(done);
         });
     });
 
@@ -79,15 +65,13 @@ describe('TFTFT EndToEnd Test', function() {
 
         it('should display correct url', function (done) {
             client
-              .url('/#coverage').then(function(){
-                  waitOrPause('#frame-coverage')
-                  //.waitForExist('#frame-coverage', 5000)
-                  .getAttribute('#frame-coverage','src')
-                  .then(function(attr){
-                      assert.equal(attr, options.baseUrl + '/cov/lcov-report/index.html');
-                  })
-                  .call(done);
-            })
+              .url('/#coverage')
+              .pause(3000)
+              .getAttribute('#frame-coverage','src')
+              .then(function(attr){
+                  assert.equal(attr, options.baseUrl + '/cov/lcov-report/index.html');
+              })
+              .call(done);
         });
     });
 
@@ -103,15 +87,13 @@ describe('TFTFT EndToEnd Test', function() {
 
         it('should display saucelabs matrix with correct url', function (done) {
             client
-              .url('/#saucelabs').then(function(){
-                  waitOrPause('#sl-img')
-                  //.waitForExist('#sl-img', 5000)
-                  .getAttribute('#sl-img','src')
-                  .then(function(attr){
-                      assert.equal(attr,'https://saucelabs.com/browser-matrix/misterdevo.svg');
-                  })
-                  .call(done);
-            })
+              .url('/#saucelabs')
+              .pause(3000)
+              .getAttribute('#sl-img','src')
+              .then(function(attr){
+                  assert.equal(attr,'https://saucelabs.com/browser-matrix/misterdevo.svg');
+              })
+              .call(done);
         });
     });
 
