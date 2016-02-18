@@ -18,6 +18,9 @@ define(['angularRoute',
                       templateUrl: '../welcome.html',
                       controller: 'welcomeController'
                     })
+                    .when('/mochawesome', {
+                      templateUrl: '../mochawesome.html'
+                    })
                     .when('/coverage', {
                       templateUrl: '../coverage.html'
                     })
