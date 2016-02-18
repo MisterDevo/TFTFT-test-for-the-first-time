@@ -23,6 +23,7 @@ describe('TFTFT EndToEnd Test', function() {
               .then(function(title){
                   assert.equal(title, 'TFTFT - Test For The First Time');
               })
+              .pause(5000)
               .call(done);
         });
     });
@@ -30,7 +31,6 @@ describe('TFTFT EndToEnd Test', function() {
     describe('mochawesome view', function() {
         it('should display correct mochawesome link', function (done) {
             client
-              .waitForExist('#project-link', 5000)
               .click('#project-link')
               .getAttribute('#mochawesome-link','href')
               .then(function(attr){
