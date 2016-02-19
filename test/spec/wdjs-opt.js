@@ -1,6 +1,6 @@
 var SauceLabs = require("saucelabs");
-var username: process.env.SAUCE_USERNAME,
-    accessKey: process.env.SAUCE_ACCESS_KEY;
+var username = process.env.SAUCE_USERNAME,
+    accessKey = process.env.SAUCE_ACCESS_KEY;
 
 var saucelabs = new SauceLabs({
             username: username,
