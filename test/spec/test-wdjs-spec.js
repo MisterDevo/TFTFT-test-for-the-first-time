@@ -24,7 +24,7 @@ test.describe('TFTFT EndToEnd Test', function() {
 
     test.describe('verif title on first page', function() {
         test.it('should have the right title', function () {
-            client.get('http://localhost:3000');
+            client.get(options.baseUrl);
             client.getTitle()
               .then(function(title){
                   assert.equal(title, 'TFTFT - Test For The First Time');
