@@ -99,19 +99,17 @@ test.describe('TFTFT EndToEnd Test', function() {
 
     test.after(function(done) {
         if(options.saucelabs){
-          //options.saucelabs.getJobs(function (err, jobs) {
-            //for (var k in jobs) {
-              //if(jobs[k].tags[0]===options.desiredCapabilities.tags[0]){
-
-              client.getSession().then(function (sessionid){
-                options.saucelabs.updateJob(sessionid.id_, //jobs[k].id,
-                                      { passed: passed },
-                                      function(){ client.quit(); done(); });
-              });
-              //  break;
-              //}
-            //}
-          //});
+          options.saucelabs.getJobs(function (err, jobs) {
+            for (var k in jobs) {
+              if(jobs[k].tags[0]===options.desiredCapabilities.tags[0]){
+                  options.saucelabs.updateJob( jobs[k].id,
+                                        { passed: passed },
+                                        function(){ client.quit(); done(); });
+                });
+                break;
+              }
+            }
+          });
         } else {
             client.quit();
             done();
