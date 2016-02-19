@@ -105,8 +105,7 @@ test.describe('TFTFT EndToEnd Test', function() {
                   options.saucelabs.updateJob( jobs[k].id,
                                         { passed: passed },
                                         function(){ client.quit(); done(); });
-                });
-                break;
+                  break;
               }
             }
           });
