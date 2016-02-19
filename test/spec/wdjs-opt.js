@@ -9,7 +9,7 @@ var saucelabs = new SauceLabs({
 
 module.exports = {
         server : "http://" + username + ":" + accessKey +
-            "@ondemand.saucelabs.com:80/wd/hub";
+            "@ondemand.saucelabs.com:80/wd/hub",
 
         saucelabs: saucelabs,
 
