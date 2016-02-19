@@ -1,47 +1,21 @@
 var SauceLabs = require("saucelabs");
+var username: process.env.SAUCE_USERNAME,
+    accessKey: process.env.SAUCE_ACCESS_KEY;
+
 var saucelabs = new SauceLabs({
-            username: process.env.SAUCE_USERNAME,
-            password: process.env.SAUCE_ACCESS_KEY
+            username: username,
+            password: accessKey
           });
 
 module.exports = {
-        host: 'ondemand.saucelabs.com',
-        port: 80,
-        user: process.env.SAUCE_USERNAME,
-        key: process.env.SAUCE_ACCESS_KEY,
+        server : "http://" + username + ":" + accessKey +
+            "@ondemand.saucelabs.com:80/wd/hub";
 
         saucelabs: saucelabs,
 
         logLevel: 'silent',
 
         baseUrl:'https://tftft-misterdevo.c9users.io',
-
-        // ChromeBrowser: {
-        //     desiredCapabilities: {
-        //         browserName: 'chrome',
-        //         version: '48.0',
-        //         platform: 'Windows 10'
-        //     }
-        // },
-        // FirefoxBrowser: {
-        //     desiredCapabilities: {
-        //         browserName: 'firefox',
-        //         version: '44.0',
-        //         platform: 'Windows 10'
-        //     }
-        // },
-        //
-        // desiredCapabilities: {
-        //     browserName: 'chrome',
-        //     version: '47.0',
-        //     platform: 'OS X 10.11',
-        //     tags: ['TFTFT'],
-        //     name: 'TFTFT',
-        //     build: 'build-1.0.1',
-        //     passed: 'false',
-        //
-        //     'public': true
-        // }
 
         desiredCapabilities: {
             browserName: (process.env._BROWSER || '').replace(/_/g, ' '),
