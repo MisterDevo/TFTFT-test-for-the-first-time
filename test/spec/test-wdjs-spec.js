@@ -111,7 +111,7 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
           //   }
           // });
           client.getSession().then(function (sessionid){
-            options.saucelabs.updateJob(sessionid.id_, //jobs[k].id,
+            options.saucelabs.updateJob(sessionid.id_,
                                           { passed: passed },
                                           function(){ client.quit(); done(); });
           });
