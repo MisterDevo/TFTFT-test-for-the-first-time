@@ -29,7 +29,7 @@ test.describe('TFTFT EndToEnd Test', function() {
               .then(function(title){
                   assert.equal(title, 'TFTFT - Test For The First Time');
               });
-            client.findElement(webdriver.By.id('project-link')).click();
+            client.wait(webdriver.until.elementLocated(webdriver.By.id('project-link')), 10000).click();
         });
     });
 
