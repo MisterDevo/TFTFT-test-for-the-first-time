@@ -2,11 +2,11 @@ var assert = require('assert');
 var webdriverio = require('webdriverio');
 
 var options = {
-//  baseUrl:'http://localhost:3000'
+  baseUrl:'http://localhost:3000'
 };
-options = require('./wdio-opt.js');
+//options = require('./wdio-opt.js');
 
-describe('TFTFT EndToEnd Test', function() {
+describe('TFTFT WDIO EndToEnd Test', function() {
 
     this.timeout(60000);
     var client = {};
@@ -20,14 +20,17 @@ describe('TFTFT EndToEnd Test', function() {
         it('should have the right title', function (done) {
             client
               .url('/')
-              .pause(5000)
+              .waitForExist('title', 10000)
+              //.pause(5000)
               .getTitle()
               .then(function(title){
                   assert.equal(title, 'TFTFT - Test For The First Time');
-                  client.pause(3000)
-                  .click('#project-link')
-                  .call(done);
+                  //client.pause(3000)
+
               })
+              .waitForVisible('#project-link', 10000)
+              .click('#project-link')
+              .call(done);
         });
     });
 
@@ -43,8 +46,10 @@ describe('TFTFT EndToEnd Test', function() {
 
         it('should display correct url', function (done) {
             client
-              .url('/#mochawesome')
-              .pause(3000)
+              //.url('/#mochawesome')
+              //.pause(3000)
+              .click('#mochawesome-link')
+              .waitForExist('#frame-mochawesome', 10000)
               .getAttribute('#frame-mochawesome','src')
               .then(function(attr){
                   assert.equal(attr, options.baseUrl + '/report/tests.html');
@@ -65,8 +70,10 @@ describe('TFTFT EndToEnd Test', function() {
 
         it('should display correct url', function (done) {
             client
-              .url('/#coverage')
-              .pause(3000)
+              // .url('/#coverage')
+              // .pause(3000)
+              .click('#coverage-link')
+              .waitForExist('#frame-coverage', 10000)
               .getAttribute('#frame-coverage','src')
               .then(function(attr){
                   assert.equal(attr, options.baseUrl + '/cov/lcov-report/index.html');
@@ -87,8 +94,10 @@ describe('TFTFT EndToEnd Test', function() {
 
         it('should display saucelabs matrix with correct url', function (done) {
             client
-              .url('/#saucelabs')
-              .pause(3000)
+              // .url('/#saucelabs')
+              // .pause(3000)
+              .click('#saucelabs-link')
+              .waitForExist('#sl-img', 10000)
               .getAttribute('#sl-img','src')
               .then(function(attr){
                   assert.equal(attr,'https://saucelabs.com/browser-matrix/misterdevo.svg');

@@ -5,11 +5,11 @@ var test = require('selenium-webdriver/testing'),
 var options = {
   // server:'http://127.0.0.1:4444/wd/hub',
   // desiredCapabilities:{browserName:'firefox'},
-  // baseUrl:'https://tftft-misterdevo.c9users.io'//http://localhost:3000'
+  // baseUrl:'http://localhost:3000'
 };
 options = require('./wdjs-opt.js');
 
-test.describe('TFTFT EndToEnd Test', function() {
+test.describe('TFTFT WDJS EndToEnd Test', function() {
 
     this.timeout(60000);
     var client = {};
