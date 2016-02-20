@@ -3,11 +3,11 @@ var test = require('selenium-webdriver/testing'),
     webdriver = require('selenium-webdriver');
 
 var options = {
-  // server:'http://127.0.0.1:4444/wd/hub',
-  // desiredCapabilities:{browserName:'firefox'},
-  // baseUrl:'http://localhost:3000'
+  server:'http://127.0.0.1:4444/wd/hub',
+  desiredCapabilities:{browserName:'firefox'},
+  baseUrl:'https://tftft-misterdevo.c9users.io'//http://localhost:3000'
 };
-options = require('./wdjs-opt.js');
+//options = require('./wdjs-opt.js');
 
 test.describe('TFTFT EndToEnd Test', function() {
 
@@ -25,7 +25,7 @@ test.describe('TFTFT EndToEnd Test', function() {
     test.describe('verif title on first page', function() {
         test.it('should have the right title', function () {
             client.get(options.baseUrl);
-            client.getTitle()
+            client.wait(client.getTitle(), 10000)
               .then(function(title){
                   assert.equal(title, 'TFTFT - Test For The First Time');
               });
@@ -44,7 +44,7 @@ test.describe('TFTFT EndToEnd Test', function() {
 
         test.it('should display correct url in the view', function () {
             client.findElement(webdriver.By.id('mochawesome-link')).click();
-            client.findElement(webdriver.By.id('frame-mochawesome'))
+            client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome')), 10000)
               .getAttribute('src')
               .then(function(attr){
                   assert.equal(attr,  options.baseUrl + '/report/tests.html');
@@ -63,11 +63,11 @@ test.describe('TFTFT EndToEnd Test', function() {
 
         test.it('should display correct url in the view', function () {
             client.findElement(webdriver.By.id('coverage-link')).click();
-            client.findElement(webdriver.By.id('frame-coverage'))
+            client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-coverage')), 10000)
               .getAttribute('src')
               .then(function(attr){
                   assert.equal(attr,  options.baseUrl + '/cov/lcov-report/index.html');
-              });
+              });          
          });
     });
 
@@ -82,7 +82,7 @@ test.describe('TFTFT EndToEnd Test', function() {
 
         test.it('should display correct url in the view', function () {
             client.findElement(webdriver.By.id('saucelabs-link')).click();
-            client.findElement(webdriver.By.id('sl-img'))
+            client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-img')), 10000)
               .getAttribute('src')
               .then(function(attr){
                   assert.equal(attr, 'https://saucelabs.com/browser-matrix/misterdevo.svg');
@@ -99,15 +99,20 @@ test.describe('TFTFT EndToEnd Test', function() {
 
     test.after(function(done) {
         if(options.saucelabs){
-          options.saucelabs.getJobs(function (err, jobs) {
-            for (var k in jobs) {
-              if(jobs[k].tags[0]===options.desiredCapabilities.tags[0]){
-                  options.saucelabs.updateJob( jobs[k].id,
-                                        { passed: passed },
-                                        function(){ client.quit(); done(); });
-                  break;
-              }
-            }
+          // options.saucelabs.getJobs(function (err, jobs) {
+          //   for (var k in jobs) {
+          //     if(jobs[k].tags[0]===options.desiredCapabilities.tags[0]){
+          //         options.saucelabs.updateJob( jobs[k].id,
+          //                               { passed: passed },
+          //                               function(){ client.quit(); done(); });
+          //         break;
+          //     }
+          //   }
+          // });
+          client.getSession().then(function (sessionid){
+            options.saucelabs.updateJob(sessionid.id_, //jobs[k].id,
+                                          { passed: passed },
+                                          function(){ client.quit(); done(); });
           });
         } else {
             client.quit();
