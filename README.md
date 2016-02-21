@@ -1,4 +1,4 @@
-![TFTFT-logo](https://raw.githubusercontent.com/MisterDevo/TFTFT/master/logo.png) 
+![TFTFT-logo](https://github.com/MisterDevo/TFTFT/blob/master/public/images/logo.png) 
 ###### TFTFT BadgeFury : [![GitHub version](https://badge.fury.io/gh/misterdevo%2Ftftft.svg)](https://badge.fury.io/gh/misterdevo%2Ftftft)
 
 ###### TFTFT Codeship : [![codeship](https://codeship.com/projects/b00bd7d0-9fa7-0133-a9c2-3206c6610001/status?branch=master)](https://codeship.com/projects/127941) => TFTFT Heroku : [![TFTFT Version](https://img.shields.io/badge/Demo-Heroku_App-746cac.svg?style=flat-square)](https://tftft.herokuapp.com/)
