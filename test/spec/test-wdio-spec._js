@@ -28,9 +28,9 @@ describe('TFTFT WDIO EndToEnd Test', function() {
                   //client.pause(3000)
 
               })
-              .waitForVisible('#project-link', 10000)
-              .click('#project-link')
-              .call(done);
+              // .waitForVisible('#project-link', 10000)
+              // .click('#project-link')
+              // .call(done);
         });
     });
 
