@@ -3,7 +3,7 @@ block content
   #wrapper
     nav.navbar.navbar-default.navbar-fixed-top(role='navigation', style='margin-bottom: 0')
       .navbar-header
-        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+        button.navbar-toggle(type='button', ng-init="sideCollapsed = true", ng-click="sideCollapsed = !sideCollapsed")
           span.sr-only Toggle navigation
           span.icon-bar
           span.icon-bar
@@ -18,26 +18,20 @@ block content
 
 
       .navbar-default.sidebar(role='navigation')
-        .sidebar-nav.navbar-collapse.collapse
+        .sidebar-nav.navbar-collapse.collapse(uib-collapse='sideCollapsed')
           ul#side-menu.nav
             li
-              a(id='project-link' href='#project')
-                i.fa.fa-folder-open.fa-fw
-                |  TFTFT Project
-                span.fa.arrow
-              ul.nav.nav-second-level
-                li
-                  a(id='mochawesome-link', href='#mochawesome')
-                    i.glyphicon.glyphicon-link
-                    |  Mocha
-                li
-                  a(id='coverage-link', href='#coverage')
-                    i.glyphicon.glyphicon-link
-                    |  Istanbul
-                li
-                  a(id='saucelabs-link', href='#saucelabs')
-                    i.glyphicon.glyphicon-link
-                    |  SauceLabs
+              a(id='mochawesome-link', href='#mochawesome')
+                i.glyphicon.glyphicon-link
+                |  Mocha
+            li
+              a(id='coverage-link', href='#coverage')
+                i.glyphicon.glyphicon-link
+                |  Istanbul
+            li
+              a(id='saucelabs-link', href='#saucelabs')
+                i.glyphicon.glyphicon-link
+                |  SauceLabs
 
     nav.navbar.navbar-default.navbar-fixed-bottom
       ul.nav.navbar-top-links.navbar-right
