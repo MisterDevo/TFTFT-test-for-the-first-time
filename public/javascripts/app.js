@@ -1,15 +1,18 @@
 define(['angularRoute',
         'angularResource',
+        'angularAnimate',
+        'bootstrapUi',
         'controllers/appControllers',
         'services/welcomeService',
         'directives/welcomeDirective'
   ], function() {
         return angular.module('TFTFT', ['ngRoute',
                                         'ngResource',
+                                        'ngAnimate',
+                                        'ui.bootstrap',
                                         'controllers',
                                         'services',
                                         'directives'
-
         ])
         .config(['$routeProvider',
             function($routeProvider) {
