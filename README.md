@@ -19,22 +19,42 @@
 
 # Test For the First Time ( TFTFT )  
 
-### **Demo Backends :**  
-#### TFTFT EndToEnd : Up to Developer !  
+### **Demo Backends :**
 
+#### TFTFT BackTests :
+
+##### `npm run coverage`  
+**Istanbul** auto-instrumented coverage/report - **Mocha** runner with default config (`test/*.js`) for :
+* TFTFT Unit Test : Mocha
+* TFTFT Route Test : Supertest
+
+_In this repo, `npm run coverage` runs at `postinstall` to create Istanbul and Mochawesome reports for app during installation.  
+For this reason, all these tests dependencies (**Istanbul-Mocha-Supertest-Mochawesome**) are in production_
+
+#### TFTFT BackTests + EndToEnd :
+
+##### `npm test`  
+**Istanbul** auto-instrumented coverage/report - **Mocha** runner with config (`test/**/*.js test/*.js`)  
+**WebDriver** browsers test
+
+**selenium-webdriver** or **webdriverio** are ready to use in folder `test/spec/`
+
+Selenium Server : Local or Remote (default to Remote with Saucelabs) ... Up to Developer !  
 
 **_SauceLabs Selenium Server with user auth :_**  
-Config in `test/wdio-opt.js`
+Config in `test/spec/wdjs-opt.js` or `test/spec/wdio-opt.js`
 ```
 $ export SAUCE_USERNAME=[secure]
 $ export SAUCE_ACCESS_KEY=[secure]
 ```
 
 **_Local Selenium Server with selenium-standalone :_**  
-In `test/test-spec.js`  
-* Remove or comment the line : `options = require('./wdio-opt.js');`  
+In `test/spec/test-wdjs-spec.js`  or `test/spec/test-wdio-spec.js`
+* Remove or comment the line : `options = require('./wdjs-opt.js');`  
 * Make your own config with : `var options = {};`  
-* Start your selenium server  
+* Start your local selenium server  
+
+Example with selenium-standalone :
 ```javascript
 npm install selenium-standalone;
 ./node_modules/.bin/selenium-standalone install;
