@@ -19,18 +19,21 @@
 
 # Test For the First Time ( TFTFT )  
 
-### **Demo Backends :**
+## **Demo Backends :**
 
-#### TFTFT ExpressJs - TFTFT AngularJs :
+### TFTFT ExpressJs - TFTFT AngularJs :
 
 ##### `npm install`  
+* **ExpressJs** dependencies
 * **Test** reports (see above `npm run coverage` in npm `postinstall`) 
 * **Bower** dependencies : 
-  * `bower install`is called in npm `postinstall`  
-  * **bower-requirejs** is called in bower `postinstall` (see .bowerrc)
+  * `bower install`is called in npm `postinstall`  **AngularJs - RequireJs - BootstrapCss**
+  * **bower-requirejs** is called in bower `postinstall` (_see .bowerrc_) to generate main requirejs file
 
+##### `npm start`
+Start **ExpressJs** server and listen to `http://localhost:3000` to serve api and static files.
 
-#### TFTFT BackTests :
+### TFTFT BackTests :
 
 ##### `npm run coverage`  
 **Istanbul** auto-instrumented coverage/report - **Mocha** runner with default config (`test/*.js`) for :
@@ -40,7 +43,7 @@
 _In this repo, `npm run coverage` runs at npm `postinstall` to create Istanbul and Mochawesome reports for app during installation.  
 For this reason, all these tests dependencies (**Istanbul-Mocha-Supertest-Mochawesome**) are in production._
 
-#### TFTFT BackTests + EndToEnd :
+### TFTFT BackTests + EndToEnd :
 
 ##### `npm test`  
 **Istanbul** auto-instrumented coverage/report - **Mocha** runner with config (`test/**/*.js test/*.js`)  
@@ -70,7 +73,7 @@ npm install selenium-standalone;
 ./node_modules/.bin/selenium-standalone start;
 ```
 
-### **Demo Frontends :**  
+## **Demo Frontends :**  
 Source :     **https://github.com/MisterDevo/TFTFT/tree/gh-pages**
 
 * TFTFT Gh-pages -> http://misterdevo.github.io/TFTFT  
