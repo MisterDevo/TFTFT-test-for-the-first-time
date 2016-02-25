@@ -4,7 +4,7 @@
   "description": "TFTFT : Test For The First Time",
   "scripts": {
     "coverage": "istanbul cover _mocha --dir public/cov -- --reporter mochawesome --reporter-options reportDir=public/report,reportName=tests",
-    "postinstall": "npm run coverage",
+    "postinstall": "npm run coverage && bower install",
     "start": "node ./bin/www",
     "test": "istanbul cover _mocha --report lcovonly -- test/**/*.js test/*.js"
   },
