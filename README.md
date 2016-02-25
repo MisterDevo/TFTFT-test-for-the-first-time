@@ -21,6 +21,15 @@
 
 ### **Demo Backends :**
 
+#### TFTFT ExpressJs - TFTFT AngularJs :
+
+##### `npm install`  
+* **Test** reports (see above `npm run coverage` in npm `postinstall`) 
+* **Bower** dependencies : 
+  * `bower install`is called in npm `postinstall`  
+  * **bower-requirejs** is called in bower `postinstall` (see .bowerrc)
+
+
 #### TFTFT BackTests :
 
 ##### `npm run coverage`  
@@ -28,8 +37,8 @@
 * TFTFT Unit Test : Mocha
 * TFTFT Route Test : Supertest
 
-_In this repo, `npm run coverage` runs at `postinstall` to create Istanbul and Mochawesome reports for app during installation.  
-For this reason, all these tests dependencies (**Istanbul-Mocha-Supertest-Mochawesome**) are in production_
+_In this repo, `npm run coverage` runs at npm `postinstall` to create Istanbul and Mochawesome reports for app during installation.  
+For this reason, all these tests dependencies (**Istanbul-Mocha-Supertest-Mochawesome**) are in production._
 
 #### TFTFT BackTests + EndToEnd :
 
