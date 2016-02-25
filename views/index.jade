@@ -11,9 +11,9 @@ block content
         a.navbar-brand(href='/#/')
           .logo
 
-      ul.nav.navbar-top-links.navbar-right
+      ul.nav.navbar-top-links.navbar-right.navbar-collapse.collapse(uib-collapse='sideCollapsed')
         li
-          a(href='/#login')
+          a(href='/#login', ng-click="sideCollapsed = !sideCollapsed")
             |  Login
 
 
@@ -21,15 +21,15 @@ block content
         .sidebar-nav.navbar-collapse.collapse(uib-collapse='sideCollapsed')
           ul#side-menu.nav
             li
-              a(id='mochawesome-link', href='#mochawesome')
+              a(id='mochawesome-link', href='#mochawesome', ng-click="sideCollapsed = !sideCollapsed")
                 i.glyphicon.glyphicon-link
                 |  Mocha
             li
-              a(id='coverage-link', href='#coverage')
+              a(id='coverage-link', href='#coverage', ng-click="sideCollapsed = !sideCollapsed")
                 i.glyphicon.glyphicon-link
                 |  Istanbul
             li
-              a(id='saucelabs-link', href='#saucelabs')
+              a(id='saucelabs-link', href='#saucelabs', ng-click="sideCollapsed = !sideCollapsed")
                 i.glyphicon.glyphicon-link
                 |  SauceLabs
 
@@ -37,7 +37,7 @@ block content
       ul.nav.navbar-top-links.navbar-right
         li
           a.navbar-brand(href='https://github.com/MisterDevo/TFTFT')
-            i.fa.fa-github-alt.fa-fw.fa-spin.fa-2x
+            i.fa.fa-github-alt
 
   #page-wrapper
     .row
