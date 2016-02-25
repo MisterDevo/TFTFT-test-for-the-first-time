@@ -1,7 +1,7 @@
-define(['angularRoute',
-        'angularResource',
-        'angularAnimate',
-        'bootstrapUi',
+define(['angular-route',
+        'angular-resource',
+        'angular-animate',
+        'angular-bootstrap',
         'controllers/appControllers',
         'services/welcomeService',
         'directives/welcomeDirective'
