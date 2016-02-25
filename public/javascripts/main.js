@@ -1,14 +1,15 @@
+//auto generate by bower-requirejs : see bower postinstall
 require.config({
 	paths: {
-    angular: 'vendor/angular.min',
-    angularRoute: 'vendor/angular-route.min',
-		angularResource: "vendor/angular-resource.min",
-		angularAnimate: "vendor/angular-animate.min",
-    bootstrapUi: "vendor/ui-bootstrap-tpls.min"
 	},
 	shim: {
-		'app': ['angular']
-	}
+		app: [
+			'angular'
+		]
+	},
+	packages: [
+
+	]
 });
 
 require(['app'], function() {
