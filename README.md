@@ -48,20 +48,20 @@ For this reason, all these tests dependencies (**Istanbul-Mocha-Supertest-Mochaw
 
 ##### `npm test`  
 **Istanbul** auto-instrumented coverage/report - **Mocha** runner with config (`test/**/*.js test/*.js`)  
-**WebDriver** browsers test
+**Selenium-WebDriver** or **WebDriverIO** are ready to use in folder `test/spec/`(_first is preferred_)
 
-**selenium-webdriver** or **webdriverio** are ready to use in folder `test/spec/`
+**Selenium Server** : Local or Remote ? ... Up to Developer !  
 
-Selenium Server : Local or Remote (default to Remote with Saucelabs) ... Up to Developer !  
-
-**_SauceLabs Selenium Server with user auth :_**  
-Config in `test/spec/wdjs-opt.js` or `test/spec/wdio-opt.js`
+Default to Remote with **Saucelabs** integrated with **TravisCI** for the needs of this repo.  
+**_Remote SauceLabs Selenium Server with SauceLabs user auth and Travis envirronnement:_**  
+Config in `test/spec/wdjs-opt.js` or `test/spec/wdio-opt.js` 
 ```
 $ export SAUCE_USERNAME=[secure]
 $ export SAUCE_ACCESS_KEY=[secure]
+TRAVIS_JOB_NUMBER, TRAVIS_BUILD_NUMBER, _BROWSER, _PLATFORM, _VERSION must be define too
 ```
 
-**_Local Selenium Server with selenium-standalone :_**  
+**_Local Selenium Server :_**  
 In `test/spec/test-wdjs-spec.js`  or `test/spec/test-wdio-spec.js`
 * Remove or comment the line : `options = require('./wdjs-opt.js');`  
 * Make your own config with : `var options = {};`  
