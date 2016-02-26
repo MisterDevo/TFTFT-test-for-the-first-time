@@ -53,26 +53,26 @@ For this reason, all these tests dependencies (**Istanbul-Mocha-Supertest-Mochaw
 **Selenium Server** : Local or Remote ? ... Up to Developer !  
 
 Default to Remote with **Saucelabs** integrated with **TravisCI** for the needs of this repo.  
-**_Remote SauceLabs Selenium Server with SauceLabs user auth and Travis envirronnement:_**  
-Config in `test/spec/wdjs-opt.js` or `test/spec/wdio-opt.js` 
-```
-$ export SAUCE_USERNAME=[secure]
-$ export SAUCE_ACCESS_KEY=[secure]
-TRAVIS_JOB_NUMBER, TRAVIS_BUILD_NUMBER, _BROWSER, _PLATFORM, _VERSION must be define too
-```
+* **_Remote SauceLabs Selenium Server with SauceLabs user auth and Travis environnement:_**  
+    Config in `test/spec/wdjs-opt.js` or `test/spec/wdio-opt.js` 
+    ```
+    $ export SAUCE_USERNAME=[secure]
+    $ export SAUCE_ACCESS_KEY=[secure]
+    TRAVIS_JOB_NUMBER, TRAVIS_BUILD_NUMBER, _BROWSER, _PLATFORM, _VERSION must be define too
+    ```
 
-**_Local Selenium Server :_**  
-In `test/spec/test-wdjs-spec.js`  or `test/spec/test-wdio-spec.js`
-* Remove or comment the line : `options = require('./wdjs-opt.js');`  
-* Make your own config with : `var options = {};`  
-* Start your local selenium server  
-
-Example with selenium-standalone :
-```javascript
-npm install selenium-standalone;
-./node_modules/.bin/selenium-standalone install;
-./node_modules/.bin/selenium-standalone start;
-```
+* **_Local Selenium Server :_**  
+    In `test/spec/test-wdjs-spec.js`  or `test/spec/test-wdio-spec.js` :
+    * Remove or comment the line : `options = require('./wdjs-opt.js');`  
+    * Make your own config with : `var options = {};`  
+    * Start your local selenium server  
+    
+    _Example with selenium-standalone (not include in this package) :_
+    ```javascript
+    npm install selenium-standalone;
+    ./node_modules/.bin/selenium-standalone install;
+    ./node_modules/.bin/selenium-standalone start;
+    ```
 
 ## **Demo Frontends : _This repo on the gh-pages branch_**  
 Source :     **https://github.com/MisterDevo/TFTFT/tree/gh-pages**
