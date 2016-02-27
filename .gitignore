@@ -27,6 +27,3 @@ node_modules
 
 # Bower
 public/components
-
-# Bower-RequireJs autogenerate
-public/javascripts/main.js
