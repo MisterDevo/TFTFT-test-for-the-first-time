@@ -3,11 +3,11 @@ var test = require('selenium-webdriver/testing'),
     webdriver = require('selenium-webdriver');
 
 var options = {
-  // server:'http://127.0.0.1:4444/wd/hub',
-  // desiredCapabilities:{browserName:'firefox'},
-  // baseUrl:'http://localhost:3000'
+  server:'http://127.0.0.1:4444/wd/hub',
+  desiredCapabilities:{browserName:'firefox'},
+  baseUrl:'http://localhost:3000'
 };
-options = require('./wdjs-opt.js');
+//options = require('./wdjs-opt.js');
 
 test.describe('TFTFT WDJS EndToEnd Test', function() {
 
@@ -86,7 +86,7 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
             client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-img')), 10000)
               .getAttribute('src')
               .then(function(attr){
-                  assert.equal(attr, 'https://saucelabs.com/browser-matrix/misterdevo.svg');
+                  assert.equal(attr, options.baseUrl + '/images/misterdevo.svg');
               });
          });
     });
