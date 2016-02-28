@@ -120,7 +120,7 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
             client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-img')), 10000)
               .getAttribute('src')
               .then(function(attr){
-                  assert.equal(attr, 'https://saucelabs.com/browser-matrix/misterdevo.svg');
+                  assert.equal(attr, options.baseUrl + '/images/misterdevo.svg');
               });
          });
     });
