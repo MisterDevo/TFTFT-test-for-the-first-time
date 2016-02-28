@@ -81,7 +81,7 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
               });
         });
 
-        test.it('should display correct url in the view', function () {
+        test.it('should be correct source iframe after click', function () {
             client.findElement(webdriver.By.id('coverage-link')).click();
             client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-coverage')), 10000)
               .getAttribute('src')
@@ -107,6 +107,7 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
     });
 
     test.describe('saucelabs view', function() {
+
         test.it('should display correct saucelabs link', function () {
             client.findElement(webdriver.By.id('saucelabs-link'))
               .getAttribute('href')
@@ -115,7 +116,7 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
               });
         });
 
-        test.it('should display correct url in the view', function () {
+        test.it('should be correct source image after click', function () {
             client.findElement(webdriver.By.id('saucelabs-link')).click();
             client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-img')), 10000)
               .getAttribute('src')
