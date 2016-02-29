@@ -22,7 +22,7 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
     });
 
 
-    test.describe('verif title on first page', function() {
+    test.describe('verif on first page', function() {
         test.it('should have the right title', function () {
             client.get(options.baseUrl);
             client.wait(client.getTitle(), 10000)
@@ -32,6 +32,15 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
             // client.wait(webdriver.until.elementIsVisible(client.findElement(webdriver.By.id('project-link'))), 10000)
             // .click();
         });
+
+        test.it('should wait for loading first angular view', function () {
+            client.wait(webdriver.until.elementLocated(webdriver.By.id('welcome-view')), 10000)
+            .getAttribute('class')
+            .then(function(attr){
+                assert.equal(attr, 'burning');
+            });
+        });
+
     });
 
     test.describe('mochawesome view', function() {
