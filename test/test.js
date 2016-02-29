@@ -19,48 +19,35 @@ describe('TFTFT Unit Test', function() {
 
 });
 
-
 describe('TFTFT Route Test', function() {
-
-    describe('Statics files', function () {
-
-        it('Saucelab image', function(done){
-          request(app)
-            .get('/images/misterdevo.svg')
-            .expect(200, done);
-        })
-
-    });
 
     describe('Covering routes/index', function () {
 
-        it('GET / respond with body burning', function(done){
-          request(app)
-            .get('/')
-            .expect('Content-Type', /html/)
-            .expect(200)
-            .expect(/<body class="burning">/, done);
-        })
+          it('GET / respond with body burning', function(done){
+            request(app)
+              .get('/')
+              .expect('Content-Type', /html/)
+              .expect(200)
+              .expect(/<body class="burning">/, done);
+          })
 
-        it('GET /api/welcome respond with json welcome messages', function(done){
-          request(app)
-            .get('/api/welcome')
-            .set('Accept', 'application/json')
-            .expect('Content-Type', /json/)
-            .expect(200, done);
-        })
-
+          it('GET /api/welcome respond with json welcome messages', function(done){
+            request(app)
+              .get('/api/welcome')
+              .set('Accept', 'application/json')
+              .expect('Content-Type', /json/)
+              .expect(200, done);
+          })
     });
 
     describe('Covering routes/users', function () {
 
-        it('GET /users respond with html', function(done){
-          request(app)
-            .get('/users')
-            .expect('Content-Type', /html/)
-            .expect(200, done);
-            //.expect(/<body>/, done);
-        })
-
+            it('GET /users respond with html', function(done){
+              request(app)
+                .get('/users')
+                .expect('Content-Type', /html/)
+                .expect(200, done);
+                //.expect(/<body>/, done);
+            })
     });
 });
