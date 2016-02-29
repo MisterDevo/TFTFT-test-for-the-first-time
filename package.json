@@ -1,10 +1,10 @@
 {
   "name": "tftft",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "TFTFT : Test For The First Time",
   "scripts": {
     "coverage": "istanbul cover _mocha --dir public/cov -- --reporter mochawesome --reporter-options reportDir=public/report,reportName=tests",
-    "postinstall": "npm run coverage && bower install --allow-root && curl -o public/images/misterdevo.svg https://saucelabs.com/browser-matrix/misterdevo.svg",
+    "postinstall": "bower install --allow-root && curl -o public/images/misterdevo.svg https://saucelabs.com/browser-matrix/misterdevo.svg && npm run coverage",
     "start": "node ./bin/www",
     "test": "istanbul cover _mocha --report lcovonly -- test/**/*.js test/*.js"
   },

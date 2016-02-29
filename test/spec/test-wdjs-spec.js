@@ -23,6 +23,7 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
 
 
     test.describe('verif title on first page', function() {
+
         test.it('should have the right title', function () {
             client.get(options.baseUrl);
             client.wait(client.getTitle(), 10000)
@@ -32,10 +33,13 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
             // client.wait(webdriver.until.elementIsVisible(client.findElement(webdriver.By.id('project-link'))), 10000)
             // .click();
         });
+
     });
 
+
     test.describe('mochawesome view', function() {
-        test.it('should display correct mochawesome link', function () {
+
+        test.it('should be correct mochawesome link', function () {
             client.findElement(webdriver.By.id('mochawesome-link'))
               .getAttribute('href')
               .then(function(attr){
@@ -43,7 +47,7 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
               });
         });
 
-        test.it('should display correct url in the view', function () {
+        test.it('should be correct source iframe after click', function () {
             client.findElement(webdriver.By.id('mochawesome-link')).click();
             client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome')), 10000)
               .getAttribute('src')
@@ -51,9 +55,24 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
                   assert.equal(attr,  options.baseUrl + '/report/tests.html');
               });
          });
+
+         test.it('should be correct page loaded', function () {
+            client.switchTo().frame(client.findElement(webdriver.By.id('frame-mochawesome')));
+            client.findElement(webdriver.By.className('report-title'))
+                .getInnerHtml()
+                .then(function(html){
+                    assert(html.length);
+                });
+          });
+
+          test.after(function(){
+            client.switchTo().defaultContent();
+          });
+
     });
 
     test.describe('coverage view', function() {
+
         test.it('should display correct coverage link', function () {
             client.findElement(webdriver.By.id('coverage-link'))
               .getAttribute('href')
@@ -62,17 +81,33 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
               });
         });
 
-        test.it('should display correct url in the view', function () {
+        test.it('should be correct source iframe after click', function () {
             client.findElement(webdriver.By.id('coverage-link')).click();
             client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-coverage')), 10000)
               .getAttribute('src')
               .then(function(attr){
                   assert.equal(attr,  options.baseUrl + '/cov/lcov-report/index.html');
               });
+
          });
+
+         test.it('should be correct page loaded', function () {
+            client.switchTo().frame(client.findElement(webdriver.By.id('frame-coverage')));
+            client.findElement(webdriver.By.className('footer'))
+                .getInnerHtml()
+                .then(function(html){
+                    assert.equal(html.split('\n  ')[1], 'Code coverage');
+                });
+          });
+
+          test.after(function(){
+            client.switchTo().defaultContent();
+          });
+
     });
 
     test.describe('saucelabs view', function() {
+
         test.it('should display correct saucelabs link', function () {
             client.findElement(webdriver.By.id('saucelabs-link'))
               .getAttribute('href')
@@ -81,12 +116,12 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
               });
         });
 
-        test.it('should display correct url in the view', function () {
+        test.it('should be correct source image after click', function () {
             client.findElement(webdriver.By.id('saucelabs-link')).click();
             client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-img')), 10000)
               .getAttribute('src')
               .then(function(attr){
-                  assert.equal(attr,  options.baseUrl +  '/images/misterdevo.svg');
+                  assert.equal(attr, options.baseUrl + '/images/misterdevo.svg');
               });
          });
     });
