@@ -63,7 +63,8 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
         });
 
         test.it('should display correct url in the view', function () {
-            client.findElement(webdriver.By.id('mochawesome-route-link')).click();
+          //client.findElement(webdriver.By.id('mochawesome-route-link')).click();
+            client.wait(webdriver.until.elementLocated(webdriver.By.id('mochawesome-route-link')), 10000).click();
             client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome-route')), 10000)
               .getAttribute('src')
               .then(function(attr){
@@ -82,7 +83,8 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
         });
 
         test.it('should display correct url in the view', function () {
-            client.findElement(webdriver.By.id('mochawesome-unit-link')).click();
+            //client.findElement(webdriver.By.id('mochawesome-unit-link')).click();
+            client.wait(webdriver.until.elementLocated(webdriver.By.id('mochawesome-unit-link')), 10000).click();
             client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome-unit')), 10000)
               .getAttribute('src')
               .then(function(attr){
