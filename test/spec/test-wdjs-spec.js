@@ -37,7 +37,7 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
             client.wait(webdriver.until.elementLocated(webdriver.By.id('welcome-view')), 10000)
             .getAttribute('class')
             .then(function(attr){
-                assert.equal(attr, 'burning');
+                assert.equal(attr, 'burning ng-scope');
             });
         });
 
