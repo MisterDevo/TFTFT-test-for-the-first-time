@@ -54,7 +54,7 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
     });
 
     test.describe('mochawesome-route view', function() {
-        test.it('should display correct mochawesome link', function () {
+        test.it('should display correct mochawesome-route link', function () {
             client.findElement(webdriver.By.id('mochawesome-route-link'))
               .getAttribute('href')
               .then(function(attr){
@@ -64,7 +64,7 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
 
         test.it('should display correct url in the view', function () {
             client.findElement(webdriver.By.id('mochawesome-route-link')).click();
-            client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome')), 10000)
+            client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome-route')), 10000)
               .getAttribute('src')
               .then(function(attr){
                   assert.equal(attr,  options.baseUrl + '/report/test-route.html');
@@ -83,7 +83,7 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
 
         test.it('should display correct url in the view', function () {
             client.findElement(webdriver.By.id('mochawesome-unit-link')).click();
-            client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome')), 10000)
+            client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome-unit')), 10000)
               .getAttribute('src')
               .then(function(attr){
                   assert.equal(attr,  options.baseUrl + '/report/test-unit.html');
