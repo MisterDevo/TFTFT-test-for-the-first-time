@@ -3,21 +3,10 @@ var assert = require('assert');
 var request = require('supertest');
 
 //tested files
-var app = require('../app');
-var index = require('../routes/index');
-var users = require('../routes/users');
+var app = require('../../app');
+var index = require('../../routes/index');
+var users = require('../../routes/users');
 
-
-describe('TFTFT Unit Test', function() {
-
-  describe('Covering func in route/users for the moment', function () {
-
-    it('should return string by calling testFunc', function () {
-      assert.equal(users.testFunc(), "TFTFT");
-    });
-  });
-
-});
 
 describe('TFTFT Route Test', function() {
 
