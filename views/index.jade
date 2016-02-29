@@ -21,10 +21,10 @@ block content
         .sidebar-nav.navbar-collapse.collapse(uib-collapse='sideCollapsed')
           ul#side-menu.nav
             li
-              a(id='mochawesome-link', href='#mochawesome')
+              a(id='mochawesome-link', href='#mochawesome', ng-init="mochaCollapsed = true", ng-click="mochaCollapsed = !mochaCollapsed")
                 i.glyphicon.glyphicon-link
                 |  Mocha
-              ul.nav.nav-second-level
+              ul.nav.nav-second-level(uib-collapse='mochaCollapsed')
                 li
                   a(id='mochawesome-unit-link' href='#mochawesome-unit')
                     i.glyphicon.glyphicon-link
