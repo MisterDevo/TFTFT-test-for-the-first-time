@@ -1,5 +1,4 @@
-![TFTFT Version](https://img.shields.io/badge/v-1.2.0-green.svg?style=flat-square)
-###### [![TFTFT-logo](https://raw.githubusercontent.com/MisterDevo/TFTFT/master/public/images/logo.png)](https://tftft.herokuapp.com) TFTFT BadgeFury : [![GitHub version](https://badge.fury.io/gh/misterdevo%2Ftftft.svg)](https://badge.fury.io/gh/misterdevo%2Ftftft)
+###### ![TFTFT-logo](https://raw.githubusercontent.com/MisterDevo/TFTFT/master/public/images/logo.png)TFTFT BadgeFury : [![GitHub version](https://badge.fury.io/gh/misterdevo%2Ftftft.svg)](https://badge.fury.io/gh/misterdevo%2Ftftft)
 ###### TFTFT David-dm : [![Dependency Status](https://img.shields.io/david/misterdevo/TFTFT.svg)](https://david-dm.org/misterdevo/TFTFT)[![devDependency Status](http://img.shields.io/david/dev/misterdevo/TFTFT.svg)](http://david-dm.org/misterdevo/tftft#info=devDependencies)
 ---
 **_Continuous Build and Deploy :_**

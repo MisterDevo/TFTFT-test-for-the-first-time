@@ -11,7 +11,6 @@ pids
 # Coverage directory used by tools like istanbul
 public/cov
 public/report
-public/images/misterdevo.svg
 coverage
 
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
@@ -28,3 +27,6 @@ node_modules
 
 # Bower
 public/components
+
+# Bower-RequireJs autogenerate
+public/javascripts/main.js
