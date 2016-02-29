@@ -3,11 +3,11 @@ var test = require('selenium-webdriver/testing'),
     webdriver = require('selenium-webdriver');
 
 var options = {
-  // server:'http://127.0.0.1:4444/wd/hub',
-  // desiredCapabilities:{browserName:'firefox'},
-  // baseUrl:'http://localhost:3000'
+  server:'http://127.0.0.1:4444/wd/hub',
+  desiredCapabilities:{browserName:'firefox'},
+  baseUrl:'http://localhost:3000'
 };
-options = require('./wdjs-opt.js');
+//options = require('./wdjs-opt.js');
 
 test.describe('TFTFT WDJS EndToEnd Test', function() {
 
@@ -49,6 +49,44 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
               .getAttribute('src')
               .then(function(attr){
                   assert.equal(attr,  options.baseUrl + '/report/tests.html');
+              });
+         });
+    });
+
+    test.describe('mochawesome-route view', function() {
+        test.it('should display correct mochawesome link', function () {
+            client.findElement(webdriver.By.id('mochawesome-route-link'))
+              .getAttribute('href')
+              .then(function(attr){
+                  assert.equal(attr,  options.baseUrl + '/#mochawesome-route');
+              });
+        });
+
+        test.it('should display correct url in the view', function () {
+            client.findElement(webdriver.By.id('mochawesome-route-link')).click();
+            client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome')), 10000)
+              .getAttribute('src')
+              .then(function(attr){
+                  assert.equal(attr,  options.baseUrl + '/report/test-route.html');
+              });
+         });
+    });
+
+    test.describe('mochawesome-unit view', function() {
+        test.it('should display correct mochawesome-unit link', function () {
+            client.findElement(webdriver.By.id('mochawesome-unit-link'))
+              .getAttribute('href')
+              .then(function(attr){
+                  assert.equal(attr,  options.baseUrl + '/#mochawesome-unit');
+              });
+        });
+
+        test.it('should display correct url in the view', function () {
+            client.findElement(webdriver.By.id('mochawesome-unit-link')).click();
+            client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome')), 10000)
+              .getAttribute('src')
+              .then(function(attr){
+                  assert.equal(attr,  options.baseUrl + '/report/test-unit.html');
               });
          });
     });
