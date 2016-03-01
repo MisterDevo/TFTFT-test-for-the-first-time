@@ -1,5 +1,6 @@
 ![TFTFT Version](https://img.shields.io/badge/v-1.2.0-green.svg?style=flat-square) 
 ###### [![TFTFT-logo](https://raw.githubusercontent.com/MisterDevo/TFTFT/master/public/images/logo.png)](https://tftft.herokuapp.com) TFTFT BadgeFury : [![GitHub version](https://badge.fury.io/gh/misterdevo%2Ftftft.svg)](https://badge.fury.io/gh/misterdevo%2Ftftft)
+
 ###### TFTFT David-dm : [![Dependency Status](https://img.shields.io/david/misterdevo/TFTFT.svg)](https://david-dm.org/misterdevo/TFTFT)[![devDependency Status](http://img.shields.io/david/dev/misterdevo/TFTFT.svg)](http://david-dm.org/misterdevo/tftft#info=devDependencies)
 ---
 **_Continuous Build and Deploy :_**
@@ -26,13 +27,13 @@
 
 ## **Demo Backends : _This repo on the default master branch_**
 Download it ! or Clone it ! or Fork it ! or ...  
-Then Install it, Start it, Test it, Browse it, Containerize it ... 
+Then Install it, Start it, Test it, Browse it, Containerize it ...
 ### TFTFT ExpressJs - TFTFT AngularJs :
 
 ##### `npm install`  
 * **ExpressJs** dependencies
-* **Test** reports (see above `npm run coverage` in npm `postinstall`) 
-* **Bower** dependencies : 
+* **Test** reports (see above `npm run coverage` in npm `postinstall`)
+* **Bower** dependencies :
   * `bower install`is called in npm `postinstall`  **AngularJs - RequireJs - BootstrapCss**
   * **bower-requirejs** is called in bower `postinstall` (_see .bowerrc_) to generate main requirejs file
 
@@ -59,7 +60,7 @@ For this reason, all these tests dependencies (**Istanbul-Mocha-Supertest-Mochaw
 
 Default to Remote with **Saucelabs** integrated with **TravisCI** for the needs of this repo.  
 * **_Remote SauceLabs Selenium Server with SauceLabs user auth and Travis environnement:_**  
-    Config in `test/spec/wdjs-opt.js` or `test/spec/wdio-opt.js` 
+    Config in `test/spec/wdjs-opt.js` or `test/spec/wdio-opt.js`
     ```
     $ export SAUCE_USERNAME=[secure]
     $ export SAUCE_ACCESS_KEY=[secure]
@@ -71,7 +72,7 @@ Default to Remote with **Saucelabs** integrated with **TravisCI** for the needs 
     * Remove or comment the line : `options = require('./wdjs-opt.js');`  
     * Make your own config with : `var options = {};`  
     * Start your local selenium server  
-    
+
     _Example with selenium-standalone (not include in this package) :_
     ```javascript
     npm install selenium-standalone;

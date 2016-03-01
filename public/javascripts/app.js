@@ -24,6 +24,15 @@ define(['angular-route',
                     .when('/mochawesome', {
                       templateUrl: '../mochawesome.html'
                     })
+                    .when('/mochawesome-unit', {
+                      templateUrl: '../mochawesome-unit.html'
+                    })
+                    .when('/mochawesome-route', {
+                      templateUrl: '../mochawesome-route.html'
+                    })
+                    .when('/mochawesome-spec', {
+                      templateUrl: '../mochawesome-spec.html'
+                    })
                     .when('/coverage', {
                       templateUrl: '../coverage.html'
                     })

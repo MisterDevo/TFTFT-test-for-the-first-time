@@ -3,10 +3,18 @@
   "version": "1.2.0",
   "description": "TFTFT : Test For The First Time",
   "scripts": {
-    "coverage": "istanbul cover _mocha --dir public/cov -- --reporter mochawesome --reporter-options reportDir=public/report,reportName=tests",
-    "postinstall": "bower install --allow-root && curl -o public/images/misterdevo.svg https://saucelabs.com/browser-matrix/misterdevo.svg && npm run coverage",
+    "coverage"   : "istanbul cover _mocha --dir public/cov -- test/route/*.js test/unit/*.js --reporter mochawesome --reporter-options reportDir=public/report,reportName=tests",
+
+    "test-all"   : "_mocha test/**/*.js --reporter mochawesome --reporter-options reportDir=public/report,reportName=tests",
+    "test-unit"  : "_mocha test/unit/*.js --reporter mochawesome --reporter-options reportDir=public/report,reportName=test-unit",
+    "test-route" : "_mocha test/route/*.js --reporter mochawesome --reporter-options reportDir=public/report,reportName=test-route",
+    "test-e2e"   : "_mocha test/spec/*.js --reporter mochawesome --reporter-options reportDir=public/report,reportName=test-spec",
+    "test-report" : "npm run test-all && npm run test-unit && npm run test-route && npm run test-e2e",
+
+    "postinstall": "bower install --allow-root && curl -o public/images/misterdevo.svg https://saucelabs.com/browser-matrix/misterdevo.svg && npm run coverage && npm run test-unit && npm run test-route",
+
     "start": "node ./bin/www",
-    "test": "istanbul cover _mocha --report lcovonly -- test/**/*.js test/*.js"
+    "test": "istanbul cover _mocha --report lcovonly -- test/**/*.js"
   },
   "engines": {
     "node": "4.2.5"
