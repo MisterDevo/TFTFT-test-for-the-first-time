@@ -152,6 +152,42 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
     });
 
 
+    test.describe('mochawesome-spec view', function() {
+
+        test.it('should display correct mochawesome-spec link', function () {
+            client.findElement(webdriver.By.id('mochawesome-spec-link'))
+              .getAttribute('href')
+              .then(function(attr){
+                  assert.equal(attr,  options.baseUrl + '/#mochawesome-spec');
+              });
+        });
+
+        test.it('should be correct source iframe after click', function () {
+          //client.findElement(webdriver.By.id('mochawesome-route-link')).click();
+            client.wait(webdriver.until.elementLocated(webdriver.By.id('mochawesome-spec-link')), 10000).click();
+            client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome-spec')), 10000)
+              .getAttribute('src')
+              .then(function(attr){
+                  assert.equal(attr,  options.baseUrl + '/report/test-spec.html');
+              });
+         });
+
+         test.it('should be correct page loaded', function () {
+            client.switchTo().frame(client.findElement(webdriver.By.id('frame-mochawesome-spec')));
+            client.findElement(webdriver.By.className('report-title'))
+                .getInnerHtml()
+                .then(function(html){
+                    assert(html.length);
+                });
+          });
+
+          test.after(function(){
+            client.switchTo().defaultContent();
+          });
+
+    });
+
+
     test.describe('coverage view', function() {
 
         test.it('should display correct coverage link', function () {
