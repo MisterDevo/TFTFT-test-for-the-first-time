@@ -10,7 +10,6 @@ pids
 
 # Coverage directory used by tools like istanbul
 public/cov
-public/report
 public/images/misterdevo.svg
 coverage
 
