@@ -5,7 +5,7 @@
 ###### TFTFT Codeship : [![codeship](https://codeship.com/projects/b00bd7d0-9fa7-0133-a9c2-3206c6610001/status?branch=master)](https://codeship.com/projects/127941) => TFTFT Heroku : [![TFTFT Version](https://img.shields.io/badge/Demo-Heroku_App-746cac.svg?style=flat-square)](https://tftft.herokuapp.com/)
 ---
 **_Continuous Dockerize and Publish :_**
-###### TFTFT Shippable : [![Shippable](https://api.shippable.com/projects/56a61fc31895ca4474728105/badge/master)](https://app.shippable.com/subscriptions/56a613901895ca4474727fd3) => TFTFT Docker [![dockeri.co](http://dockeri.co/image/misterdevo/tftft)](https://hub.docker.com/r/misterdevo/tftft/)
+###### TFTFT Shippable : [![Run Status](https://api.shippable.com/projects/56a61fc31895ca4474728105/badge?branch=master)](https://app.shippable.com/projects/56a61fc31895ca4474728105) => TFTFT Docker [![dockeri.co](http://dockeri.co/image/misterdevo/tftft)](https://hub.docker.com/r/misterdevo/tftft/)
 ---
 **_Continuous Integration :_**
 ###### TFTFT Travis-ci : [![Travis](https://img.shields.io/travis/MisterDevo/TFTFT/master.svg)](https://travis-ci.org/MisterDevo/TFTFT/branches) => TFTFT Coveralls : [![Coverage Status](https://coveralls.io/repos/github/MisterDevo/TFTFT/badge.svg?branch=master)](https://coveralls.io/github/MisterDevo/TFTFT?branch=master)
@@ -25,13 +25,13 @@
 
 ## **Demo Backends : _This repo on the default master branch_**
 Download it ! or Clone it ! or Fork it ! or ...  
-Then Install it, Start it, Test it, Browse it, Containerize it ... 
+Then Install it, Start it, Test it, Browse it, Containerize it ...
 ### TFTFT ExpressJs - TFTFT AngularJs :
 
 ##### `npm install`  
 * **ExpressJs** dependencies
-* **Test** reports (see above `npm run coverage` in npm `postinstall`) 
-* **Bower** dependencies : 
+* **Test** reports (see above `npm run coverage` in npm `postinstall`)
+* **Bower** dependencies :
   * `bower install`is called in npm `postinstall`  **AngularJs - RequireJs - BootstrapCss**
   * **bower-requirejs** is called in bower `postinstall` (_see .bowerrc_) to generate main requirejs file
 
@@ -58,7 +58,7 @@ For this reason, all these tests dependencies (**Istanbul-Mocha-Supertest-Mochaw
 
 Default to Remote with **Saucelabs** integrated with **TravisCI** for the needs of this repo.  
 * **_Remote SauceLabs Selenium Server with SauceLabs user auth and Travis environnement:_**  
-    Config in `test/spec/wdjs-opt.js` or `test/spec/wdio-opt.js` 
+    Config in `test/spec/wdjs-opt.js` or `test/spec/wdio-opt.js`
     ```
     $ export SAUCE_USERNAME=[secure]
     $ export SAUCE_ACCESS_KEY=[secure]
@@ -70,7 +70,7 @@ Default to Remote with **Saucelabs** integrated with **TravisCI** for the needs 
     * Remove or comment the line : `options = require('./wdjs-opt.js');`  
     * Make your own config with : `var options = {};`  
     * Start your local selenium server  
-    
+
     _Example with selenium-standalone (not include in this package) :_
     ```javascript
     npm install selenium-standalone;
