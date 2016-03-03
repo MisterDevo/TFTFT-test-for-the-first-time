@@ -2,6 +2,7 @@ angular.module('controllers', [])
 
   .controller('globalController', ['$scope', function($scope) {
     		$scope.mochaCollapsed = true;
+        angular.element(document.querySelector('.sidebar')).css('visibility', 'visible');
 	   }
   ])
 
