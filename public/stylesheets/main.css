@@ -113,6 +113,10 @@ body {
   }
 }
 
+.sidebar {
+  visibility: hidden;
+}
+
 
 .navbar-top-links {
     margin-right: 0;
