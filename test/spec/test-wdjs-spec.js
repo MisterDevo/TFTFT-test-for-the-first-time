@@ -9,7 +9,7 @@ var options = {
 };
 options = require('./wdjs-opt.js');
 
-test.describe('TFTFT WDJS EndToEnd Test', function() {
+test.describe('TFTFT End To End tests', function() {
 
     this.timeout(60000);
     var client = {};
@@ -22,7 +22,7 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
     });
 
 
-    test.describe('verif on first page', function() {
+    test.describe('Verif on first page', function() {
 
         test.it('should have the right title', function () {
             client.get(options.baseUrl);
@@ -45,150 +45,139 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
     });
 
 
-    test.describe('mochawesome view', function() {
+    test.describe('Mocha menu', function() {
 
-        test.it('should display correct mochawesome link', function () {
-            client.findElement(webdriver.By.id('mochawesome-link'))
-              .getAttribute('href')
-              .then(function(attr){
-                  assert.equal(attr,  options.baseUrl + '/#mochawesome');
-              });
-        });
-
-        test.it('should be correct source iframe after click', function () {
-            client.findElement(webdriver.By.id('mochawesome-link')).click();
-            client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome')), 10000)
-              .getAttribute('src')
-              .then(function(attr){
-                  assert.equal(attr,  options.baseUrl + '/report/tests.html');
-              });
-         });
-
-         test.it('should be correct page loaded', function () {
-            client.switchTo().frame(client.findElement(webdriver.By.id('frame-mochawesome')));
-            client.findElement(webdriver.By.className('report-title'))
-                .getInnerHtml()
-                .then(function(html){
-                    assert(html.length);
+          test.it('should be correct mocha menu slide by click', function () {
+              client.findElement(webdriver.By.id('mochawesome-link'))
+                .getAttribute('ng-click')
+                .then(function(attr){
+                    assert(attr.length);
                 });
           });
 
-          test.after(function(){
-            client.switchTo().defaultContent();
-          });
+          test.it('should be displayed after click', function () {
+              client.findElement(webdriver.By.id('mochawesome-link')).click();
+              //client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome')), 10000)
+              client.findElement(webdriver.By.className('nav-second-level'))
+                .isDisplayed()
+                .then(function(displayed){
+                    assert(displayed);
+                });
+           });
+
+
+        test.describe('Mochawesome-unit view', function() {
+
+            test.it('should display correct mochawesome-unit link', function () {
+                client.findElement(webdriver.By.id('mochawesome-unit-link'))
+                  .getAttribute('href')
+                  .then(function(attr){
+                      assert.equal(attr,  options.baseUrl + '/#mochawesome-unit');
+                  });
+            });
+
+            test.it('should be correct source iframe after click', function () {
+                //client.findElement(webdriver.By.id('mochawesome-unit-link')).click();
+                client.wait(webdriver.until.elementLocated(webdriver.By.id('mochawesome-unit-link')), 10000).click();
+                client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome-unit')), 10000)
+                  .getAttribute('src')
+                  .then(function(attr){
+                      assert.equal(attr,  options.baseUrl + '/report/test-unit.html');
+                  });
+             });
+
+            test.it('should be correct page loaded', function () {
+                client.switchTo().frame(client.findElement(webdriver.By.id('frame-mochawesome-unit')));
+                client.findElement(webdriver.By.className('report-title'))
+                    .getInnerHtml()
+                    .then(function(html){
+                        assert(html.length);
+                    });
+            });
+
+            test.after(function(){
+              client.switchTo().defaultContent();
+            });
+
+        });
+
+
+        test.describe('Mochawesome-route view', function() {
+
+            test.it('should display correct mochawesome-route link', function () {
+                client.findElement(webdriver.By.id('mochawesome-route-link'))
+                  .getAttribute('href')
+                  .then(function(attr){
+                      assert.equal(attr,  options.baseUrl + '/#mochawesome-route');
+                  });
+            });
+
+            test.it('should be correct source iframe after click', function () {
+              //client.findElement(webdriver.By.id('mochawesome-route-link')).click();
+                client.wait(webdriver.until.elementLocated(webdriver.By.id('mochawesome-route-link')), 10000).click();
+                client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome-route')), 10000)
+                  .getAttribute('src')
+                  .then(function(attr){
+                      assert.equal(attr,  options.baseUrl + '/report/test-route.html');
+                  });
+             });
+
+             test.it('should be correct page loaded', function () {
+                client.switchTo().frame(client.findElement(webdriver.By.id('frame-mochawesome-route')));
+                client.findElement(webdriver.By.className('report-title'))
+                    .getInnerHtml()
+                    .then(function(html){
+                        assert(html.length);
+                    });
+              });
+
+              test.after(function(){
+                client.switchTo().defaultContent();
+              });
+
+        });
+
+
+        test.describe('Mochawesome-spec view', function() {
+
+            test.it('should display correct mochawesome-spec link', function () {
+                client.findElement(webdriver.By.id('mochawesome-spec-link'))
+                  .getAttribute('href')
+                  .then(function(attr){
+                      assert.equal(attr,  options.baseUrl + '/#mochawesome-spec');
+                  });
+            });
+
+            test.it('should be correct source iframe after click', function () {
+              //client.findElement(webdriver.By.id('mochawesome-route-link')).click();
+                client.wait(webdriver.until.elementLocated(webdriver.By.id('mochawesome-spec-link')), 10000).click();
+                client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome-spec')), 10000)
+                  .getAttribute('src')
+                  .then(function(attr){
+                      assert.equal(attr,  options.baseUrl + '/report/test-spec.html');
+                  });
+             });
+
+             test.it('should be correct page loaded', function () {
+                client.switchTo().frame(client.findElement(webdriver.By.id('frame-mochawesome-spec')));
+                client.findElement(webdriver.By.className('report-title'))
+                    .getInnerHtml()
+                    .then(function(html){
+                        assert(html.length);
+                    });
+              });
+
+              test.after(function(){
+                client.switchTo().defaultContent();
+              });
+
+        });
+
 
     });
 
 
-    test.describe('mochawesome-unit view', function() {
-
-        test.it('should display correct mochawesome-unit link', function () {
-            client.findElement(webdriver.By.id('mochawesome-unit-link'))
-              .getAttribute('href')
-              .then(function(attr){
-                  assert.equal(attr,  options.baseUrl + '/#mochawesome-unit');
-              });
-        });
-
-        test.it('should be correct source iframe after click', function () {
-            //client.findElement(webdriver.By.id('mochawesome-unit-link')).click();
-            client.wait(webdriver.until.elementLocated(webdriver.By.id('mochawesome-unit-link')), 10000).click();
-            client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome-unit')), 10000)
-              .getAttribute('src')
-              .then(function(attr){
-                  assert.equal(attr,  options.baseUrl + '/report/test-unit.html');
-              });
-         });
-
-        test.it('should be correct page loaded', function () {
-            client.switchTo().frame(client.findElement(webdriver.By.id('frame-mochawesome-unit')));
-            client.findElement(webdriver.By.className('report-title'))
-                .getInnerHtml()
-                .then(function(html){
-                    assert(html.length);
-                });
-        });
-
-        test.after(function(){
-          client.switchTo().defaultContent();
-        });
-
-    });
-
-
-    test.describe('mochawesome-route view', function() {
-
-        test.it('should display correct mochawesome-route link', function () {
-            client.findElement(webdriver.By.id('mochawesome-route-link'))
-              .getAttribute('href')
-              .then(function(attr){
-                  assert.equal(attr,  options.baseUrl + '/#mochawesome-route');
-              });
-        });
-
-        test.it('should be correct source iframe after click', function () {
-          //client.findElement(webdriver.By.id('mochawesome-route-link')).click();
-            client.wait(webdriver.until.elementLocated(webdriver.By.id('mochawesome-route-link')), 10000).click();
-            client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome-route')), 10000)
-              .getAttribute('src')
-              .then(function(attr){
-                  assert.equal(attr,  options.baseUrl + '/report/test-route.html');
-              });
-         });
-
-         test.it('should be correct page loaded', function () {
-            client.switchTo().frame(client.findElement(webdriver.By.id('frame-mochawesome-route')));
-            client.findElement(webdriver.By.className('report-title'))
-                .getInnerHtml()
-                .then(function(html){
-                    assert(html.length);
-                });
-          });
-
-          test.after(function(){
-            client.switchTo().defaultContent();
-          });
-
-    });
-
-
-    test.describe('mochawesome-spec view', function() {
-
-        test.it('should display correct mochawesome-spec link', function () {
-            client.findElement(webdriver.By.id('mochawesome-spec-link'))
-              .getAttribute('href')
-              .then(function(attr){
-                  assert.equal(attr,  options.baseUrl + '/#mochawesome-spec');
-              });
-        });
-
-        test.it('should be correct source iframe after click', function () {
-          //client.findElement(webdriver.By.id('mochawesome-route-link')).click();
-            client.wait(webdriver.until.elementLocated(webdriver.By.id('mochawesome-spec-link')), 10000).click();
-            client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome-spec')), 10000)
-              .getAttribute('src')
-              .then(function(attr){
-                  assert.equal(attr,  options.baseUrl + '/report/test-spec.html');
-              });
-         });
-
-         test.it('should be correct page loaded', function () {
-            client.switchTo().frame(client.findElement(webdriver.By.id('frame-mochawesome-spec')));
-            client.findElement(webdriver.By.className('report-title'))
-                .getInnerHtml()
-                .then(function(html){
-                    assert(html.length);
-                });
-          });
-
-          test.after(function(){
-            client.switchTo().defaultContent();
-          });
-
-    });
-
-
-    test.describe('coverage view', function() {
+    test.describe('Coverage view', function() {
 
         test.it('should display correct coverage link', function () {
             client.findElement(webdriver.By.id('coverage-link'))
@@ -223,7 +212,7 @@ test.describe('TFTFT WDJS EndToEnd Test', function() {
     });
 
 
-    test.describe('saucelabs view', function() {
+    test.describe('Saucelabs view', function() {
 
         test.it('should display correct saucelabs link', function () {
             client.findElement(webdriver.By.id('saucelabs-link'))
