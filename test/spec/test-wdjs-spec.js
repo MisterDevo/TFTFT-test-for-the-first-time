@@ -244,21 +244,14 @@ test.describe('TFTFT End To End tests', function() {
 
     test.after(function(done) {
         if(options.saucelabs){
-          // options.saucelabs.getJobs(function (err, jobs) {
-          //   for (var k in jobs) {
-          //     if(jobs[k].tags[0]===options.desiredCapabilities.tags[0]){
-          //         options.saucelabs.updateJob( jobs[k].id,
-          //                               { passed: passed },
-          //                               function(){ client.quit(); done(); });
-          //         break;
-          //     }
-          //   }
-          // });
           client.getSession().then(function (sessionid){
-            options.saucelabs.updateJob(sessionid.id_,
-                                          { passed: passed },
-                                          function(){ client.quit(); done(); });
-          });
+              options.saucelabs.updateJob( sessionid.id_, { passed: passed }, function(err, res) {
+                options.saucelabs.stopJob( sessionid.id_, { }, function(err, res) {
+                  client.quit();
+                  done();
+                });
+              });
+            });
         } else {
             client.quit();
             done();
