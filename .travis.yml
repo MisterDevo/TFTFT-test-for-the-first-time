@@ -53,3 +53,6 @@ env:
     - _BROWSER: "iphone"
       _PLATFORM: "OS_X_10.10"
       _VERSION: "9.2"
+    - _BROWSER: "android"
+      _PLATFORM: "Linux"
+      _VERSION: "5.1"
