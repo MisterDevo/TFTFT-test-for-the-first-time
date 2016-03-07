@@ -11,7 +11,7 @@ options = require('./wdjs-opt.js');
 
 test.describe('TFTFT End To End tests', function() {
 
-    this.timeout(60000);
+    this.timeout(90000);
     var client = {};
 
     test.before(function(){
@@ -47,7 +47,7 @@ test.describe('TFTFT End To End tests', function() {
 
     test.describe('Mocha menu', function() {
 
-          test.it('should be correct mocha menu slide by click', function () {
+          test.it('should be correct mocha submenu slide by ng-click', function () {
               client.findElement(webdriver.By.id('mochawesome-link'))
                 .getAttribute('ng-click')
                 .then(function(attr){
@@ -55,7 +55,14 @@ test.describe('TFTFT End To End tests', function() {
                 });
           });
 
-          test.it('should be displayed after click', function () {
+          test.it('should be displayed after toggle if necessary  and after slide click', function () {
+              client.findElement(webdriver.By.className('navbar-toggle'))
+                .isDisplayed()
+                .then(function(displayed){
+                    if(displayed){
+                      client.findElement(webdriver.By.className('navbar-toggle')).click();
+                    }
+                });
               client.findElement(webdriver.By.id('mochawesome-link')).click();
               //client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome')), 10000)
               client.findElement(webdriver.By.className('nav-second-level'))
