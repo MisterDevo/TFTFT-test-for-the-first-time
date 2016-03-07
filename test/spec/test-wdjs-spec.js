@@ -11,7 +11,7 @@ options = require('./wdjs-opt.js');
 
 test.describe('TFTFT End To End tests', function() {
 
-    this.timeout(60000);
+    this.timeout(90000);
     var client = {};
 
     test.before(function(){
