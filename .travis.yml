@@ -50,3 +50,6 @@ env:
     - _BROWSER: "opera"
       _PLATFORM: "Windows_7"
       _VERSION: "12"
+    - _BROWSER: "iphone"
+      _PLATFORM: "OS_X_10.10"
+      _VERSION: "9.2"
