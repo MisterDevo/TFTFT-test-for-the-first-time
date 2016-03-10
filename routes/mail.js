@@ -19,8 +19,8 @@ router.get('/', function(req, res, next) {
   };
 
   var reqMail = https.request(options, (res) => {
-    console.log('statusCode: ', res.statusCode);
-    console.log('headers: ', res.headers);
+    //console.log('statusCode: ', res.statusCode);
+    //console.log('headers: ', res.headers);
     res.on('data', (d) => {
       process.stdout.write(d);
     });
