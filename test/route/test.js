@@ -1,12 +1,7 @@
 var assert = require('assert');
 
 var request = require('supertest');
-
-//tested files
 var app = require('../../app');
-var index = require('../../routes/index');
-var users = require('../../routes/users');
-
 
 describe('TFTFT Route Test', function() {
 
@@ -29,6 +24,7 @@ describe('TFTFT Route Test', function() {
           })
     });
 
+
     describe('Covering routes/users', function () {
 
             it('GET /users respond with html', function(done){
@@ -37,6 +33,17 @@ describe('TFTFT Route Test', function() {
                 .expect('Content-Type', /html/)
                 .expect(200, done);
                 //.expect(/<body>/, done);
+            })
+    });
+
+
+    describe('Covering routes/mail', function () {
+
+            it('GET /mail respond with html', function(done){
+              request(app)
+                .get('/mail')
+                .expect('Content-Type', /html/)
+                .expect(200, done);
             })
     });
 });
