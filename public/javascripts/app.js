@@ -21,9 +21,6 @@ define(['angular-route',
                       templateUrl: '../welcome.html',
                       controller: 'welcomeController'
                     })
-                    .when('/mochawesome', {
-                      templateUrl: '../mochawesome.html'
-                    })
                     .when('/mochawesome-unit', {
                       templateUrl: '../mochawesome-unit.html'
                     })
