@@ -2,12 +2,16 @@ var assert = require('assert');
 var test = require('selenium-webdriver/testing'),
     webdriver = require('selenium-webdriver');
 
-var options = {
-  // server:'http://127.0.0.1:4444/wd/hub',
-  // desiredCapabilities:{browserName:'firefox'},
-  // baseUrl:'http://localhost:3000'
-};
-options = require('./wdjs-opt.js');
+// change this line to run locally
+var isLocalSeleniumServer = false;
+
+var local = {
+      server: 'http://127.0.0.1:4444/wd/hub',
+      desiredCapabilities: { browserName: 'firefox' },
+      baseUrl:'http://localhost:3000'
+    };
+var options = isLocalSeleniumServer ? local : require('./wdjs-trav-sauce-opt.js');
+
 
 test.describe('TFTFT End To End tests', function() {
 
