@@ -78,9 +78,3 @@ Default to Remote with **Saucelabs** integrated with **TravisCI** for the needs 
     ./node_modules/.bin/selenium-standalone install;
     ./node_modules/.bin/selenium-standalone start;
     ```
-
-## **Demo Frontends : _This repo on the gh-pages branch_**  
-Source :     **https://github.com/MisterDevo/TFTFT/tree/gh-pages**
-
-* TFTFT Gh-pages -> http://misterdevo.github.io/TFTFT  
-* TFTFT WebGL -> http://misterdevo.github.io/TFTFT/webgl.html
