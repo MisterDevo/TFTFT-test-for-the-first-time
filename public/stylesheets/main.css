@@ -26,6 +26,7 @@
     height: 100%;
     min-height: 510px;
     background-color: #f8f8f8;
+    opacity: 0.95;
 }
 @media(min-width:768px) {
     .iframe-wrapper{
@@ -84,6 +85,10 @@ a, a:focus, a:hover {
 
 body {
     background-color: #000;
+    background-image:url(../images/flame_large.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }
 
 #wrapper {
@@ -92,9 +97,11 @@ body {
 
 #page-wrapper {
     padding: 0 15px;
-    background-color: #000;
+    /*background-color: #000;*/
     /*min-height: 560px;*/
     margin: 0px 0px 50px 0px;
+    /*background-image:url(../images/flame_large.jpeg);
+    background-size: cover;*/
 }
 @media(min-width:768px) {
     #page-wrapper {
