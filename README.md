@@ -26,6 +26,7 @@ _Run with Node v4 or v5_
 
 Download it ! or Clone it ! or Fork it ! or ...  
 Then Install it, Start it, Test it, Browse it, Containerize it ...
+
 ### TFTFT ExpressJs - TFTFT AngularJs :
 
 ##### `npm install`  
@@ -37,27 +38,30 @@ Then Install it, Start it, Test it, Browse it, Containerize it ...
 ##### `npm start`
 Start **ExpressJs** server and listen to `http://localhost:3000` to serve api and static files.
 
-### TFTFT BackTests :
 
-##### `npm run coverage`  
+### TFTFT Resources (for app example  : Coverage reports + saucelabs matrix + test reports with mochawesome 
+
+##### `npm run app-resources`  
+
 **Istanbul** auto-instrumented coverage/report - **Mocha** runner with default config (`test/*.js`) for :
-* TFTFT Unit Test : Mocha
-* TFTFT Route Test : Supertest
+
+* TFTFT Saucelabs matrix : download the last remote tests
 
 _In this repo, `npm run coverage` runs at npm `postinstall` to create Istanbul and Mochawesome reports for app during installation.  
-For this reason, all these tests dependencies (**Istanbul-Mocha-Supertest-Mochawesome**) are in production._
 
-### TFTFT BackTests + EndToEnd :
+### TFTFT Tests + EndToEnd :
 
 ##### `npm test`  
-**Istanbul** auto-instrumented coverage/report - **Mocha** runner with config (`test/**/*.js test/*.js`)  
-**Selenium-WebDriver** or **WebDriverIO** are ready to use in folder `test/spec/`(_first is preferred_)
+**Istanbul** auto-instrumented coverage/report - **Mocha** runner with config (`test/**/*.js`) :
+* TFTFT Route Test : Supertest
+* TFTFT Report Test : Mochawesome
 
+**Selenium-WebDriver** is used for end to end test in folder `test/spec/`
 **Selenium Server** : Local or Remote ? ... Up to Developer !  
 
 Default to Remote with **Saucelabs** integrated with **TravisCI** for the needs of this repo.  
 * **_Remote SauceLabs Selenium Server with SauceLabs user auth and Travis environnement:_**  
-    Config in `test/spec/wdjs-opt.js` or `test/spec/wdio-opt.js`
+    Config in `test/spec/wdjs-opt.js`
     ```
     $ export SAUCE_USERNAME=[secure]
     $ export SAUCE_ACCESS_KEY=[secure]
@@ -65,9 +69,9 @@ Default to Remote with **Saucelabs** integrated with **TravisCI** for the needs 
     ```
 
 * **_Local Selenium Server :_**  
-    In `test/spec/test-wdjs-spec.js`  or `test/spec/test-wdio-spec.js` :
-    * Remove or comment the line : `options = require('./wdjs-opt.js');`  
-    * Make your own config with : `var options = {};`  
+    In `test/spec/test-wdjs-spec.js` :
+    * Change this line for local : `var isLocalSeleniumServer = false;`
+    * Make your own config with object : `var local = {};`  
     * Start your local selenium server  
 
     _Example with selenium-standalone (not include in this package) :_
