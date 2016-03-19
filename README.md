@@ -45,21 +45,23 @@ Start **ExpressJs** server and listen to `http://localhost:3000` to serve api an
 * TFTFT Route Test : Supertest
 * TFTFT Report Test : Mochawesome
 
-**Selenium-WebDriver** is used for end to end test in folder `test/spec/`
+**Selenium-WebDriver** is used for end to end test in folder `test/spec/`  
 **Selenium Server** : Local or Remote ? ... Up to Developer !  
+Change this line for local or remote : `var isLocalSeleniumServer = false;`
 
-Default to Remote with **Saucelabs** integrated with **TravisCI** for the needs of this repo.  
+Default to Remote for the needs of this repo : **saucelabs** instrumented in tests with _**TravisCI** configuration_.  
+_Travis will also send code coverage to **coveralls** and **codacy**._
 * **_Remote SauceLabs Selenium Server with SauceLabs user auth and Travis environnement:_**  
-    Config in `test/spec/wdjs-opt.js`
+    Config in `test/spec/wdjs-opt.js` :  
+
     ```
     $ export SAUCE_USERNAME=[secure]
     $ export SAUCE_ACCESS_KEY=[secure]
     TRAVIS_JOB_NUMBER, TRAVIS_BUILD_NUMBER, _BROWSER, _PLATFORM, _VERSION must be define too
     ```
-
+    
 * **_Local Selenium Server :_**  
     In `test/spec/test-wdjs-spec.js` :
-    * Change this line for local : `var isLocalSeleniumServer = false;`
     * Make your own config with object : `var local = {};`  
     * Start your local selenium server  
 
