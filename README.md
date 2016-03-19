@@ -41,36 +41,35 @@ Start **ExpressJs** server and listen to `http://localhost:3000` to serve api an
 ### TFTFT Tests :
 
 ##### `npm test`  
-**Istanbul** auto-instrumented coverage/report - **Mocha** runner with config (`test/**/*.js`) :
-* TFTFT Route Test : Supertest
-* TFTFT Report Test : Mochawesome
-
-**Selenium-WebDriver** is used for end to end test in folder `test/spec/`  
-**Selenium Server** : Local or Remote ? ... Up to Developer !  
-Change this line for local or remote : `var isLocalSeleniumServer = false;`
-
-Default to Remote for the needs of this repo : **saucelabs** instrumented in tests with _**TravisCI** configuration_.  
-_Travis will also send code coverage to **coveralls** and **codacy**._
-* **_Remote SauceLabs Selenium Server with SauceLabs user auth and Travis environnement:_**  
-    Config in `test/spec/wdjs-opt.js` :  
-
-    ```
-    $ export SAUCE_USERNAME=[secure]
-    $ export SAUCE_ACCESS_KEY=[secure]
-    TRAVIS_JOB_NUMBER, TRAVIS_BUILD_NUMBER, _BROWSER, _PLATFORM, _VERSION must be define too
-    ```
+**Istanbul** auto-instrumented coverage/report - **mocha** runner with config (`test/**/*.js`) :
+* TFTFT Route Test : **supertest**
+* TFTFT Report Test : **mochawesome**
+* TFTFT Specification Test : **selenium-webdriver**  in folder `test/spec/`  
+    NB : **Selenium Server** : Local or Remote ? ... Up to Developer !  
     
-* **_Local Selenium Server :_**  
-    In `test/spec/test-wdjs-spec.js` :
-    * Make your own config with object : `var local = {};`  
-    * Start your local selenium server  
-
-    _Example with selenium-standalone (not include in this package) :_
-    ```javascript
-    npm install selenium-standalone;
-    ./node_modules/.bin/selenium-standalone install;
-    ./node_modules/.bin/selenium-standalone start;
-    ```
+    Default to Remote for the needs of this repo : **saucelabs** instrumented in tests with _**TravisCI** configuration_.  
+    _Travis will also send code coverage to **coveralls** and **codacy**._
+    * **_Remote SauceLabs Selenium Server with SauceLabs user auth and Travis environnement:_**  
+        Config in `test/spec/wdjs-opt.js` :  
+    
+        ```
+        $ export SAUCE_USERNAME=[secure]
+        $ export SAUCE_ACCESS_KEY=[secure]
+        TRAVIS_JOB_NUMBER, TRAVIS_BUILD_NUMBER, _BROWSER, _PLATFORM, _VERSION must be define too
+        ```
+        
+    * **_Local Selenium Server :_**  
+        In `test/spec/test-wdjs-spec.js` :
+        * Change this line for local or remote : `var isLocalSeleniumServer = false;`
+        * Make your own config with object : `var local = {};`  
+        * Start your local selenium server  
+    
+        _Example with selenium-standalone (not include in this package) :_
+        ```javascript
+        npm install selenium-standalone;
+        ./node_modules/.bin/selenium-standalone install;
+        ./node_modules/.bin/selenium-standalone start;
+        ```
 
 ### TFTFT Resources
 
