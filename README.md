@@ -1,5 +1,12 @@
 ![TFTFT Version](https://img.shields.io/badge/v-1.2.0-green.svg?style=flat-square) 
-###### [![TFTFT-logo](https://raw.githubusercontent.com/MisterDevo/TFTFT/master/public/images/logo.png)](https://tftft.herokuapp.com) TFTFT BadgeFury : [![GitHub version](https://badge.fury.io/gh/misterdevo%2Ftftft.svg)](https://badge.fury.io/gh/misterdevo%2Ftftft)
+
+<p align="center">
+ <a href="https://tftft.herokuapp.com" >
+  <img alt="TFTFT" src="https://raw.githubusercontent.com/MisterDevo/TFTFT/master/public/images/logo.png">
+ </a>
+</p>
+
+###### TFTFT BadgeFury : [![GitHub version](https://badge.fury.io/gh/misterdevo%2Ftftft.svg)](https://badge.fury.io/gh/misterdevo%2Ftftft)
 
 ###### TFTFT David-dm : [![Dependency Status](https://img.shields.io/david/misterdevo/TFTFT.svg)](https://david-dm.org/misterdevo/TFTFT)[![devDependency Status](http://img.shields.io/david/dev/misterdevo/TFTFT.svg)](http://david-dm.org/misterdevo/tftft#info=devDependencies)
 ---
@@ -22,7 +29,7 @@
 
 # Test For the First Time ( TFTFT )  
 
-_Run with Node v4 or v5_  
+_Run with NodeJs v4 or v5_  
 
 Download it ! or Clone it ! or Fork it ! or ...  
 Then Install it, Start it, Test it, Browse it, Containerize it ...
@@ -38,7 +45,7 @@ Then Install it, Start it, Test it, Browse it, Containerize it ...
 ##### `npm start`
 Start **ExpressJs** server and listen to `http://localhost:3000` to serve api and static files.
 
-### TFTFT Tests :
+### TFTFT Test :
 
 ##### `npm test`  
 **Istanbul** auto-instrumented coverage/report - **mocha** runner with config (`test/**/*.js`) :
