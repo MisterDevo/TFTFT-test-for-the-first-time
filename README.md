@@ -52,21 +52,14 @@ Start **ExpressJs** server and listen to `http://localhost:3000` to serve api an
 **Istanbul** auto-instrumented coverage/report - **mocha** runner with config (`test/**/*.js`) :
 * TFTFT Route Test : **supertest**
 * TFTFT Report Test : **mochawesome**
-* TFTFT Specification Test : **selenium-webdriver**  in folder `test/spec/`  
-    NB : **Selenium Server** : Local or Remote ? ... Up to Developer !  
+* TFTFT Specification Test : **selenium-webdriver**  in folder 'test/spec/'  
+    
+    **Selenium Server** : Local or Remote ? ... Up to Developer !  
 
     Default to Remote for the needs of this repo : **saucelabs** instrumented in tests with _**TravisCI** configuration_.  
     _Travis will also send code coverage to **coveralls** after running tests._
-    * **_Remote SauceLabs Selenium Server with SauceLabs user auth and Travis environnement:_**  
-        Config in `test/spec/wdjs-opt.js` :  
 
-        ```
-        $ export SAUCE_USERNAME=[secure]
-        $ export SAUCE_ACCESS_KEY=[secure]
-        TRAVIS_JOB_NUMBER, TRAVIS_BUILD_NUMBER, _BROWSER, _PLATFORM, _VERSION must be define too
-        ```
-
-    * **_Local Selenium Server :_**  
+     * **_Local Selenium Server :_**  
         In `test/spec/test-wdjs-spec.js` :
         * Change this line for local or remote : `var isLocalSeleniumServer = false;`
         * Make your own config with object : `var local = {};`  
@@ -78,6 +71,16 @@ Start **ExpressJs** server and listen to `http://localhost:3000` to serve api an
         ./node_modules/.bin/selenium-standalone install;
         ./node_modules/.bin/selenium-standalone start;
         ```
+
+    * **_Remote SauceLabs Selenium Server with SauceLabs user auth and Travis environnement:_**  
+        Config in `test/spec/wdjs-opt.js` :  
+
+        ```
+        $ export SAUCE_USERNAME=[secure]
+        $ export SAUCE_ACCESS_KEY=[secure]
+        TRAVIS_JOB_NUMBER, TRAVIS_BUILD_NUMBER, _BROWSER, _PLATFORM, _VERSION must be define too
+        ```
+
 
 ### TFTFT Resources
 
