@@ -49,9 +49,11 @@ Start **ExpressJs** server and listen to `http://localhost:3000` to serve api an
 ### TFTFT Test :
 
 ##### `npm test`  
-**Istanbul** auto-instrumented coverage/report - **mocha** runner with config (`test/**/*.js`) :
+_**mocha** runner with config (`test/**/*.js`) - **Istanbul** auto-instrumented coverage/report_
+* TFTFT Unit Test : **mocha**
 * TFTFT Route Test : **supertest**
-* TFTFT Report Test : **mochawesome**
+* TFTFT Test Reporter : **mochawesome**
+* TFTFT Coverage Test Report : **istanbul**
 * TFTFT Specification Test : **selenium-webdriver**  in folder 'test/spec/'  
 * _Note for Specification Test :  
   **Selenium Server** : Local or Remote ? ... Up to Developer !  
@@ -72,8 +74,8 @@ Start **ExpressJs** server and listen to `http://localhost:3000` to serve api an
        
        * _Start your local selenium server_  
 
-        _Example with selenium-standalone (not include in this package) :_
         ```javascript
+        /*Example with selenium-standalone (not include in this package)*/
         npm install selenium-standalone;
         ./node_modules/.bin/selenium-standalone install;
         ./node_modules/.bin/selenium-standalone start;
