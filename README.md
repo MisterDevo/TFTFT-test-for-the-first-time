@@ -1,4 +1,4 @@
-![TFTFT Version](https://img.shields.io/badge/v-1.2.0-green.svg?style=flat-square) 
+![TFTFT Version](https://img.shields.io/badge/v-1.2.0-green.svg?style=flat-square)
 
 <p align="center">
  <a href="https://tftft.herokuapp.com" >
@@ -11,7 +11,7 @@
 ###### TFTFT David-dm : [![Dependency Status](https://img.shields.io/david/misterdevo/TFTFT.svg)](https://david-dm.org/misterdevo/TFTFT)[![devDependency Status](http://img.shields.io/david/dev/misterdevo/TFTFT.svg)](http://david-dm.org/misterdevo/tftft#info=devDependencies)
 ---
 **_Continuous Integration :_**
-###### TFTFT Travis-ci : [![Travis](https://img.shields.io/travis/MisterDevo/TFTFT/master.svg)](https://travis-ci.org/MisterDevo/TFTFT/branches) => TFTFT Coveralls : [![Coverage Status](https://coveralls.io/repos/github/MisterDevo/TFTFT/badge.svg?branch=master)](https://coveralls.io/github/MisterDevo/TFTFT?branch=master) => TFTFT Codacy : [![Codacy Badge](https://api.codacy.com/project/badge/grade/a5046941e5224dba9984a773d32f82bd)](https://www.codacy.com/app/mister-devo/TFTFT)
+###### TFTFT Travis-ci : [![Travis](https://img.shields.io/travis/MisterDevo/TFTFT/master.svg)](https://travis-ci.org/MisterDevo/TFTFT/branches) => TFTFT Coveralls : [![Coverage Status](https://coveralls.io/repos/github/MisterDevo/TFTFT/badge.svg?branch=master)](https://coveralls.io/github/MisterDevo/TFTFT?branch=master)
 ###### => TFTFT SauceLabs : [![Sauce Test Status](https://saucelabs.com/browser-matrix/misterdevo.svg)](https://saucelabs.com/u/misterdevo)
 ---
 **_Continuous Build and Deploy :_**
@@ -23,6 +23,7 @@
 ###### TFTFT Waffle : [![Throughput Graph](https://graphs.waffle.io/MisterDevo/TFTFT/throughput.svg)](https://waffle.io/MisterDevo/TFTFT/metrics) [![Stories in Ready](https://badge.waffle.io/MisterDevo/TFTFT.png?label=ready&title=Ready)](https://waffle.io/MisterDevo/TFTFT) [![Stories in progress](https://badge.waffle.io/MisterDevo/TFTFT.png?label=in%20progress&title=in%20progress)](https://waffle.io/MisterDevo/TFTFT)
 ###### TFTFT IssueStats : [![Issue Stats](http://issuestats.com/github/misterdevo/tftft/badge/pr)](http://issuestats.com/github/misterdevo/tftft) [![Issue Stats](http://issuestats.com/github/misterdevo/tftft/badge/issue)](http://issuestats.com/github/misterdevo/tftft)
 ###### TFTFT Code-Climate : [![Code Climate](https://codeclimate.com/github/MisterDevo/TFTFT/badges/gpa.svg)](https://codeclimate.com/github/MisterDevo/TFTFT)
+###### TFTFT Codacy : [![Codacy Badge](https://api.codacy.com/project/badge/grade/a5046941e5224dba9984a773d32f82bd)](https://www.codacy.com/app/mister-devo/TFTFT)
 ---
 ###### TFTFT BitHound : [![bitHound Dependencies](https://www.bithound.io/github/MisterDevo/TFTFT/badges/dependencies.svg)](https://www.bithound.io/github/MisterDevo/TFTFT/master/dependencies/npm)[![bitHound Code](https://www.bithound.io/github/MisterDevo/TFTFT/badges/code.svg)](https://www.bithound.io/github/MisterDevo/TFTFT)
 ###### TFTFT Gemnasium : [![Dependency Status](https://gemnasium.com/MisterDevo/TFTFT.svg)](https://gemnasium.com/MisterDevo/TFTFT)
@@ -53,24 +54,24 @@ Start **ExpressJs** server and listen to `http://localhost:3000` to serve api an
 * TFTFT Report Test : **mochawesome**
 * TFTFT Specification Test : **selenium-webdriver**  in folder `test/spec/`  
     NB : **Selenium Server** : Local or Remote ? ... Up to Developer !  
-    
+
     Default to Remote for the needs of this repo : **saucelabs** instrumented in tests with _**TravisCI** configuration_.  
-    _Travis will also send code coverage to **coveralls** and **codacy**._
+    _Travis will also send code coverage to **coveralls** after running tests._
     * **_Remote SauceLabs Selenium Server with SauceLabs user auth and Travis environnement:_**  
         Config in `test/spec/wdjs-opt.js` :  
-    
+
         ```
         $ export SAUCE_USERNAME=[secure]
         $ export SAUCE_ACCESS_KEY=[secure]
         TRAVIS_JOB_NUMBER, TRAVIS_BUILD_NUMBER, _BROWSER, _PLATFORM, _VERSION must be define too
         ```
-        
+
     * **_Local Selenium Server :_**  
         In `test/spec/test-wdjs-spec.js` :
         * Change this line for local or remote : `var isLocalSeleniumServer = false;`
         * Make your own config with object : `var local = {};`  
         * Start your local selenium server  
-    
+
         _Example with selenium-standalone (not include in this package) :_
         ```javascript
         npm install selenium-standalone;
