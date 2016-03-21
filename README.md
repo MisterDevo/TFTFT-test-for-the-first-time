@@ -84,19 +84,19 @@ _Mocha runner with config (`test/**/*.js`) and Istanbul auto-instrumented covera
 
      * _**Remote Selenium Server with SauceLabs :**_  
      
-       _Change baseUrl to address your app in a cloud developpement environnement  
+       _Change baseUrl to address app in a cloud developpement environnement  
        For this repo : `baseUrl:'https://tftft-misterdevo.c9users.io'` on Cloud9_  
        
-       * _With Travis environnement `var travis = true;` (default) :_  
-        _Config in `test/spec/option-travis-sauce.js` :_  
+       * _**With Travis environnement** `var travis = true;` (default) :_  
+        _Config in **`test/spec/option-travis-sauce.js`** :_  
        ```
         SAUCE_USERNAME=[secure] and SAUCE_ACCESS_KEY=[secure] must be set in Travis env variable
         TRAVIS_JOB_NUMBER, TRAVIS_BUILD_NUMBER are automatically set by Travis
         _BROWSER, _PLATFORM, _VERSION are define in .travis.yml matrix
         ```
         
-       * _Without Travis environnement `var travis = false;` :_   
-       _Config in `test/spec/option-sauce.js` :_
+       * _**Without Travis environnement** `var travis = false;` :_   
+       _Config in **`test/spec/option-sauce.js`** :_
         ```
         In local environnement : 
         $ export SAUCE_USERNAME=[secure]
