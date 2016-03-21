@@ -55,14 +55,22 @@ Start **ExpressJs** server and listen to `http://localhost:3000` to serve api an
 * TFTFT Specification Test : **selenium-webdriver**  in folder 'test/spec/'  
 * _Note for Specification Test :  
   **Selenium Server** : Local or Remote ? ... Up to Developer !  
-  Default to Remote for the needs of this repo : **saucelabs** instrumented in tests with _**TravisCI** configuration_.  
-  _Travis will also send code coverage to **coveralls** after running tests._
+  Default to Remote for the needs of this repo : **saucelabs** instrumented in tests with **TravisCI** configuration.  
+  Travis will also send code coverage to **coveralls** after running tests._  
 
-     * **_Local Selenium Server :_**  
-        In `test/spec/test-wdjs-spec.js` :
-        * Change this line for local or remote : `var isLocalSeleniumServer = false;`
-        * Make your own config with object : `var local = {};`  
-        * Start your local selenium server  
+
+  For local or remote : In `test/spec/test-wdjs-spec.js` change `var isLocalSeleniumServer = false;`
+     * _**Local Selenium Server :**_  
+       * _Make your own config with :_  
+       ```
+         var option_local = {
+                 server: 'http://127.0.0.1:4444/wd/hub',
+                 desiredCapabilities: { browserName: 'firefox' },
+                 baseUrl:'http://localhost:3000'
+         };
+       ```
+       
+       * _Start your local selenium server_  
 
         _Example with selenium-standalone (not include in this package) :_
         ```javascript
@@ -71,8 +79,9 @@ Start **ExpressJs** server and listen to `http://localhost:3000` to serve api an
         ./node_modules/.bin/selenium-standalone start;
         ```
 
-    * **_Remote SauceLabs Selenium Server with SauceLabs user auth and Travis environnement:_**  
-        Config in `test/spec/wdjs-opt.js` :  
+
+     * _**Remote SauceLabs Selenium Server with SauceLabs user auth and Travis environnement:**_  
+        _Config in `test/spec/wdjs-opt.js` :_  
 
         ```
         $ export SAUCE_USERNAME=[secure]
