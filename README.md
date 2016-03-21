@@ -49,11 +49,10 @@ Start **ExpressJs** server and listen to `http://localhost:3000` to serve api an
 ### TFTFT Test :
 
 ##### `npm test`  
-_**mocha** runner with config (`test/**/*.js`) - **Istanbul** auto-instrumented coverage/report_
+_Mocha runner with config (`test/**/*.js`) and Istanbul auto-instrumented coverage/report_
 * TFTFT Unit Test : **mocha**
 * TFTFT Route Test : **supertest**
-* TFTFT Test Reporter : **mochawesome**
-* TFTFT Coverage Test Report : **istanbul**
+* TFTFT Coverage Test : **istanbul**
 * TFTFT Specification Test : **selenium-webdriver**  in folder 'test/spec/'  
 * _Note for Specification Test :  
   **Selenium Server** : Local or Remote ? ... Up to Developer !  
@@ -99,6 +98,6 @@ _For app example  : Coverage reports + saucelabs matrix + test reports with moch
 ##### `npm run app-resources`  
 
 **Istanbul** auto-instrumented coverage/report - **Mocha** runner with default config (`test/*.js`) for :
-* TFTFT Mochawesome report 'one by one' in `public/report`
-* TFTFT Istanbul Coverage Report in `public/cov`
+* TFTFT Test Reporter : **mochawesome** _('one by one' in `public/report`)_
+* TFTFT Istanbul Coverage Test Report in `public/cov`
 * TFTFT Saucelabs matrix : download the last remote tests badge to `public/images/misterdevo.svg`
