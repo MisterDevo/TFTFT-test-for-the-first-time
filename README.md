@@ -52,14 +52,11 @@ Start **ExpressJs** server and listen to `http://localhost:3000` to serve api an
 **Istanbul** auto-instrumented coverage/report - **mocha** runner with config (`test/**/*.js`) :
 * TFTFT Route Test : **supertest**
 * TFTFT Report Test : **mochawesome**
-* TFTFT Specification Test : **selenium-webdriver**  in folder 'test/spec/'
-* 
-
-    
-    **Selenium Server** : Local or Remote ? ... Up to Developer !  
-
-    Default to Remote for the needs of this repo : **saucelabs** instrumented in tests with _**TravisCI** configuration_.  
-    _Travis will also send code coverage to **coveralls** after running tests._
+* TFTFT Specification Test : **selenium-webdriver**  in folder 'test/spec/'  
+* _Note for Specification Test :  
+  **Selenium Server** : Local or Remote ? ... Up to Developer !  
+  Default to Remote for the needs of this repo : **saucelabs** instrumented in tests with _**TravisCI** configuration_.  
+  _Travis will also send code coverage to **coveralls** after running tests._
 
      * **_Local Selenium Server :_**  
         In `test/spec/test-wdjs-spec.js` :
