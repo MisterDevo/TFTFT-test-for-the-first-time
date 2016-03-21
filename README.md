@@ -63,7 +63,7 @@ _Mocha runner with config (`test/**/*.js`) and Istanbul auto-instrumented covera
   _For local or remote :  
   **In `test/spec/test-wdjs-spec.js` change `var isLocalSeleniumServer = false;`**_
      * _**Local Selenium Server :**_  
-       * _Make your own config with :_  
+       * _Change config with :_  
        ```
          var option_local = {
                  server: 'http://127.0.0.1:4444/wd/hub',
@@ -72,7 +72,7 @@ _Mocha runner with config (`test/**/*.js`) and Istanbul auto-instrumented covera
          };
        ```
        
-       * _Start your local selenium server_  
+       * _Start a local selenium server_  
 
         ```
         /*Example with selenium-standalone (not include in this package)*/
@@ -80,12 +80,10 @@ _Mocha runner with config (`test/**/*.js`) and Istanbul auto-instrumented covera
         ./node_modules/.bin/selenium-standalone install;
         ./node_modules/.bin/selenium-standalone start;
         ```  
-
-
      * _**Remote Selenium Server with SauceLabs :**_  
-     
-       _Change baseUrl to address app in a cloud developpement environnement  
-       For this repo : `baseUrl:'https://tftft-misterdevo.c9users.io'` on Cloud9_  
+       
+       _For Travis :  
+       **In `test/spec/test-wdjs-spec.js` change `var travis = true;`**_
        
        * _**With Travis environnement** `var travis = true;` (default) :_  
         _Config in **`test/spec/option-travis-sauce.js`** :_  
@@ -102,7 +100,8 @@ _Mocha runner with config (`test/**/*.js`) and Istanbul auto-instrumented covera
         $ export SAUCE_USERNAME=[secure]
         $ export SAUCE_ACCESS_KEY=[secure]
         ```
-
+       _Change baseUrl to address app in a cloud developpement environnement  
+       For this repo : `baseUrl:'https://tftft-misterdevo.c9users.io'` on Cloud9_  
 
 ### TFTFT Resources
 
