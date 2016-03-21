@@ -4,13 +4,15 @@ var test = require('selenium-webdriver/testing'),
 
 // change this line to run locally
 var isLocalSeleniumServer = false;
+var travis = true;
 
-var local = {
+var option-local = {
       server: 'http://127.0.0.1:4444/wd/hub',
       desiredCapabilities: { browserName: 'firefox' },
       baseUrl:'http://localhost:3000'
     };
-var options = isLocalSeleniumServer ? local : require('./wdjs-trav-sauce-opt.js');
+
+var options = isLocalSeleniumServer ? option-local : travis ? require('./option-travis-sauce.js') : require('./option-sauce.js');
 
 
 test.describe('TFTFT End To End tests', function() {
