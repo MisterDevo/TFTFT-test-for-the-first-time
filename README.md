@@ -60,7 +60,8 @@ _Mocha runner with config (`test/**/*.js`) and Istanbul auto-instrumented covera
   Travis will also send code coverage to **coveralls** after running tests._  
 
 
-  For local or remote : In `test/spec/test-wdjs-spec.js` change `var isLocalSeleniumServer = false;`
+  _For local or remote :  
+  **In `test/spec/test-wdjs-spec.js` change `var isLocalSeleniumServer = false;`**_
      * _**Local Selenium Server :**_  
        * _Make your own config with :_  
        ```
@@ -73,21 +74,33 @@ _Mocha runner with config (`test/**/*.js`) and Istanbul auto-instrumented covera
        
        * _Start your local selenium server_  
 
-        ```javascript
+        ```
         /*Example with selenium-standalone (not include in this package)*/
         npm install selenium-standalone;
         ./node_modules/.bin/selenium-standalone install;
         ./node_modules/.bin/selenium-standalone start;
+        ```  
+
+
+     * _**Remote Selenium Server with SauceLabs :**_  
+     
+       _Change baseUrl to address your app in a cloud developpement environnement  
+       For this repo : `baseUrl:'https://tftft-misterdevo.c9users.io'` on Cloud9_  
+       
+       * _With Travis environnement `var travis = true;` (default) :_  
+        _Config in `test/spec/option-travis-sauce.js` :_  
+       ```
+        SAUCE_USERNAME=[secure] and SAUCE_ACCESS_KEY=[secure] must be set in Travis env variable
+        TRAVIS_JOB_NUMBER, TRAVIS_BUILD_NUMBER are automatically set by Travis
+        _BROWSER, _PLATFORM, _VERSION are define in .travis.yml matrix
         ```
-
-
-     * _**Remote SauceLabs Selenium Server with SauceLabs user auth and Travis environnement:**_  
-        _Config in `test/spec/wdjs-opt.js` :_  
-
+        
+       * _Without Travis environnement `var travis = false;` :_   
+       _Config in `test/spec/option-sauce.js` :_
         ```
+        In local environnement : 
         $ export SAUCE_USERNAME=[secure]
         $ export SAUCE_ACCESS_KEY=[secure]
-        TRAVIS_JOB_NUMBER, TRAVIS_BUILD_NUMBER, _BROWSER, _PLATFORM, _VERSION must be define too
         ```
 
 
