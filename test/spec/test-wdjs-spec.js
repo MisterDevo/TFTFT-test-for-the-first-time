@@ -6,13 +6,13 @@ var test = require('selenium-webdriver/testing'),
 var isLocalSeleniumServer = false;
 var travis = true;
 
-var option-local = {
+var option_local = {
       server: 'http://127.0.0.1:4444/wd/hub',
       desiredCapabilities: { browserName: 'firefox' },
       baseUrl:'http://localhost:3000'
     };
 
-var options = isLocalSeleniumServer ? option-local : travis ? require('./option-travis-sauce.js') : require('./option-sauce.js');
+var options = isLocalSeleniumServer ? option_local : travis ? require('./option-travis-sauce.js') : require('./option-sauce.js');
 
 
 test.describe('TFTFT End To End tests', function() {
