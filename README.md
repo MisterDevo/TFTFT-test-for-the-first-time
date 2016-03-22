@@ -100,8 +100,9 @@ _Mocha runner with config (`test/**/*.js`) and Istanbul auto-instrumented covera
         $ export SAUCE_USERNAME=[secure]
         $ export SAUCE_ACCESS_KEY=[secure]
         ```
-       _Change baseUrl to address app in a cloud developpement environnement  
-       For this repo : `baseUrl:'https://tftft-misterdevo.c9users.io'` on Cloud9_  
+      
+      _Change baseUrl to address app in a cloud developpement environnement  
+      For this repo, **`baseUrl:'https://tftft-misterdevo.c9users.io'`** on Cloud9_  
 
 ### TFTFT Resources
 
