@@ -111,6 +111,6 @@ _For app example  : Coverage reports + saucelabs matrix + test reports with moch
 ##### `npm run app-resources`  
 
 **Istanbul** auto-instrumented coverage/report - **Mocha** runner with default config (`test/unit/*.js test/route/*.js`) for :
-* TFTFT Mochawesome report 'one by one' in `public/report`
-* TFTFT Istanbul Coverage Report in `public/cov`
+* TFTFT Test reporter **mochawesome** _('one by one' in `public/report`)_
+* TFTFT Istanbul Coverage Test Report in `public/cov`
 * TFTFT Saucelabs matrix : download the last remote tests badge to `public/images/misterdevo.svg`
