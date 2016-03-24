@@ -18,11 +18,12 @@ router.get('/', function(req, res, next) {
     }
   };
 
-  var reqMail = https.request(options, (res) => {
+  var reqMail = https.request(options, (respMail) => {
     //console.log('statusCode: ', res.statusCode);
     //console.log('headers: ', res.headers);
-    res.on('data', (d) => {
-      process.stdout.write(d);
+    respMail.on('data', (d) => {
+      process.stdout.write(d);      
+      res.send('A mail has been send to administrator');
     });
   });
 
@@ -37,7 +38,7 @@ router.get('/', function(req, res, next) {
                             text: 'Crazy first mail from my app'}));
   reqMail.end();
 
-  res.send('A mail has been send to administrator');
+  // res.send('A mail has been send to administrator');
 });
 
 module.exports = router;

@@ -71,7 +71,7 @@ _Mocha runner with config (`test/**/*.js`) and Istanbul auto-instrumented covera
                  baseUrl:'http://localhost:3000'
          };
        ```
-       
+
        * _Start a local selenium server_  
 
         ```
@@ -81,10 +81,10 @@ _Mocha runner with config (`test/**/*.js`) and Istanbul auto-instrumented covera
         ./node_modules/.bin/selenium-standalone start;
         ```  
      * _**Remote Selenium Server with SauceLabs :**_  
-       
+
        _For Travis :  
        **In `test/spec/test-wdjs-spec.js` change `var travis = true;`**_
-       
+
        * _**With Travis environnement** `var travis = true;` (default) :_  
         _Config in **`test/spec/option-travis-sauce.js`** :_  
        ```
@@ -92,15 +92,15 @@ _Mocha runner with config (`test/**/*.js`) and Istanbul auto-instrumented covera
         TRAVIS_JOB_NUMBER, TRAVIS_BUILD_NUMBER are automatically set by Travis
         _BROWSER, _PLATFORM, _VERSION are define in .travis.yml matrix
         ```
-        
+
        * _**Without Travis environnement** `var travis = false;` :_   
        _Config in **`test/spec/option-sauce.js`** :_
         ```
-        In local environnement : 
+        In local environnement :
         $ export SAUCE_USERNAME=[secure]
         $ export SAUCE_ACCESS_KEY=[secure]
         ```
-      
+
       _Change baseUrl to address app in a cloud developpement environnement  
       For this repo, **`baseUrl:'https://tftft-misterdevo.c9users.io'`** on Cloud9_  
 
@@ -110,7 +110,7 @@ _For app example  : Coverage reports + saucelabs matrix + test reports with moch
 
 ##### `npm run app-resources`  
 
-**Istanbul** auto-instrumented coverage/report - **Mocha** runner with default config (`test/*.js`) for :
-* TFTFT Test Reporter : **mochawesome** _('one by one' in `public/report`)_
+**Istanbul** auto-instrumented coverage/report - **Mocha** runner with default config (`test/unit/*.js test/route/*.js`) for :
+* TFTFT Test reporter **mochawesome** _('one by one' in `public/report`)_
 * TFTFT Istanbul Coverage Test Report in `public/cov`
 * TFTFT Saucelabs matrix : download the last remote tests badge to `public/images/misterdevo.svg`
