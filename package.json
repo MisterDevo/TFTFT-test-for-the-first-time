@@ -8,7 +8,7 @@
     "test-e2e"   : "_mocha test/spec/*.js --reporter mochawesome --reporter-options reportDir=public/report,reportName=test-spec",
 
     "test-report" : "npm run test-unit && npm run test-route && npm run test-e2e",
-    "coverage" : "istanbul cover _mocha --dir public/cov -- test/**/*.js",
+    "coverage" : "istanbul cover _mocha --dir public/cov -- test/unit/*.js test/route/*.js",
     "saucelabs-matrix" : "curl -o public/images/misterdevo.svg https://saucelabs.com/browser-matrix/misterdevo.svg",
 
     "app-resources" : "npm run coverage && npm run saucelabs-matrix && npm run test-report",
