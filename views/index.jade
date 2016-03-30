@@ -11,6 +11,14 @@ block content
         a.navbar-brand(href='/#/')
           .logo
 
+      ul.nav.navbar-top-links.navbar-left
+        li(uib-dropdown, auto-close='outsideClick')
+          a(href, uib-dropdown-toggle)
+            i.fa.fa-envelope.fa-fw
+            i.fa.fa-caret-down
+          ul(uib-dropdown-menu)
+            mailme
+
       ul.nav.navbar-top-links.navbar-right.navbar-collapse.collapse(uib-collapse='sideCollapsed')
         li
           a(href='/#login')
