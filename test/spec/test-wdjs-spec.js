@@ -44,7 +44,7 @@ test.describe('TFTFT End To End tests', function() {
             client.wait(webdriver.until.elementLocated(webdriver.By.id('welcome-view')), 10000)
             .getAttribute('class')
             .then(function(attr){
-                assert.equal(attr, 'burning ng-scope');
+                assert.equal(attr, 'ng-scope');
             });
         });
 

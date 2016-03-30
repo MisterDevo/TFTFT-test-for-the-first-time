@@ -41,12 +41,12 @@ describe('TFTFT Route Test', function() {
 
     describe('Covering routes/index', function () {
 
-          it('GET / respond with body burning', function(done){
+          it('GET / respond with body', function(done){
             request(app)
               .get('/')
               .expect('Content-Type', /html/)
               .expect(200)
-              .expect(/<body class="burning">/, done);
+              .expect(/<body>/, done);
           })
 
           it('GET /api/welcome respond with json welcome messages', function(done){
