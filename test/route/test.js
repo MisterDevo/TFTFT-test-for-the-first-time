@@ -73,11 +73,17 @@ describe('TFTFT Route Test', function() {
 
     describe('Covering routes/mail', function () {
 
-            it('GET /mail respond with html', function(done){
+            it('POST /mail respond with message', function(done){
               request(app)
-                .get('/mail')
-                .expect('Content-Type', /html/)
+                .post('/mail')
+                .send({ email: '', message: 'myMessageTest' })
                 .expect(200, done);
+            })
+            it('POST /mail respond error without message', function(done){
+              request(app)
+                .post('/mail')
+                .send({ email: '', message: '' })
+                .expect(500, done);
             })
     });
 });
