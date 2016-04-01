@@ -257,6 +257,23 @@ test.describe('TFTFT End To End tests', function() {
             });
        });
 
+       test.it('should return response if message is send', function () {
+         var mailmeForm = client.findElement(webdriver.By.css('mailme'))
+                             .findElement(webdriver.By.css('form'));
+
+         mailmeForm.findElement(webdriver.By.css('textarea'))
+             .sendKeys("hello from selenium test");
+
+         mailmeForm.findElement(webdriver.By.css('input[type=submit]'))
+            .click().then(function () {
+               mailmeForm.findElement(webdriver.By.css('.txtstyle'))
+               .getInnerHtml()
+               .then(function(html){
+                   assert(html.length);
+               });
+             })
+        });
+
        test.it('should return error if empty message is send', function () {
          client.findElement(webdriver.By.css('mailme'))
             .findElement(webdriver.By.css('form'))
@@ -269,23 +286,6 @@ test.describe('TFTFT End To End tests', function() {
                });
              })
         });
-
-        test.it('should return response if message is send', function () {
-          var mailmeForm = client.findElement(webdriver.By.css('mailme'))
-                              .findElement(webdriver.By.css('form'));
-
-          mailmeForm.findElement(webdriver.By.css('textarea'))
-              .sendKeys("hello from selenium test");
-
-          mailmeForm.findElement(webdriver.By.css('input[type=submit]'))
-             .click().then(function () {
-                mailmeForm.findElement(webdriver.By.css('.txtstyle'))
-                .getInnerHtml()
-                .then(function(html){
-                    assert(html.length);
-                });
-              })
-         });
     });
 
 
