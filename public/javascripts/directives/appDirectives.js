@@ -18,6 +18,7 @@ angular.module('directives', [])
                       + "</form>",
             link: function(scope, element, attrs) {
                 scope.send = function () {
+                  scope.response = '';
                   $http.post('/mail', scope.user)
                       .then(function successCallback(response) {
                           scope.response = response.data;
