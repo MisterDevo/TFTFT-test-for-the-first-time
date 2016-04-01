@@ -21,6 +21,7 @@ angular.module('directives', [])
                   $http.post('/mail', scope.user)
                       .then(function successCallback(response) {
                           scope.response = response.data;
+                          scope.user = {};
                         }, function errorCallback(response) {
                           scope.response = "An error occurs.";
                       });
