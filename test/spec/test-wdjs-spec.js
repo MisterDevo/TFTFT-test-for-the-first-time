@@ -265,7 +265,7 @@ test.describe('TFTFT End To End tests', function() {
                       .sendKeys("hello from selenium test");
          mailmeForm.findElement(webdriver.By.css('input[type=submit]'))
                       .click();
-         client.wait(webdriver.until.elementTextContains(mailmeForm.findElement(webdriver.By.css('.txtstyle')),' '), 3000)
+         client.wait(webdriver.until.elementTextContains(mailmeForm.findElement(webdriver.By.className('txtstyle')),' '), 3000)
                  .getInnerHtml()
                  .then(function(html){
                      assert(html.length);
@@ -275,7 +275,7 @@ test.describe('TFTFT End To End tests', function() {
        test.it('should return error if empty message is send', function () {
             mailmeForm.findElement(webdriver.By.css('input[type=submit]'))
                       .click();
-            client.wait(webdriver.until.elementTextContains(mailmeForm.findElement(webdriver.By.css('.txtstyle')),' '), 3000)
+            client.wait(webdriver.until.elementTextContains(mailmeForm.findElement(webdriver.By.className('txtstyle')),' '), 3000)
                  .getInnerHtml()
                  .then(function(html){
                      assert.equal(html, 'An error occurs.');
