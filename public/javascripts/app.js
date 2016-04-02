@@ -3,8 +3,8 @@ define(['angular-route',
         'angular-animate',
         'angular-bootstrap',
         'controllers/appControllers',
-        'services/welcomeService',
-        'directives/welcomeDirective'
+        'services/appServices',
+        'directives/appDirectives'
   ], function() {
         return angular.module('TFTFT', ['ngRoute',
                                         'ngResource',
