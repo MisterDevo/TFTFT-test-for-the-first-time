@@ -1,5 +1,3 @@
-![TFTFT Version](https://img.shields.io/badge/v-1.2.0-green.svg?style=flat-square)
-
 <p align="center">
  <a href="https://tftft.herokuapp.com" >
   <img alt="TFTFT" src="https://raw.githubusercontent.com/MisterDevo/TFTFT/master/public/images/logo.png">
@@ -42,6 +40,7 @@ Then Install it, Start it, Test it, Browse it, Containerize it ...
 * **Bower** dependencies : _bower - bower-requirejs_
   * **`bower install`** is called in `npm postinstall`  **AngularJs - RequireJs - BootstrapCss**
   * **`bower-requirejs`** is called in `bower postinstall` (_see .bowerrc_) to generate main requirejs file
+* _**md-mailgun** : my dependency to send me a mail with mailgun_
 
 ##### `npm start`
 Start **ExpressJs** server and listen to `http://localhost:3000` to serve api and static files.
@@ -56,8 +55,7 @@ _Mocha runner with config (`test/**/*.js`) and Istanbul auto-instrumented covera
 * TFTFT Specification Test : **selenium-webdriver**  in folder 'test/spec/'  
 * _Note for Specification Test :  
   **Selenium Server** : Local or Remote ? ... Up to Developer !  
-  Default to Remote for the needs of this repo : **saucelabs** instrumented in tests with **TravisCI** configuration.  
-  Travis will also send code coverage to **coveralls** after running tests._  
+  Default to Remote for the needs of this repo : **saucelabs** instrumented in tests with **TravisCI** configuration._  
 
 
   _For local or remote :  
