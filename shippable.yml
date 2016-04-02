@@ -11,6 +11,7 @@ env:
 
 # Create directories for test and coverage reports
 before_script:
+      - npm install xunit-file
       - mkdir -p shippable/testresults
       - mkdir -p shippable/codecoverage
 
