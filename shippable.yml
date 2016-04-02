@@ -9,6 +9,7 @@ build:
   ci:
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
+    - npm install
     - npm run coverage
     - npm install xunit-file
     - ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- test/route/*.js test/unit/*.js -R xunit-file
