@@ -248,18 +248,21 @@ test.describe('TFTFT End To End tests', function() {
 
     test.describe('Mail Me feature', function() {
 
+      var mailmeForm
       test.it('should display mailme directive when click on mailme-link', function () {
           client.findElement(webdriver.By.id('mailme-link')).click();
           client.findElement(webdriver.By.css('mailme'))
             .isDisplayed()
             .then(function(displayed){
+                mailmeForm = client.findElement(webdriver.By.css('mailme'))
+                                       .findElement(webdriver.By.css('form'));
                 assert(displayed);
             });
        });
 
        test.it('should return response if message is send', function () {
-           var mailmeForm = client.findElement(webdriver.By.css('mailme'))
-                                    .findElement(webdriver.By.css('form'));
+          //  var mailmeForm = client.findElement(webdriver.By.css('mailme'))
+          //                           .findElement(webdriver.By.css('form'));
            mailmeForm.findElement(webdriver.By.css('textarea'))
                         .sendKeys("hello from selenium test");
            mailmeForm.findElement(webdriver.By.css('input[type=submit]'))
@@ -272,8 +275,8 @@ test.describe('TFTFT End To End tests', function() {
         });
 
        test.it('should return error if empty message is send', function () {
-            var mailmeForm = client.findElement(webdriver.By.css('mailme'))
-                                      .findElement(webdriver.By.css('form'));
+            // var mailmeForm = client.findElement(webdriver.By.css('mailme'))
+            //                           .findElement(webdriver.By.css('form'));
             mailmeForm.findElement(webdriver.By.css('input[type=submit]'))
                       .click();
             client.wait(webdriver.until.elementTextContains(mailmeForm.findElement(webdriver.By.className('txtstyle')),' '), 3000)
