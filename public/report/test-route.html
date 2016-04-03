@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mochawesome Report Card</title>
+    
+    <link rel="stylesheet" href="css/mochawesome.css">
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="report-info-cnt">
+          <h1 class="report-title">TFTFT</h1>
+          <h3 class="report-date">Sunday, April 3 2016, 12:29am</h3>
+        </div>
+        <div class="quick-summary-cnt">
+            <ul class="list-unstyled quick-summary">
+              <li class="qs-item summary-duration" title="Duration">1.160<span>S</span></li>
+              <li class="qs-item summary-suites" title="Suites">5</li>
+              <li class="qs-item summary-tests" title="Tests">10</li>
+              <li class="qs-item summary-passes" title="Passed" data-filter="passed">10</li>
+              <li class="qs-item summary-failures" title="Failed" data-filter="failed">0</li>
+              <li class="qs-item summary-pending" title="Pending" data-filter="pending">0</li>
+            </ul>        </div>
+      </div>
+    </div>
+
+    <!-- Report Summary -->
+    <div class="summary">
+      <div class="container">
+          <div class="row">
+            <div class="summary-col summary-duration">
+              <h1 class="summary-count">1.160<span>S</span></h1>
+              <h4 class="summary-label">S</h4>
+            </div>
+            <div class="summary-col summary-suites" title="Suites">
+              <h1 class="summary-count">5</h1>
+              <h4 class="summary-label">Suites</h4>
+            </div>
+            <div class="summary-col summary-tests" title="Tests">
+              <h1 class="summary-count">10</h1>
+              <h4 class="summary-label">Tests</h4>
+            </div>
+            <div class="summary-col summary-passes" data-filter="passed" title="Passed">
+              <h1 class="summary-count">10</h1>
+              <h4 class="summary-label">Passed</h4>
+            </div>
+            <div class="summary-col summary-failures" data-filter="failed" title="Failed">
+              <h1 class="summary-count">0</h1>
+              <h4 class="summary-label">Failed</h4>
+            </div>
+            <div class="summary-col summary-pending" data-filter="pending" title="Pending">
+              <h1 class="summary-count">0</h1>
+              <h4 class="summary-label">Pending</h4>
+            </div>
+          </div>      </div>
+    </div>
+    <div class="statusbar">
+      <div class="container">
+          <div class="row">
+            <div class="status-item status-item-pending-pct">0% Pending</div>
+            <div class="status-item status-item-passing-pct success">100% Passing</div>
+          </div>      </div>
+    </div>
+
+    <!-- Suites -->
+    <div class="details container">
+            <section class="suite-wrap">
+          <div id="ca234c09-af13-4e63-9f57-ecd83aab5c12" class="suite has-suites">
+            <h3 class="suite-title">TFTFT Route Test</h3>
+            <h5 class="suite-filename">/test/route/test.js</h5>
+        
+              <section class="suite-wrap">
+          <div id="3e5466c8-747b-4500-aba8-b9ba92512c50" class="suite has-tests has-passed">
+            <h3 class="suite-title">Statics files</h3>
+            <h5 class="suite-filename">/test/route/test.js</h5>
+            <!-- Suite Chart -->
+            <div class="suite-chart-wrap">
+              <canvas id="3e5466c8-747b-4500-aba8-b9ba92512c50" class="suite-chart" width="50" height="50" data-total-passes="5" data-total-failures="0" data-total-pending="0" data-total-skipped="0"></canvas>
+            </div>
+            <div class="suite-data-wrap">
+              <!-- Suite Summary -->
+              <ul class="suite-summary list-unstyled">
+                <li class="suite-summary-item duration">65 ms</li>
+                <li class="suite-summary-item tests">5</li>
+                <li class="suite-summary-item passed">5</li>
+                <li class="suite-summary-item failed">0</li>
+                <li class="suite-summary-item pending">0</li>
+              </ul>
+              <!-- Test Info -->
+              <div class="suite-test-wrap">
+                <div class="suite-test-header" data-toggle="collapse" data-target="#3e5466c8-747b-4500-aba8-b9ba92512c50-test-list">
+                  <h4 class="suite-test-header-title">Tests</h4>
+                </div>
+                <div id="3e5466c8-747b-4500-aba8-b9ba92512c50-test-list" class="list-group test-list collapse in">
+                    <div id="874c2971-7865-45b1-acc7-fbee948fe5ed" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              must find Unit test mochawesome html report
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#874c2971-7865-45b1-acc7-fbee948fe5ed > .test-code.collapse">Code</button>
+              <span class="test-duration medium">46 ms</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small">request(app)<br>  .get(<span class="hljs-string">'/report/test-unit.html'</span>)<br>  .expect(<span class="hljs-number">200</span>, done);</code></pre>
+          </div>
+          <!-- Test Error Stack -->
+        </div>            <div id="5d73b024-5469-4354-8386-b3193f48c2aa" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              must find Route test mochawesome html report
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#5d73b024-5469-4354-8386-b3193f48c2aa > .test-code.collapse">Code</button>
+              <span class="test-duration fast">8 ms</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small">request(app)<br>  .get(<span class="hljs-string">'/report/test-route.html'</span>)<br>  .expect(<span class="hljs-number">200</span>, done);</code></pre>
+          </div>
+          <!-- Test Error Stack -->
+        </div>            <div id="1443fa12-76b7-48be-a67b-de9af20834a1" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              must find End to End test mochawesome html report
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#1443fa12-76b7-48be-a67b-de9af20834a1 > .test-code.collapse">Code</button>
+              <span class="test-duration fast">4 ms</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small">request(app)<br>  .get(<span class="hljs-string">'/report/test-spec.html'</span>)<br>  .expect(<span class="hljs-number">200</span>, done);</code></pre>
+          </div>
+          <!-- Test Error Stack -->
+        </div>            <div id="a3a74918-819c-471d-afcf-6bc3f3853297" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              must find Coverage test istanbul html report
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#a3a74918-819c-471d-afcf-6bc3f3853297 > .test-code.collapse">Code</button>
+              <span class="test-duration fast">3 ms</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small">request(app)<br>  .get(<span class="hljs-string">'/cov/lcov-report/index.html'</span>)<br>  .expect(<span class="hljs-number">200</span>, done);</code></pre>
+          </div>
+          <!-- Test Error Stack -->
+        </div>            <div id="b7c63fe1-61d2-4677-abc4-ae7a5e5ff83a" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              must find Saucelab image
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#b7c63fe1-61d2-4677-abc4-ae7a5e5ff83a > .test-code.collapse">Code</button>
+              <span class="test-duration fast">4 ms</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small">request(app)<br>  .get(<span class="hljs-string">'/images/misterdevo.svg'</span>)<br>  .expect(<span class="hljs-number">200</span>, done);</code></pre>
+          </div>
+          <!-- Test Error Stack -->
+        </div>        </div>
+              </div>
+            </div>
+        
+        
+          </div>
+        </section>
+              <section class="suite-wrap">
+          <div id="64f45dfd-c935-452f-b130-efbbf15c9d53" class="suite has-tests has-passed">
+            <h3 class="suite-title">Covering routes/index</h3>
+            <h5 class="suite-filename">/test/route/test.js</h5>
+            <!-- Suite Chart -->
+            <div class="suite-chart-wrap">
+              <canvas id="64f45dfd-c935-452f-b130-efbbf15c9d53" class="suite-chart" width="50" height="50" data-total-passes="2" data-total-failures="0" data-total-pending="0" data-total-skipped="0"></canvas>
+            </div>
+            <div class="suite-data-wrap">
+              <!-- Suite Summary -->
+              <ul class="suite-summary list-unstyled">
+                <li class="suite-summary-item duration">385 ms</li>
+                <li class="suite-summary-item tests">2</li>
+                <li class="suite-summary-item passed">2</li>
+                <li class="suite-summary-item failed">0</li>
+                <li class="suite-summary-item pending">0</li>
+              </ul>
+              <!-- Test Info -->
+              <div class="suite-test-wrap">
+                <div class="suite-test-header" data-toggle="collapse" data-target="#64f45dfd-c935-452f-b130-efbbf15c9d53-test-list">
+                  <h4 class="suite-test-header-title">Tests</h4>
+                </div>
+                <div id="64f45dfd-c935-452f-b130-efbbf15c9d53-test-list" class="list-group test-list collapse in">
+                    <div id="9b804a4e-be62-4cd7-9af1-7ba20a97b9e8" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              GET / respond with body
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#9b804a4e-be62-4cd7-9af1-7ba20a97b9e8 > .test-code.collapse">Code</button>
+              <span class="test-duration slow">380 ms</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small">request(app)<br>  .get(<span class="hljs-string">'/'</span>)<br>  .expect(<span class="hljs-string">'Content-Type'</span>, <span class="hljs-regexp">/html/</span>)<br>  .expect(<span class="hljs-number">200</span>)<br>  .expect(<span class="hljs-regexp">/&lt;body&gt;/</span>, done);</code></pre>
+          </div>
+          <!-- Test Error Stack -->
+        </div>            <div id="5ae5b916-19eb-48ba-86bb-3c4533c74b21" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              GET /api/welcome respond with json welcome messages
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#5ae5b916-19eb-48ba-86bb-3c4533c74b21 > .test-code.collapse">Code</button>
+              <span class="test-duration fast">5 ms</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small">request(app)<br>  .get(<span class="hljs-string">'/api/welcome'</span>)<br>  .set(<span class="hljs-string">'Accept'</span>, <span class="hljs-string">'application/json'</span>)<br>  .expect(<span class="hljs-string">'Content-Type'</span>, <span class="hljs-regexp">/json/</span>)<br>  .expect(<span class="hljs-number">200</span>, done);</code></pre>
+          </div>
+          <!-- Test Error Stack -->
+        </div>        </div>
+              </div>
+            </div>
+        
+        
+          </div>
+        </section>
+              <section class="suite-wrap">
+          <div id="85d2b610-f756-4197-8b9a-1909c520d50c" class="suite has-tests has-passed">
+            <h3 class="suite-title">Covering routes/users</h3>
+            <h5 class="suite-filename">/test/route/test.js</h5>
+            <!-- Suite Chart -->
+            <div class="suite-chart-wrap">
+              <canvas id="85d2b610-f756-4197-8b9a-1909c520d50c" class="suite-chart" width="50" height="50" data-total-passes="1" data-total-failures="0" data-total-pending="0" data-total-skipped="0"></canvas>
+            </div>
+            <div class="suite-data-wrap">
+              <!-- Suite Summary -->
+              <ul class="suite-summary list-unstyled">
+                <li class="suite-summary-item duration">3 ms</li>
+                <li class="suite-summary-item tests">1</li>
+                <li class="suite-summary-item passed">1</li>
+                <li class="suite-summary-item failed">0</li>
+                <li class="suite-summary-item pending">0</li>
+              </ul>
+              <!-- Test Info -->
+              <div class="suite-test-wrap">
+                <div class="suite-test-header" data-toggle="collapse" data-target="#85d2b610-f756-4197-8b9a-1909c520d50c-test-list">
+                  <h4 class="suite-test-header-title">Tests</h4>
+                </div>
+                <div id="85d2b610-f756-4197-8b9a-1909c520d50c-test-list" class="list-group test-list collapse in">
+                    <div id="8db3af99-850b-4bf0-bfe1-2c3ef5e1766b" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              GET /users respond with html
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#8db3af99-850b-4bf0-bfe1-2c3ef5e1766b > .test-code.collapse">Code</button>
+              <span class="test-duration fast">3 ms</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small">request(app)<br>  .get(<span class="hljs-string">'/users'</span>)<br>  .expect(<span class="hljs-string">'Content-Type'</span>, <span class="hljs-regexp">/html/</span>)<br>  .expect(<span class="hljs-number">200</span>, done);<br>  <span class="hljs-comment">//.expect(/&lt;body&gt;/, done);</span></code></pre>
+          </div>
+          <!-- Test Error Stack -->
+        </div>        </div>
+              </div>
+            </div>
+        
+        
+          </div>
+        </section>
+              <section class="suite-wrap">
+          <div id="b249d6ee-b0b6-4e00-90aa-72296a9d3b43" class="suite has-tests has-passed">
+            <h3 class="suite-title">Covering routes/mail</h3>
+            <h5 class="suite-filename">/test/route/test.js</h5>
+            <!-- Suite Chart -->
+            <div class="suite-chart-wrap">
+              <canvas id="b249d6ee-b0b6-4e00-90aa-72296a9d3b43" class="suite-chart" width="50" height="50" data-total-passes="2" data-total-failures="0" data-total-pending="0" data-total-skipped="0"></canvas>
+            </div>
+            <div class="suite-data-wrap">
+              <!-- Suite Summary -->
+              <ul class="suite-summary list-unstyled">
+                <li class="suite-summary-item duration">684 ms</li>
+                <li class="suite-summary-item tests">2</li>
+                <li class="suite-summary-item passed">2</li>
+                <li class="suite-summary-item failed">0</li>
+                <li class="suite-summary-item pending">0</li>
+              </ul>
+              <!-- Test Info -->
+              <div class="suite-test-wrap">
+                <div class="suite-test-header" data-toggle="collapse" data-target="#b249d6ee-b0b6-4e00-90aa-72296a9d3b43-test-list">
+                  <h4 class="suite-test-header-title">Tests</h4>
+                </div>
+                <div id="b249d6ee-b0b6-4e00-90aa-72296a9d3b43-test-list" class="list-group test-list collapse in">
+                    <div id="56896db0-0942-4d05-8e0e-a5381b98f67e" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              POST /mail with message respond status 200
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#56896db0-0942-4d05-8e0e-a5381b98f67e > .test-code.collapse">Code</button>
+              <span class="test-duration slow">677 ms</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small">request(app)<br>  .post(<span class="hljs-string">'/mail'</span>)<br>  .send({ email: <span class="hljs-string">''</span>, message: <span class="hljs-string">'hello from route test'</span> })<br>  .expect(<span class="hljs-number">200</span>, done);</code></pre>
+          </div>
+          <!-- Test Error Stack -->
+        </div>            <div id="4fefe860-5184-47fb-b18a-0f5f7107eb7d" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              POST /mail without message respond status 500
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#4fefe860-5184-47fb-b18a-0f5f7107eb7d > .test-code.collapse">Code</button>
+              <span class="test-duration fast">7 ms</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small">request(app)<br>  .post(<span class="hljs-string">'/mail'</span>)<br>  .send({ email: <span class="hljs-string">''</span>, message: <span class="hljs-string">''</span> })<br>  .expect(<span class="hljs-number">500</span>, done);</code></pre>
+          </div>
+          <!-- Test Error Stack -->
+        </div>        </div>
+              </div>
+            </div>
+        
+        
+          </div>
+        </section>
+        
+          </div>
+        </section>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>Report generated by <a href="http://adamgruber.github.io/mochawesome/" target="_blank">mochawesome</a>.<br>Designed and built by <a href="https://github.com/adamgruber" target="_blank">adamgruber</a>. &copy;2016.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/vendor.js"></script>
+    <script src="js/mochawesome.js"></script>
+  </body>
+</html>

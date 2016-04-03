@@ -11,7 +11,8 @@ router.get('/api/welcome', function(req, res, next) {
               {text:'Mocha Server Unit Test - Supertest Route Test'},
               {text:'Istanbul Coverage Instrumented'},
               {text:'Selenium-WebDriver End To End Browser Test'},
-              {text:'Reports : Mochawesome - Istanbul - Saucelabs'}
+              {text:'Reports : Mochawesome - Istanbul - Saucelabs'},
+              {text:'Send Me a mail with md-mailgun'}
             ]);
 });
 

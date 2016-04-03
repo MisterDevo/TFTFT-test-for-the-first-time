@@ -1,10 +1,6 @@
 var assert = require('assert');
 
-var request = require('supertest');
-
-
 var users = require('../../routes/users');
-
 
 describe('TFTFT Unit Test', function() {
 
@@ -13,6 +9,7 @@ describe('TFTFT Unit Test', function() {
     it('should return string by calling testFunc', function () {
       assert.equal(users.testFunc(), "TFTFT");
     });
+    
   });
 
 });

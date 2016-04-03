@@ -3,8 +3,8 @@ define(['angular-route',
         'angular-animate',
         'angular-bootstrap',
         'controllers/appControllers',
-        'services/welcomeService',
-        'directives/welcomeDirective'
+        'services/appServices',
+        'directives/appDirectives'
   ], function() {
         return angular.module('TFTFT', ['ngRoute',
                                         'ngResource',
@@ -20,9 +20,6 @@ define(['angular-route',
                     .when('/', {
                       templateUrl: '../welcome.html',
                       controller: 'welcomeController'
-                    })
-                    .when('/mochawesome', {
-                      templateUrl: '../mochawesome.html'
                     })
                     .when('/mochawesome-unit', {
                       templateUrl: '../mochawesome-unit.html'
