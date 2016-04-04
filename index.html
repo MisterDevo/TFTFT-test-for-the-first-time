@@ -21,15 +21,130 @@
     <section class="main-content">
 
       <h3>Test First Test First Test</h3>
-      <a href="https://github.com/MisterDevo/TFTFT">See below how it simply :
-        <span class="rw-words-1">
-          <span> Works!</span>
-          <span> Installs!</span>
-          <span> Tests!</span>
-          <span> Ship!</span>
-          <span> Deploys!</span>
-        </span>
-      </a>
+      <div class="flashy-text">
+          See below how it simply :
+          <span class="rw-words-1">
+            <span> Works!</span>
+            <span> Installs!</span>
+            <span> Tests!</span>
+            <span> Ship!</span>
+            <span> Deploys!</span>
+          </span>
+      </div>
+      <!--  thanks to showdownjs -->
+      <div><p><em>Run with NodeJs v4 or v5</em>  </p>
+
+        <p>Download it ! or Clone it ! or Fork it ! or ... <br>
+        Then Install it, Start it, Test it, Browse it, Containerize it ...</p>
+
+        <h5 id="tftftexpressjstftftangularjs">TFTFT ExpressJs - TFTFT AngularJs :</h5>
+
+        <h7 id="npminstall"><code>npm install</code></h7>
+
+        <ul>
+        <li><strong>ExpressJs</strong> dependencies : <em>body-parser - cookie-parser - debug - express - jade - morgan - serve-favicon</em></li>
+
+        <li><strong>Bower</strong> dependencies : <em>bower - bower-requirejs</em>
+
+
+        <ul>
+        <li><strong><code>bower install</code></strong> is called in <code>npm postinstall</code>  <strong>AngularJs - RequireJs - BootstrapCss</strong></li>
+
+        <li><strong><code>bower-requirejs</code></strong> is called in <code>bower postinstall</code> (<em>see .bowerrc</em>) to generate main requirejs file</li></ul>
+        </li>
+
+        <li><em><strong>md-mailgun</strong> : my dependency to send me a mail with mailgun</em></li>
+        </ul>
+
+        <h7 id="npmstart"><code>npm start</code></h7>
+
+        <p>Start <strong>ExpressJs</strong> server and listen to <code>http://localhost:3000</code> to serve api and static files.</p>
+
+        <h5 id="tftfttest">TFTFT Test :</h5>
+
+        <h7 id="npmtest"><code>npm test</code></h7>
+
+        <p><em>Mocha runner with config (<code>test/**/*.js</code>) and Istanbul auto-instrumented coverage/report</em></p>
+
+        <ul>
+        <li><p>TFTFT Unit Test : <strong>mocha</strong></p></li>
+
+        <li><p>TFTFT Route Test : <strong>supertest</strong></p></li>
+
+        <li><p>TFTFT Coverage Test : <strong>istanbul</strong></p></li>
+
+        <li><p>TFTFT Specification Test : <strong>selenium-webdriver</strong>  in folder 'test/spec/'  </p></li>
+
+        <li><p><em>Note for Specification Test : <br>
+        <strong>Selenium Server</strong> : Local or Remote ? ... Up to Developer ! <br>
+        Default to Remote for the needs of this repo : <strong>saucelabs</strong> instrumented in tests with <strong>TravisCI</strong> configuration.</em>  </p>
+
+        <p><em>For local or remote : <br>
+        <strong>In <code>test/spec/test-wdjs-spec.js</code> change <code>var isLocalSeleniumServer = false;</code></strong></em></p>
+
+        <ul>
+        <li><p><em><strong>Local Selenium Server :</strong></em>  </p>
+
+        <ul>
+        <li><em>Change config with :</em>  </li></ul>
+
+        <pre><code> var option_local = {
+                 server: 'http://127.0.0.1:4444/wd/hub',
+                 desiredCapabilities: { browserName: 'firefox' },
+                 baseUrl:'http://localhost:3000'
+         };</code></pre>
+
+        <ul>
+        <li><em>Start a local selenium server</em>  </li></ul>
+
+        <pre><code>/*Example with selenium-standalone (not include in this package)*/
+        npm install selenium-standalone;
+        ./node_modules/.bin/selenium-standalone install;
+        ./node_modules/.bin/selenium-standalone start;</code></pre>
+
+        <p></p></li>
+
+        <li><p><em><strong>Remote Selenium Server with SauceLabs :</strong></em>  </p>
+
+        <p><em>For Travis : <br>
+        <strong>In <code>test/spec/test-wdjs-spec.js</code> change <code>var travis = true;</code></strong></em></p>
+
+        <ul>
+        <li><em><strong>With Travis environnement</strong> <code>var travis = true;</code> (default) :</em> <br>
+        <em>Config in <strong><code>test/spec/option-travis-sauce.js</code></strong> :</em>  </li></ul>
+
+        <pre><code>SAUCE_USERNAME=[secure] and SAUCE_ACCESS_KEY=[secure] must be set in Travis env variable
+        TRAVIS_JOB_NUMBER, TRAVIS_BUILD_NUMBER are automatically set by Travis
+        _BROWSER, _PLATFORM, _VERSION are define in .travis.yml matrix</code></pre>
+
+        <ul>
+        <li><em><strong>Without Travis environnement</strong> <code>var travis = false;</code> :</em> <br>
+        <em>Config in <strong><code>test/spec/option-sauce.js</code></strong> :</em></li></ul>
+
+        <pre><code>In local environnement :
+        $ export SAUCE_USERNAME=[secure]
+        $ export SAUCE_ACCESS_KEY=[secure]</code></pre>
+
+        <p><em>Change baseUrl to address app in a cloud developpement environnement <br>
+        For this repo, <strong><code>baseUrl:'https://tftft-misterdevo.c9users.io'</code></strong> on Cloud9</em>  </p></li></ul></li>
+        </ul>
+
+        <h5 id="tftftresources">TFTFT Resources</h5>
+
+        <p><em>For app example  : Coverage reports + saucelabs matrix + test reports with mochawesome</em></p>
+
+        <h7 id="npmrunappresources"><code>npm run app-resources</code></h7>
+
+        <p><strong>Istanbul</strong> auto-instrumented coverage/report - <strong>Mocha</strong> runner with default config (<code>test/unit/*.js test/route/*.js</code>) for :</p>
+
+        <ul>
+        <li>TFTFT Test reporter <strong>mochawesome</strong> <em>('one by one' in <code>public/report</code>)</em></li>
+
+        <li>TFTFT Istanbul Coverage Test Report in <code>public/cov</code></li>
+
+        <li>TFTFT Saucelabs matrix : download the last remote tests badge to <code>public/images/misterdevo.svg</code></li>
+        </ul>
+      </div>
       <footer class="site-footer">
         <span class="site-footer-owner">
         	<a href="https://github.com/MisterDevo/TFTFT">TFTFT</a> is maintained by <a href="http://misterdevo.github.io/">MisterDevo</a>.
