@@ -8,10 +8,10 @@ router.get('/', function(req, res, next) {
 
 router.get('/api/welcome', function(req, res, next) {
   res.json( [ {text:'Express Server App - Angular Client App'},
+              {text:'Istanbul Coverage Instrumented'},  
               {text:'Mocha Server Unit Test - Supertest Route Test'},
-              {text:'Istanbul Coverage Instrumented'},
               {text:'Selenium-WebDriver End To End Browser Test'},
-              {text:'Reports : Mochawesome - Istanbul - Saucelabs'},
+              {text:'Reports : Mocha doc reporter - Istanbul html reporter - Saucelabs matrix'},
               {text:'Send Me a mail with md-mailgun'}
             ]);
 });
