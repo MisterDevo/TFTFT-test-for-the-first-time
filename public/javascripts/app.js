@@ -22,13 +22,13 @@ define(['angular-route',
                       controller: 'welcomeController'
                     })
                     .when('/mochawesome-unit', {
-                      templateUrl: '../mochawesome-unit.html'
+                      templateUrl: '../report/test-unit.html'
                     })
                     .when('/mochawesome-route', {
-                      templateUrl: '../mochawesome-route.html'
+                      templateUrl: '../report/test-route.html'
                     })
                     .when('/mochawesome-spec', {
-                      templateUrl: '../mochawesome-spec.html'
+                      templateUrl: '../report/test-spec.html'
                     })
                     .when('/coverage', {
                       templateUrl: '../coverage.html'
