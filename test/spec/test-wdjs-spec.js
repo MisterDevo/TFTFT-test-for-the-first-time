@@ -3,7 +3,7 @@ var test = require('selenium-webdriver/testing'),
     webdriver = require('selenium-webdriver');
 
 // change this line to run locally
-var isLocalSeleniumServer = false;
+var isLocalSeleniumServer = true;
 var travis = true;
 
 var option_local = {
@@ -86,11 +86,14 @@ test.describe('TFTFT End To End tests', function() {
             });
 
             test.it('should wait for loading mocha-unit view', function () {
-                client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-unit-link')), 10000).click();
-                client.wait(webdriver.until.elementLocated(webdriver.By.css('section')), 10000)
-                  .getAttribute('class')
-                  .then(function(attr){
-                      assert.equal(attr, 'suite ng-scope');
+                client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-unit-link')), 10000)
+                  .click()
+                  .then( function() {
+                    client.wait(webdriver.until.elementLocated(webdriver.By.css('section')), 10000)
+                    .getAttribute('class')
+                    .then(function(attr){
+                        assert.equal(attr, 'suite ng-scope');
+                    });
                   });
             });
 
@@ -107,11 +110,14 @@ test.describe('TFTFT End To End tests', function() {
             });
 
             test.it('should wait for loading mocha-route view', function () {
-                client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-route-link')), 10000).click();
-                client.wait(webdriver.until.elementLocated(webdriver.By.css('section')), 10000)
-                  .getAttribute('class')
-                  .then(function(attr){
-                      assert.equal(attr, 'suite ng-scope');
+                client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-route-link')), 10000)
+                  .click()
+                  .then( function() {
+                    client.wait(webdriver.until.elementLocated(webdriver.By.css('section')), 10000)
+                      .getAttribute('class')
+                      .then(function(attr){
+                          assert.equal(attr, 'suite ng-scope');
+                      });
                   });
             });
 
@@ -128,11 +134,14 @@ test.describe('TFTFT End To End tests', function() {
             });
 
             test.it('should wait for loading mocha-spec view', function () {
-                client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-spec-link')), 10000).click();
-                client.wait(webdriver.until.elementLocated(webdriver.By.css('section')), 10000)
-                  .getAttribute('class')
-                  .then(function(attr){
-                      assert.equal(attr, 'suite ng-scope');
+                client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-spec-link')), 10000)
+                  .click()
+                  .then( function() {
+                    client.wait(webdriver.until.elementLocated(webdriver.By.css('section')), 10000)
+                      .getAttribute('class')
+                      .then(function(attr){
+                          assert.equal(attr, 'suite ng-scope');
+                      });
                   });
             });
 
