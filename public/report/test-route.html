@@ -4,27 +4,27 @@
         <section class="suite">
           <h1>routes for static files</h1>
           <dl>
-[0mGET /report/test-unit.html [32m200 [0m6.475 ms - 378[0m
+[0mGET /report/test-unit.html [32m200 [0m16.879 ms - 378[0m
             <dt>Unit test mocha html report</dt>
             <dd><pre><code>request(app)
   .get('/report/test-unit.html')
   .expect(200, done);</code></pre></dd>
-[0mGET /report/test-route.html [32m200 [0m1.515 ms - 401[0m
+[0mGET /report/test-route.html [32m200 [0m4.586 ms - 402[0m
             <dt>Route test mocha html report</dt>
             <dd><pre><code>request(app)
   .get('/report/test-route.html')
   .expect(200, done);</code></pre></dd>
-[0mGET /report/test-spec.html [32m200 [0m1.246 ms - 8106[0m
+[0mGET /report/test-spec.html [32m200 [0m3.051 ms - 136[0m
             <dt>End to End test mocha html report</dt>
             <dd><pre><code>request(app)
   .get('/report/test-spec.html')
   .expect(200, done);</code></pre></dd>
-[0mGET /cov/lcov-report/index.html [32m200 [0m1.031 ms - 4163[0m
+[0mGET /cov/lcov-report/index.html [32m200 [0m2.428 ms - 4163[0m
             <dt>Coverage test istanbul html report</dt>
             <dd><pre><code>request(app)
   .get('/cov/lcov-report/index.html')
   .expect(200, done);</code></pre></dd>
-[0mGET /images/misterdevo.svg [32m200 [0m1.275 ms - 42194[0m
+[0mGET /images/misterdevo.svg [32m200 [0m3.394 ms - 42194[0m
             <dt>End to End saucelabs matrix image</dt>
             <dd><pre><code>request(app)
   .get('/images/misterdevo.svg')
@@ -34,14 +34,14 @@
         <section class="suite">
           <h1>routes/index</h1>
           <dl>
-[0mGET / [32m200 [0m358.681 ms - 2660[0m
+[0mGET / [32m200 [0m1037.648 ms - 2660[0m
             <dt>GET / respond with body</dt>
             <dd><pre><code>request(app)
   .get('/')
   .expect('Content-Type', /html/)
   .expect(200)
   .expect(/&lt;body&gt;/, done);</code></pre></dd>
-[0mGET /api/welcome [32m200 [0m1.536 ms - 303[0m
+[0mGET /api/welcome [32m200 [0m3.043 ms - 331[0m
             <dt>GET /api/welcome respond with json welcome messages</dt>
             <dd><pre><code>request(app)
   .get('/api/welcome')
@@ -53,7 +53,7 @@
         <section class="suite">
           <h1>routes/users</h1>
           <dl>
-[0mGET /users [32m200 [0m0.847 ms - 23[0m
+[0mGET /users [32m200 [0m2.093 ms - 23[0m
             <dt>GET /users respond with html</dt>
             <dd><pre><code>request(app)
   .get('/users')
@@ -67,7 +67,7 @@
           <dl>
 statusCode:  200
 headers:  { server: 'nginx',
-  date: 'Thu, 07 Apr 2016 11:15:15 GMT',
+  date: 'Thu, 07 Apr 2016 16:43:57 GMT',
   'content-type': 'application/json',
   'content-length': '138',
   connection: 'close',
@@ -77,15 +77,15 @@ headers:  { server: 'nginx',
   'access-control-allow-methods': 'GET, POST, PUT, DELETE, OPTIONS',
   'access-control-allow-headers': 'Content-Type, x-requested-with' }
 {
-  "id": "<20160407111515.30232.87725.9132E266@sandboxcf2d4ddabec04387b927fe6352358ed5.mailgun.org>",
+  "id": "<20160407164357.12638.51164.C2C356F0@sandboxcf2d4ddabec04387b927fe6352358ed5.mailgun.org>",
   "message": "Queued. Thank you."
-}[0mPOST /mail [32m200 [0m573.169 ms - 37[0m
+}[0mPOST /mail [32m200 [0m676.837 ms - 37[0m
             <dt>POST /mail with message respond status 200</dt>
             <dd><pre><code>request(app)
   .post('/mail')
   .send({ email: '', message: 'hello from route test' })
   .expect(200, done);</code></pre></dd>
-[0mPOST /mail [31m500 [0m1.261 ms - -[0m
+[0mPOST /mail [31m500 [0m2.824 ms - -[0m
             <dt>POST /mail without message respond status 500</dt>
             <dd><pre><code>request(app)
   .post('/mail')

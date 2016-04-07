@@ -51,13 +51,15 @@ client.findElement(webdriver.By.className('nav-second-level'))
       assert.equal(attr,  options.baseUrl + '/#mocha-unit');
   });</code></pre></dd>
                 <dt>should wait for loading mocha-unit view</dt>
-                <dd><pre><code>// client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-unit-link')), 10000).click();
-client.findElement(webdriver.By.id('mocha-unit-link')).click();
-client.wait(webdriver.until.elementLocated(webdriver.By.css('[ng-view]')), 10000)
-  .findElement(webdriver.By.css('section'))
-  .getAttribute('class')
-  .then(function(attr){
-      assert.equal(attr, 'suite ng-scope');
+                <dd><pre><code>client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-unit-link')), 10000)
+  .click()
+  .then( function() {
+    repTestedElem = client.wait(webdriver.until.elementLocated(webdriver.By.css('section')), 10000);
+    repTestedElem
+      .getAttribute('class')
+      .then(function(attr){
+          assert.equal(attr, 'suite ng-scope');
+      });
   });</code></pre></dd>
               </dl>
             </section>
@@ -71,14 +73,16 @@ client.wait(webdriver.until.elementLocated(webdriver.By.css('[ng-view]')), 10000
       assert.equal(attr,  options.baseUrl + '/#mocha-route');
   });</code></pre></dd>
                 <dt>should wait for loading mocha-route view</dt>
-                <dd><pre><code>// client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-route-link')), 10000).click();
-client.findElement(webdriver.By.id('mocha-route-link')).click();
-client.wait(webdriver.until.elementLocated(webdriver.By.css('[ng-view]')), 10000)
-  .findElement(webdriver.By.css('section'))
-  .getAttribute('class')
-  .then(function(attr){
-      assert.equal(attr, 'suite ng-scope');
-  });</code></pre></dd>
+                <dd><pre><code>client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-route-link')), 10000).click();
+client.wait(webdriver.until.stalenessOf(repTestedElem), 10000)
+    .then(function(el){
+      repTestedElem = client.findElement(webdriver.By.css('section'));
+      repTestedElem
+        .getAttribute('class')
+        .then(function(attr){
+            assert.equal(attr, 'suite ng-scope');
+        });
+    });</code></pre></dd>
               </dl>
             </section>
             <section class="suite">
@@ -86,19 +90,20 @@ client.wait(webdriver.until.elementLocated(webdriver.By.css('[ng-view]')), 10000
               <dl>
                 <dt>should display correct mocha-spec link</dt>
                 <dd><pre><code>client.findElement(webdriver.By.id('mocha-spec-link'))
-  .getAttribute('href')
-  .then(function(attr){
-      assert.equal(attr,  options.baseUrl + '/#mocha-spec');
-  });</code></pre></dd>
+    .getAttribute('href')
+    .then(function(attr){
+        assert.equal(attr,  options.baseUrl + '/#mocha-spec');
+    });</code></pre></dd>
                 <dt>should wait for loading mocha-spec view</dt>
-                <dd><pre><code>// client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-spec-link')), 10000).click();
-client.findElement(webdriver.By.id('mocha-spec-link')).click();
-client.wait(webdriver.until.elementLocated(webdriver.By.css('[ng-view]')), 10000)
-  .findElement(webdriver.By.css('section'))
-  .getAttribute('class')
-  .then(function(attr){
-      assert.equal(attr, 'suite ng-scope');
-  });</code></pre></dd>
+                <dd><pre><code>client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-spec-link')), 10000).click();
+client.wait(webdriver.until.stalenessOf(repTestedElem), 10000)
+    .then(function(el){
+      client.findElement(webdriver.By.css('section'))
+        .getAttribute('class')
+        .then(function(attr){
+            assert.equal(attr, 'suite ng-scope');
+        });
+    });</code></pre></dd>
               </dl>
             </section>
           </dl>
