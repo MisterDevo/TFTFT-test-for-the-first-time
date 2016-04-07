@@ -85,10 +85,17 @@ test.describe('TFTFT End To End tests', function() {
                   });
             });
 
-            test.it('should wait for loading mocha-unit view', function () {
+            test.it('should wait for loading angular view', function () {
                 client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-unit-link')), 10000).click();
                 client.wait(webdriver.until.elementLocated(webdriver.By.css('[ng-view]')), 10000)
-                  .findElement(webdriver.By.css('section'))
+                  .getAttribute('class')
+                  .then(function(attr){
+                      assert.equal(attr, 'ng-scope');
+                  });
+            });
+
+            test.it('should wait for loading mocha-unit view', function () {
+                client.wait(webdriver.until.elementLocated(webdriver.By.css('section')), 10000)
                   .getAttribute('class')
                   .then(function(attr){
                       assert.equal(attr, 'suite ng-scope');
@@ -107,10 +114,17 @@ test.describe('TFTFT End To End tests', function() {
                   });
             });
 
-            test.it('should wait for loading mocha-route view', function () {
+            test.it('should wait for loading angular view', function () {
                 client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-route-link')), 10000).click();
                 client.wait(webdriver.until.elementLocated(webdriver.By.css('[ng-view]')), 10000)
-                  .findElement(webdriver.By.css('section'))
+                  .getAttribute('class')
+                  .then(function(attr){
+                      assert.equal(attr, 'ng-scope');
+                  });
+            });
+
+            test.it('should wait for loading mocha-route view', function () {
+                client.wait(webdriver.until.elementLocated(webdriver.By.css('section')), 10000)
                   .getAttribute('class')
                   .then(function(attr){
                       assert.equal(attr, 'suite ng-scope');
@@ -129,10 +143,17 @@ test.describe('TFTFT End To End tests', function() {
                   });
             });
 
-            test.it('should wait for loading mocha-spec view', function () {
+            test.it('should wait for loading angular view', function () {
                 client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-spec-link')), 10000).click();
                 client.wait(webdriver.until.elementLocated(webdriver.By.css('[ng-view]')), 10000)
-                  .findElement(webdriver.By.css('section'))
+                  .getAttribute('class')
+                  .then(function(attr){
+                      assert.equal(attr, 'ng-scope');
+                  });
+            });
+
+            test.it('should wait for loading mocha-spec view', function () {
+                client.wait(webdriver.until.elementLocated(webdriver.By.css('section')), 10000)
                   .getAttribute('class')
                   .then(function(attr){
                       assert.equal(attr, 'suite ng-scope');
