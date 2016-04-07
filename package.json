@@ -1,11 +1,11 @@
 {
   "name": "tftft",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "TFTFT : Test For The First Time",
   "scripts": {
-    "test-unit": "_mocha test/unit/*.js --reporter mochawesome --reporter-options reportDir=public/report,reportName=test-unit",
-    "test-route": "_mocha test/route/*.js --reporter mochawesome --reporter-options reportDir=public/report,reportName=test-route",
-    "test-e2e": "_mocha test/spec/*.js --reporter mochawesome --reporter-options reportDir=public/report,reportName=test-spec",
+    "test-unit": "_mocha test/unit/*.js --reporter doc > public/report/test-unit.html",
+    "test-route": "_mocha test/route/*.js --reporter doc > public/report/test-route.html",
+    "test-e2e": "_mocha test/spec/*.js --reporter doc > public/report/test-spec.html",
     "test-report": "npm run test-unit && npm run test-route && npm run test-e2e",
     "coverage": "istanbul cover _mocha --dir public/cov -- test/unit/*.js test/route/*.js",
     "saucelabs-matrix": "curl -o public/images/misterdevo.svg https://saucelabs.com/browser-matrix/misterdevo.svg",
@@ -42,7 +42,6 @@
   "devDependencies": {
     "istanbul": "^0.4.2",
     "mocha": "^2.3.4",
-    "mochawesome": "^1.3.1",
     "saucelabs": "^1.1.0",
     "selenium-webdriver": "^2.52.0",
     "supertest": "^1.1.0"
