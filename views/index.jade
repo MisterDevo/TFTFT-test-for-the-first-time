@@ -29,20 +29,20 @@ block content
         .sidebar-nav.navbar-collapse.collapse(uib-collapse='sideCollapsed')
           ul#side-menu.nav
             li
-              a(id='mochawesome-link', href, ng-click="mochaCollapsed = !mochaCollapsed")
+              a(id='mocha-link', href, ng-click="mochaCollapsed = !mochaCollapsed")
                 i.glyphicon.glyphicon-link
                 |  Mocha
               ul.nav.nav-second-level(uib-collapse='mochaCollapsed')
                 li
-                  a(id='mochawesome-unit-link' href='#mochawesome-unit')
+                  a(id='mocha-unit-link' href='#mocha-unit')
                     i.glyphicon.glyphicon-link
                     |  Unit Test
                 li
-                  a(id='mochawesome-route-link' href='#mochawesome-route')
+                  a(id='mocha-route-link' href='#mocha-route')
                     i.glyphicon.glyphicon-link
                     |  Route Test
                 li
-                  a(id='mochawesome-spec-link' href='#mochawesome-spec')
+                  a(id='mocha-spec-link' href='#mocha-spec')
                     i.glyphicon.glyphicon-link
                     |  End To End Test
             li
@@ -63,6 +63,6 @@ block content
           a(href='https://github.com/MisterDevo/TFTFT')
             i.fa.fa-github-alt
 
-  #page-wrapper.txtstyle
+  #page-wrapper
     .row
       div(ng-view='')

@@ -28,7 +28,7 @@ test.describe('TFTFT End To End tests', function() {
     });
 
 
-    test.describe('Verif on first page', function() {
+    test.describe('Welcome page', function() {
 
         test.it('should have the right title', function () {
             client.get(options.baseUrl);
@@ -36,15 +36,13 @@ test.describe('TFTFT End To End tests', function() {
               .then(function(title){
                   assert.equal(title, 'TFTFT - Test For The First Time');
               });
-            // client.wait(webdriver.until.elementIsVisible(client.findElement(webdriver.By.id('project-link'))), 10000)
-            // .click();
         });
 
         test.it('should wait for loading first angular view', function () {
             client.wait(webdriver.until.elementLocated(webdriver.By.id('welcome-view')), 10000)
             .getAttribute('class')
             .then(function(attr){
-                assert.equal(attr, 'ng-scope');
+                assert.equal(attr, 'txtstyle ng-scope');
             });
         });
 
@@ -53,15 +51,15 @@ test.describe('TFTFT End To End tests', function() {
 
     test.describe('Mocha menu', function() {
 
-          test.it('should be correct mocha submenu slide by ng-click', function () {
-              client.findElement(webdriver.By.id('mochawesome-link'))
+          test.it('should slide with ng-click condition', function () {
+              client.findElement(webdriver.By.id('mocha-link'))
                 .getAttribute('ng-click')
                 .then(function(attr){
                     assert(attr.length);
                 });
           });
 
-          test.it('should be displayed after toggle if necessary  and after slide click', function () {
+          test.it('should display submenu on click after toggle if necessary (small device)', function () {
               client.findElement(webdriver.By.className('navbar-toggle'))
                 .isDisplayed()
                 .then(function(displayed){
@@ -69,8 +67,7 @@ test.describe('TFTFT End To End tests', function() {
                       client.findElement(webdriver.By.className('navbar-toggle')).click();
                     }
                 });
-              client.findElement(webdriver.By.id('mochawesome-link')).click();
-              //client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome')), 10000)
+              client.findElement(webdriver.By.id('mocha-link')).click();
               client.findElement(webdriver.By.className('nav-second-level'))
                 .isDisplayed()
                 .then(function(displayed){
@@ -78,119 +75,109 @@ test.describe('TFTFT End To End tests', function() {
                 });
            });
 
+        var repTestedElem;
+        test.describe('Unit Test menu', function() {
 
-        test.describe('Mochawesome-unit view', function() {
-
-            test.it('should display correct mochawesome-unit link', function () {
-                client.findElement(webdriver.By.id('mochawesome-unit-link'))
+            test.it('should display correct mocha-unit link', function () {
+                client.findElement(webdriver.By.id('mocha-unit-link'))
                   .getAttribute('href')
                   .then(function(attr){
-                      assert.equal(attr,  options.baseUrl + '/#mochawesome-unit');
+                      assert.equal(attr,  options.baseUrl + '/#mocha-unit');
                   });
             });
 
-            test.it('should be correct source iframe after click', function () {
-                //client.findElement(webdriver.By.id('mochawesome-unit-link')).click();
-                client.wait(webdriver.until.elementLocated(webdriver.By.id('mochawesome-unit-link')), 10000).click();
-                client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome-unit')), 10000)
-                  .getAttribute('src')
-                  .then(function(attr){
-                      assert.equal(attr,  options.baseUrl + '/report/test-unit.html');
+            test.it('should wait for loading mocha-unit view', function () {
+                client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-unit-link')), 10000)
+                  .click()
+                  .then( function() {
+                    repTestedElem = client.wait(webdriver.until.elementLocated(webdriver.By.css('section')), 10000);
+                    repTestedElem
+                      .getAttribute('class')
+                      .then(function(attr){
+                          assert.equal(attr, 'suite ng-scope');
+                      });
                   });
-             });
-
-            test.it('should be correct page loaded', function () {
-                client.switchTo().frame(client.findElement(webdriver.By.id('frame-mochawesome-unit')));
-                client.findElement(webdriver.By.className('report-title'))
-                    .getInnerHtml()
-                    .then(function(html){
-                        assert(html.length);
-                    });
-            });
-
-            test.after(function(){
-              client.switchTo().defaultContent();
             });
 
         });
 
+        test.describe('Route Test menu', function() {
 
-        test.describe('Mochawesome-route view', function() {
-
-            test.it('should display correct mochawesome-route link', function () {
-                client.findElement(webdriver.By.id('mochawesome-route-link'))
-                  .getAttribute('href')
+            test.it('should display correct mocha-route link', function () {
+                var btn = client.findElement(webdriver.By.id('mocha-route-link'));
+                btn.getAttribute('href')
                   .then(function(attr){
-                      assert.equal(attr,  options.baseUrl + '/#mochawesome-route');
+                      assert.equal(attr,  options.baseUrl + '/#mocha-route');
+                      btn.click();
                   });
             });
 
-            test.it('should be correct source iframe after click', function () {
-              //client.findElement(webdriver.By.id('mochawesome-route-link')).click();
-                client.wait(webdriver.until.elementLocated(webdriver.By.id('mochawesome-route-link')), 10000).click();
-                client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome-route')), 10000)
-                  .getAttribute('src')
-                  .then(function(attr){
-                      assert.equal(attr,  options.baseUrl + '/report/test-route.html');
-                  });
-             });
+            test.it('should wait for loading mocha-route view', function () {
+              //client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-route-link')), 10000).click();
 
-             test.it('should be correct page loaded', function () {
-                client.switchTo().frame(client.findElement(webdriver.By.id('frame-mochawesome-route')));
-                client.findElement(webdriver.By.className('report-title'))
-                    .getInnerHtml()
-                    .then(function(html){
-                        assert(html.length);
+              if(options.desiredCapabilities.browserName === 'android') {
+                  //must find a solution to pass saucelabs android test
+                  client.findElement(webdriver.By.css('section'))
+                    .getAttribute('class')
+                    .then(function(attr){
+                        assert.equal(attr, 'suite ng-scope');
                     });
-              });
+              } else {
+                  client.wait(webdriver.until.stalenessOf(repTestedElem), 10000)
+                      .then(function(el){
+                        repTestedElem = client.findElement(webdriver.By.css('section'));
+                        repTestedElem
+                          .getAttribute('class')
+                          .then(function(attr){
+                              assert.equal(attr, 'suite ng-scope');
+                          });
+                      });
+              }
 
-              test.after(function(){
-                client.switchTo().defaultContent();
-              });
+
+
+            });
 
         });
 
+        test.describe('End to End Test menu', function() {
 
-        test.describe('Mochawesome-spec view', function() {
-
-            test.it('should display correct mochawesome-spec link', function () {
-                client.findElement(webdriver.By.id('mochawesome-spec-link'))
-                  .getAttribute('href')
+            test.it('should display correct mocha-spec link', function () {
+                var btn = client.findElement(webdriver.By.id('mocha-spec-link'));
+                btn.getAttribute('href')
                   .then(function(attr){
-                      assert.equal(attr,  options.baseUrl + '/#mochawesome-spec');
+                      assert.equal(attr,  options.baseUrl + '/#mocha-spec');
+                      btn.click();
                   });
             });
 
-            test.it('should be correct source iframe after click', function () {
-              //client.findElement(webdriver.By.id('mochawesome-route-link')).click();
-                client.wait(webdriver.until.elementLocated(webdriver.By.id('mochawesome-spec-link')), 10000).click();
-                client.wait(webdriver.until.elementLocated(webdriver.By.id('frame-mochawesome-spec')), 10000)
-                  .getAttribute('src')
-                  .then(function(attr){
-                      assert.equal(attr,  options.baseUrl + '/report/test-spec.html');
-                  });
-             });
-
-             test.it('should be correct page loaded', function () {
-                client.switchTo().frame(client.findElement(webdriver.By.id('frame-mochawesome-spec')));
-                client.findElement(webdriver.By.className('report-title'))
-                    .getInnerHtml()
-                    .then(function(html){
-                        assert(html.length);
-                    });
-              });
-
-              test.after(function(){
-                client.switchTo().defaultContent();
-              });
+            test.it('should wait for loading mocha-spec view', function () {
+                //client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-spec-link')), 10000).click();
+                if(options.desiredCapabilities.browserName === 'android') {
+                    //must find a solution to pass saucelabs android test
+                    client.findElement(webdriver.By.css('section'))
+                      .getAttribute('class')
+                      .then(function(attr){
+                          assert.equal(attr, 'suite ng-scope');
+                      });
+                } else {
+                    client.wait(webdriver.until.stalenessOf(repTestedElem), 10000)
+                        .then(function(el){
+                          client.findElement(webdriver.By.css('section'))
+                            .getAttribute('class')
+                            .then(function(attr){
+                                assert.equal(attr, 'suite ng-scope');
+                            });
+                        });
+                }
+            });
 
         });
-
 
     });
 
 
-    test.describe('Coverage view', function() {
+    test.describe('Istanbul menu', function() {
 
         test.it('should display correct coverage link', function () {
             client.findElement(webdriver.By.id('coverage-link'))
@@ -225,7 +212,7 @@ test.describe('TFTFT End To End tests', function() {
     });
 
 
-    test.describe('Saucelabs view', function() {
+    test.describe('Saucelabs menu', function() {
 
         test.it('should display correct saucelabs link', function () {
             client.findElement(webdriver.By.id('saucelabs-link'))
@@ -245,6 +232,7 @@ test.describe('TFTFT End To End tests', function() {
          });
 
     });
+
 
     test.describe('Mail Me feature', function() {
 
