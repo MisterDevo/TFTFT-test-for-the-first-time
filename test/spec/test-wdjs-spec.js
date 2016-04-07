@@ -75,6 +75,7 @@ test.describe('TFTFT End To End tests', function() {
                 });
            });
 
+        var repTestedElem;
         test.describe('Unit Test menu', function() {
 
             test.it('should display correct mocha-unit link', function () {
@@ -89,11 +90,12 @@ test.describe('TFTFT End To End tests', function() {
                 client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-unit-link')), 10000)
                   .click()
                   .then( function() {
-                    client.wait(webdriver.until.elementLocated(webdriver.By.css('section')), 10000)
-                    .getAttribute('class')
-                    .then(function(attr){
-                        assert.equal(attr, 'suite ng-scope');
-                    });
+                    repTestedElem = client.wait(webdriver.until.elementLocated(webdriver.By.css('section')), 10000);
+                    repTestedElem
+                      .getAttribute('class')
+                      .then(function(attr){
+                          assert.equal(attr, 'suite ng-scope');
+                      });
                   });
             });
 
@@ -110,15 +112,19 @@ test.describe('TFTFT End To End tests', function() {
             });
 
             test.it('should wait for loading mocha-route view', function () {
-                client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-route-link')), 10000)
-                  .click()
-                  .then( function() {
-                    client.wait(webdriver.until.elementLocated(webdriver.By.css('section')), 10000)
-                      .getAttribute('class')
-                      .then(function(attr){
-                          assert.equal(attr, 'suite ng-scope');
-                      });
-                  });
+              client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-route-link')), 10000)
+                .click()
+                .then( function() {
+                    client.wait(webdriver.until.stalenessOf(repTestedElem), 10000)
+                        .then(function(el){
+                          repTestedElem = client.findElement(webdriver.By.css('section'));
+                          repTestedElem
+                            .getAttribute('class')
+                            .then(function(attr){
+                                assert.equal(attr, 'suite ng-scope');
+                            });
+                        });
+                });
             });
 
         });
@@ -127,22 +133,25 @@ test.describe('TFTFT End To End tests', function() {
 
             test.it('should display correct mocha-spec link', function () {
                 client.findElement(webdriver.By.id('mocha-spec-link'))
-                  .getAttribute('href')
-                  .then(function(attr){
-                      assert.equal(attr,  options.baseUrl + '/#mocha-spec');
-                  });
+                    .getAttribute('href')
+                    .then(function(attr){
+                        assert.equal(attr,  options.baseUrl + '/#mocha-spec');
+                    });
             });
 
             test.it('should wait for loading mocha-spec view', function () {
                 client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-spec-link')), 10000)
                   .click()
                   .then( function() {
-                    client.wait(webdriver.until.elementLocated(webdriver.By.css('section')), 10000)
-                      .getAttribute('class')
-                      .then(function(attr){
-                          assert.equal(attr, 'suite ng-scope');
+                      client.wait(webdriver.until.stalenessOf(repTestedElem), 10000)
+                          .then(function(el){
+                            client.findElement(webdriver.By.css('section'))
+                              .getAttribute('class')
+                              .then(function(attr){
+                                  assert.equal(attr, 'suite ng-scope');
+                              });
+                          });
                       });
-                  });
             });
 
         });
