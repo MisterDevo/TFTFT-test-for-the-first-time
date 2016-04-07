@@ -3,7 +3,7 @@ var test = require('selenium-webdriver/testing'),
     webdriver = require('selenium-webdriver');
 
 // change this line to run locally
-var isLocalSeleniumServer = true;
+var isLocalSeleniumServer = false;
 var travis = true;
 
 var option_local = {
