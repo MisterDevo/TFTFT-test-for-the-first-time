@@ -104,15 +104,16 @@ test.describe('TFTFT End To End tests', function() {
         test.describe('Route Test menu', function() {
 
             test.it('should display correct mocha-route link', function () {
-                client.findElement(webdriver.By.id('mocha-route-link'))
-                  .getAttribute('href')
+                var btn = client.findElement(webdriver.By.id('mocha-route-link'));
+                btn.getAttribute('href')
                   .then(function(attr){
                       assert.equal(attr,  options.baseUrl + '/#mocha-route');
+                      btn.click();
                   });
             });
 
             test.it('should wait for loading mocha-route view', function () {
-              client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-route-link')), 10000).click();
+              //client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-route-link')), 10000).click();
               client.wait(webdriver.until.stalenessOf(repTestedElem), 10000)
                   .then(function(el){
                     repTestedElem = client.findElement(webdriver.By.css('section'));
@@ -130,15 +131,16 @@ test.describe('TFTFT End To End tests', function() {
         test.describe('End to End Test menu', function() {
 
             test.it('should display correct mocha-spec link', function () {
-                client.findElement(webdriver.By.id('mocha-spec-link'))
-                    .getAttribute('href')
-                    .then(function(attr){
-                        assert.equal(attr,  options.baseUrl + '/#mocha-spec');
-                    });
+                var btn = client.findElement(webdriver.By.id('mocha-spec-link'));
+                btn.getAttribute('href')
+                  .then(function(attr){
+                      assert.equal(attr,  options.baseUrl + '/#mocha-spec');
+                      btn.click();
+                  });
             });
 
             test.it('should wait for loading mocha-spec view', function () {
-                client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-spec-link')), 10000).click();
+                //client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-spec-link')), 10000).click();
                 client.wait(webdriver.until.stalenessOf(repTestedElem), 10000)
                     .then(function(el){
                       client.findElement(webdriver.By.css('section'))
