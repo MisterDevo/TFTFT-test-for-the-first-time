@@ -74,9 +74,11 @@ btn.getAttribute('href')
       btn.click();
   });</code></pre></dd>
                 <dt>should wait for loading mocha-route view</dt>
-                <dd><pre><code>//client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-route-link')), 10000).click();
+                <dd><pre><code>/*
+    must find a solution to pass saucelabs android test
+    stalenessOf is not use
+*/
 if(options.desiredCapabilities.browserName === 'android') {
-    //must find a solution to pass saucelabs android test
     client.findElement(webdriver.By.css('section'))
       .getAttribute('class')
       .then(function(attr){
@@ -106,9 +108,11 @@ btn.getAttribute('href')
       btn.click();
   });</code></pre></dd>
                 <dt>should wait for loading mocha-spec view</dt>
-                <dd><pre><code>//client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-spec-link')), 10000).click();
+                <dd><pre><code>/*
+    must find a solution to pass saucelabs android test
+    stalenessOf is not use
+*/
 if(options.desiredCapabilities.browserName === 'android') {
-    //must find a solution to pass saucelabs android test
     client.findElement(webdriver.By.css('section'))
       .getAttribute('class')
       .then(function(attr){
@@ -154,17 +158,48 @@ client.findElement(webdriver.By.className('footer'))
           </dl>
         </section>
         <section class="suite">
-          <h1>Saucelabs menu</h1>
+          <h1>Saucelabs dropdown and popup</h1>
           <dl>
-            <dt>should display correct saucelabs link</dt>
-            <dd><pre><code>client.findElement(webdriver.By.id('saucelabs-link'))
-  .getAttribute('href')
-  .then(function(attr){
-      assert.equal(attr,  options.baseUrl + '/#saucelabs');
-  });</code></pre></dd>
-            <dt>should display correct url in the view</dt>
-            <dd><pre><code>client.findElement(webdriver.By.id('saucelabs-link')).click();
-client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-img')), 10000)
+            <dt>should popup saucelabs matrix when mouse hover sl-logo if present (large device)</dt>
+            <dd><pre><code>client.findElement(webdriver.By.className('navbar-toggle'))
+            .isDisplayed()
+            .then(function(displayed){
+                if(displayed){
+                  assert(true);
+                } else {
+                  /*
+                      must find a solution to pass saucelabs internet explorer and safari test
+                      Exception on mouseMove : replace by click on logo (not necessary in this test)
+                  */
+                  if(options.desiredCapabilities.browserName === 'internet explorer'
+                                  || options.desiredCapabilities.browserName === 'safari' ) {
+                      client.findElement(webdriver.By.css('#sl-logo[popover-placement]'))
+                        .click()
+                        .then(function(){
+                          client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-mat-pp')), 3000)
+                            .getAttribute('src')
+                            .then(function(attr){
+                                assert.equal(attr,  options.baseUrl + '/images/misterdevo.svg');
+                            });
+                        });
+                  } else {
+                      new webdriver.ActionSequence(client)
+                        .mouseMove(client.findElement(webdriver.By.css('#sl-logo[popover-placement]')))
+                        .perform()
+                        .then(function(){
+                          client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-mat-pp')), 3000)
+                            .getAttribute('src')
+                            .then(function(attr){
+                                assert.equal(attr,  options.baseUrl + '/images/misterdevo.svg');
+                            });
+                        });
+                  }
+                }
+            });</code></pre></dd>
+            <dt>should display saucelabs matrix when click on sl-link present only in mocha-spec view</dt>
+            <dd><pre><code>client.findElement(webdriver.By.id('mocha-spec-link')).click();
+client.findElement(webdriver.By.id('sl-link')).click();
+client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-mat-dd')), 3000)
   .getAttribute('src')
   .then(function(attr){
       assert.equal(attr,  options.baseUrl +  '/images/misterdevo.svg');
