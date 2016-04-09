@@ -112,11 +112,12 @@ test.describe('TFTFT End To End tests', function() {
                   });
             });
 
+            //client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-route-link')), 10000).click();
             test.it('should wait for loading mocha-route view', function () {
-              //client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-route-link')), 10000).click();
+
+              //must find a solution to pass saucelabs android test :(
 
               if(options.desiredCapabilities.browserName === 'android') {
-                  //must find a solution to pass saucelabs android test
                   client.findElement(webdriver.By.css('section'))
                     .getAttribute('class')
                     .then(function(attr){
@@ -133,9 +134,6 @@ test.describe('TFTFT End To End tests', function() {
                           });
                       });
               }
-
-
-
             });
 
         });
@@ -151,25 +149,27 @@ test.describe('TFTFT End To End tests', function() {
                   });
             });
 
+            //client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-spec-link')), 10000).click();
             test.it('should wait for loading mocha-spec view', function () {
-                //client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-spec-link')), 10000).click();
-                if(options.desiredCapabilities.browserName === 'android') {
-                    //must find a solution to pass saucelabs android test
-                    client.findElement(webdriver.By.css('section'))
-                      .getAttribute('class')
-                      .then(function(attr){
-                          assert.equal(attr, 'suite ng-scope');
+
+              //must find a solution to pass saucelabs android test
+
+              if(options.desiredCapabilities.browserName === 'android') {
+                  client.findElement(webdriver.By.css('section'))
+                    .getAttribute('class')
+                    .then(function(attr){
+                        assert.equal(attr, 'suite ng-scope');
+                    });
+              } else {
+                  client.wait(webdriver.until.stalenessOf(repTestedElem), 10000)
+                      .then(function(el){
+                        client.findElement(webdriver.By.css('section'))
+                          .getAttribute('class')
+                          .then(function(attr){
+                              assert.equal(attr, 'suite ng-scope');
+                          });
                       });
-                } else {
-                    client.wait(webdriver.until.stalenessOf(repTestedElem), 10000)
-                        .then(function(el){
-                          client.findElement(webdriver.By.css('section'))
-                            .getAttribute('class')
-                            .then(function(attr){
-                                assert.equal(attr, 'suite ng-scope');
-                            });
-                        });
-                }
+              }
             });
 
         });
@@ -222,16 +222,31 @@ test.describe('TFTFT End To End tests', function() {
                 if(displayed){
                   assert(true);
                 } else {
-                  new webdriver.ActionSequence(client)
-                      .mouseMove(client.findElement(webdriver.By.css('#sl-logo[popover-placement]')))
-                      .perform()
-                      .then(function(){
-                        client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-mat-pp')), 3000)
-                          .getAttribute('src')
-                          .then(function(attr){
-                              assert.equal(attr,  options.baseUrl + '/images/misterdevo.svg');
-                          });
-                      });
+                  //must find a solution to pass saucelabs android test :(
+
+                  if(options.desiredCapabilities.browserName === 'internet explorer'
+                                  || options.desiredCapabilities.browserName === 'safari' ) {
+                      client.findElement(webdriver.By.css('#sl-logo[popover-placement]'))
+                        .click()
+                        .then(function(){
+                          client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-mat-pp')), 3000)
+                            .getAttribute('src')
+                            .then(function(attr){
+                                assert.equal(attr,  options.baseUrl + '/images/misterdevo.svg');
+                            });
+                        });
+                  } else {
+                      new webdriver.ActionSequence(client)
+                        .mouseMove(client.findElement(webdriver.By.css('#sl-logo[popover-placement]')))
+                        .perform()
+                        .then(function(){
+                          client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-mat-pp')), 3000)
+                            .getAttribute('src')
+                            .then(function(attr){
+                                assert.equal(attr,  options.baseUrl + '/images/misterdevo.svg');
+                            });
+                        });
+                  }
                 }
             });
         });
