@@ -286,6 +286,10 @@ a, a:focus, a:hover {
   border-radius: 2px;
   -webkit-box-shadow: 0 2px 5px 0 black;
 }
+.suite.ng-scope {
+  min-width: 700px;
+}
+
 
 pre {
   padding: 10px;
