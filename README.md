@@ -1,5 +1,8 @@
-
-[![TFTFT-logo](https://raw.githubusercontent.com/MisterDevo/TFTFT/master/public/images/logo.png)](https://tftft.herokuapp.com)
+<p align="center">
+ <a href="https://tftft.herokuapp.com" >
+  <img alt="TFTFT" src="https://raw.githubusercontent.com/MisterDevo/TFTFT/master/public/images/logo.png">
+ </a>
+</p>
 
 ###### TFTFT BadgeFury : [![GitHub version](https://badge.fury.io/gh/misterdevo%2Ftftft.svg)](https://badge.fury.io/gh/misterdevo%2Ftftft)
 ---
