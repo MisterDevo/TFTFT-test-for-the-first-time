@@ -34,7 +34,7 @@ test.describe('TFTFT End To End tests', function() {
             client.get(options.baseUrl);
             client.wait(client.getTitle(), 10000)
               .then(function(title){
-                  assert.equal(title, 'TFTFT - Test For The First Time');
+                  assert.equal(title, 'TFTFT - Test First Test First Test');
               });
         });
 
