@@ -212,19 +212,34 @@ test.describe('TFTFT End To End tests', function() {
     });
 
 
-    test.describe('Saucelabs menu', function() {
+    test.describe('Saucelabs dropdown and popup', function() {
 
-        test.it('should display correct saucelabs link', function () {
-            client.findElement(webdriver.By.id('saucelabs-link'))
-              .getAttribute('href')
-              .then(function(attr){
-                  assert.equal(attr,  options.baseUrl + '/#saucelabs');
-              });
+        test.it('should popup saucelabs matrix when mouse hover sl-logo if present (large device)', function () {
+
+          client.findElement(webdriver.By.className('navbar-toggle'))
+            .isDisplayed()
+            .then(function(displayed){
+                if(displayed){
+                  assert(true);
+                } else {
+                  new webdriver.ActionSequence(client)
+                      .mouseMove(client.findElement(webdriver.By.css('#sl-logo[popover-placement]')))
+                      .perform()
+                      .then(function(){
+                        client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-img')), 3000)
+                          .getAttribute('src')
+                          .then(function(attr){
+                              assert.equal(attr,  options.baseUrl + '/images/misterdevo.svg');
+                          });
+                      });
+                }
+            });
         });
 
-        test.it('should display correct url in the view', function () {
-            client.findElement(webdriver.By.id('saucelabs-link')).click();
-            client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-img')), 10000)
+        test.it('should display saucelabs matrix when click on sl-link present only in mocha-spec view', function () {
+            client.findElement(webdriver.By.id('mocha-spec-link')).click();
+            client.findElement(webdriver.By.id('sl-link')).click();
+            client.findElement(webdriver.By.id('sl-img'))
               .getAttribute('src')
               .then(function(attr){
                   assert.equal(attr,  options.baseUrl +  '/images/misterdevo.svg');
