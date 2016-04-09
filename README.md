@@ -1,14 +1,10 @@
 
-<p align="center">
- <a href="https://tftft.herokuapp.com" >
-  <img alt="TFTFT" src="https://raw.githubusercontent.com/MisterDevo/TFTFT/master/public/images/logo.png">
- </a>
-</p>
+[![TFTFT-logo](https://raw.githubusercontent.com/MisterDevo/TFTFT/master/public/images/logo.png)](https://tftft.herokuapp.com)
 
 ###### TFTFT BadgeFury : [![GitHub version](https://badge.fury.io/gh/misterdevo%2Ftftft.svg)](https://badge.fury.io/gh/misterdevo%2Ftftft)
 ---
 **_Continuous Integration :_**
-###### TFTFT Travis-ci : [![Travis](https://img.shields.io/travis/MisterDevo/TFTFT/master.svg)](https://travis-ci.org/MisterDevo/TFTFT/branches) => TFTFT Shippable : [![Run Status](https://api.shippable.com/projects/56a61fc31895ca4474728105/coverageBadge?branch=master)](https://app.shippable.com/projects/56a61fc31895ca4474728105)
+###### TFTFT Travis-ci : [![Travis](https://img.shields.io/travis/MisterDevo/TFTFT/master.svg)](https://travis-ci.org/MisterDevo/TFTFT/branches) => TFTFT Shippable : [![Cov Status](https://api.shippable.com/projects/56a61fc31895ca4474728105/coverageBadge?branch=master)](https://app.shippable.com/projects/56a61fc31895ca4474728105)
 ###### => TFTFT SauceLabs : [![Sauce Test Status](https://saucelabs.com/browser-matrix/misterdevo.svg)](https://saucelabs.com/u/misterdevo)
 ---
 **_Continuous Build and Deploy :_**
