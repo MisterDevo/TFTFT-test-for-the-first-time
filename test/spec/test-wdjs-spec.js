@@ -17,7 +17,7 @@ var options = isLocalSeleniumServer ? option_local : travis ? require('./option-
 
 test.describe('TFTFT End To End tests', function() {
 
-    this.timeout(90000);
+    this.timeout(100000);
     var client = {};
 
     test.before(function(){
