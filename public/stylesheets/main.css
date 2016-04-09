@@ -46,6 +46,19 @@ body {
 .sidebar {
   visibility: hidden;
 }
+#slmat{
+  visibility: hidden;
+}
+#sl-logo[popover-placement]{
+  display: none;
+}
+@media(min-width:768px) {
+  #sl-logo[popover-placement]{
+    margin-left: 10px;
+    opacity: 0.7;
+    display:inline;;
+  }
+}
 
 .navbar-fixed-top {
      position: initial;
@@ -273,6 +286,10 @@ a, a:focus, a:hover {
   border-radius: 2px;
   -webkit-box-shadow: 0 2px 5px 0 black;
 }
+.suite.ng-scope {
+  min-width: 700px;
+}
+
 
 pre {
   padding: 10px;
@@ -297,4 +314,12 @@ pre {
   -webkit-box-shadow: inset 0 0 5px #eee;
   -moz-box-shadow: inset 0 0 5px #eee;
   box-shadow: inset 0 0 5px #eee;
+}
+
+.popover {
+  max-width: none;
+}
+
+.popover-content>a {
+  padding-left: 0px;
 }
