@@ -4,12 +4,12 @@ var users = require('../../routes/users');
 
 describe('TFTFT Unit Test', function() {
 
-  describe('Covering func in route/users for the moment', function () {
+  describe('testFunc in route/users', function () {
 
-    it('should return string by calling testFunc', function () {
+    it('should return "TFTFT" string', function () {
       assert.equal(users.testFunc(), "TFTFT");
     });
-    
+
   });
 
 });

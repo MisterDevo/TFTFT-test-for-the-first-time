@@ -7,7 +7,7 @@
 ###### TFTFT BadgeFury : [![GitHub version](https://badge.fury.io/gh/misterdevo%2Ftftft.svg)](https://badge.fury.io/gh/misterdevo%2Ftftft)
 ---
 **_Continuous Integration :_**
-###### TFTFT Travis-ci : [![Travis](https://img.shields.io/travis/MisterDevo/TFTFT/master.svg)](https://travis-ci.org/MisterDevo/TFTFT/branches) => TFTFT Shippable : [![Run Status](https://api.shippable.com/projects/56a61fc31895ca4474728105/coverageBadge?branch=master)](https://app.shippable.com/projects/56a61fc31895ca4474728105)
+###### TFTFT Travis-ci : [![Travis](https://img.shields.io/travis/MisterDevo/TFTFT/master.svg)](https://travis-ci.org/MisterDevo/TFTFT/branches) => TFTFT Shippable : [![Cov Status](https://api.shippable.com/projects/56a61fc31895ca4474728105/coverageBadge?branch=master)](https://app.shippable.com/projects/56a61fc31895ca4474728105)
 ###### => TFTFT SauceLabs : [![Sauce Test Status](https://saucelabs.com/browser-matrix/misterdevo.svg)](https://saucelabs.com/u/misterdevo)
 ---
 **_Continuous Build and Deploy :_**
@@ -103,11 +103,11 @@ _Mocha runner with config (`test/**/*.js`) and Istanbul auto-instrumented covera
 
 ### TFTFT Resources
 
-_For app example  : Coverage reports + saucelabs matrix + test reports with mochawesome_
+_For app example  : Mocha test html reports + Coverage reports + saucelabs matrix_
 
 ##### `npm run app-resources`  
 
 **Istanbul** auto-instrumented coverage/report - **Mocha** runner with default config (`test/unit/*.js test/route/*.js`) for :
-* TFTFT Test reporter **mochawesome** _('one by one' in `public/report`)_
+* TFTFT Mocha doc reporter  _('one by one' in `public/report`)_
 * TFTFT Istanbul Coverage Test Report in `public/cov`
 * TFTFT Saucelabs matrix : download the last remote tests badge to `public/images/misterdevo.svg`

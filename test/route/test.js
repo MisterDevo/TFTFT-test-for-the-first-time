@@ -3,35 +3,35 @@ var assert = require('assert');
 var request = require('supertest');
 var app = require('../../app');
 
-describe('TFTFT Route Test', function() {
+describe('TFTFT Route Test with Supertest', function() {
 
-    describe('Statics files', function () {
+    describe('routes for static files', function () {
 
-          it('must find Unit test mochawesome html report', function(done){
+          it('Unit test mocha html report', function(done){
             request(app)
               .get('/report/test-unit.html')
               .expect(200, done);
           })
 
-          it('must find Route test mochawesome html report', function(done){
+          it('Route test mocha html report', function(done){
             request(app)
               .get('/report/test-route.html')
               .expect(200, done);
           })
 
-          it('must find End to End test mochawesome html report', function(done){
+          it('End to End test mocha html report', function(done){
             request(app)
               .get('/report/test-spec.html')
               .expect(200, done);
           })
 
-          it('must find Coverage test istanbul html report', function(done){
+          it('Coverage test istanbul html report', function(done){
             request(app)
               .get('/cov/lcov-report/index.html')
               .expect(200, done);
           })
 
-          it('must find Saucelab image', function(done){
+          it('End to End saucelabs matrix image', function(done){
             request(app)
               .get('/images/misterdevo.svg')
               .expect(200, done);
@@ -39,7 +39,7 @@ describe('TFTFT Route Test', function() {
 
     });
 
-    describe('Covering routes/index', function () {
+    describe('routes/index', function () {
 
           it('GET / respond with body', function(done){
             request(app)
@@ -59,7 +59,7 @@ describe('TFTFT Route Test', function() {
     });
 
 
-    describe('Covering routes/users', function () {
+    describe('routes/users', function () {
 
             it('GET /users respond with html', function(done){
               request(app)
@@ -71,7 +71,7 @@ describe('TFTFT Route Test', function() {
     });
 
 
-    describe('Covering routes/mail', function () {
+    describe('routes/mail', function () {
 
             it('POST /mail with message respond status 200', function(done){
               request(app)
