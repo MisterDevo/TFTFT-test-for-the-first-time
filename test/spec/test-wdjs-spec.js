@@ -114,9 +114,10 @@ test.describe('TFTFT End To End tests', function() {
 
             //client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-route-link')), 10000).click();
             test.it('should wait for loading mocha-route view', function () {
-
-              //must find a solution to pass saucelabs android test :(
-
+              /*
+                  must find a solution to pass saucelabs android test
+                  stalenessOf is not use
+              */
               if(options.desiredCapabilities.browserName === 'android') {
                   client.findElement(webdriver.By.css('section'))
                     .getAttribute('class')
@@ -151,9 +152,10 @@ test.describe('TFTFT End To End tests', function() {
 
             //client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-spec-link')), 10000).click();
             test.it('should wait for loading mocha-spec view', function () {
-
-              //must find a solution to pass saucelabs android test
-
+              /*
+                  must find a solution to pass saucelabs android test
+                  stalenessOf is not use
+              */
               if(options.desiredCapabilities.browserName === 'android') {
                   client.findElement(webdriver.By.css('section'))
                     .getAttribute('class')
@@ -222,8 +224,10 @@ test.describe('TFTFT End To End tests', function() {
                 if(displayed){
                   assert(true);
                 } else {
-                  //must find a solution to pass saucelabs android test :(
-
+                  /*
+                      must find a solution to pass saucelabs internet explorer and safari test
+                      Exception on mouseMove : replace by click on logo (not necessary in this test)
+                  */
                   if(options.desiredCapabilities.browserName === 'internet explorer'
                                   || options.desiredCapabilities.browserName === 'safari' ) {
                       client.findElement(webdriver.By.css('#sl-logo[popover-placement]'))
