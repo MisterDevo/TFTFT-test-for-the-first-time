@@ -226,7 +226,7 @@ test.describe('TFTFT End To End tests', function() {
                       .mouseMove(client.findElement(webdriver.By.css('#sl-logo[popover-placement]')))
                       .perform()
                       .then(function(){
-                        client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-img')), 3000)
+                        client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-mat-pp')), 3000)
                           .getAttribute('src')
                           .then(function(attr){
                               assert.equal(attr,  options.baseUrl + '/images/misterdevo.svg');
@@ -239,7 +239,7 @@ test.describe('TFTFT End To End tests', function() {
         test.it('should display saucelabs matrix when click on sl-link present only in mocha-spec view', function () {
             client.findElement(webdriver.By.id('mocha-spec-link')).click();
             client.findElement(webdriver.By.id('sl-link')).click();
-            client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-img')), 3000)
+            client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-mat-dd')), 3000)
               .getAttribute('src')
               .then(function(attr){
                   assert.equal(attr,  options.baseUrl +  '/images/misterdevo.svg');
