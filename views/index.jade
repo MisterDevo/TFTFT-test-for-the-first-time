@@ -31,37 +31,48 @@ block content
             li
               a(id='mocha-link', href, ng-click="mochaCollapsed = !mochaCollapsed")
                 i.glyphicon.glyphicon-link
-                |  Mocha
+                |  Mocha Test
               ul.nav.nav-second-level(uib-collapse='mochaCollapsed')
                 li
                   a(id='mocha-unit-link' href='#mocha-unit')
                     i.glyphicon.glyphicon-link
-                    |  Unit Test
+                    |  Unit
                 li
                   a(id='mocha-route-link' href='#mocha-route')
                     i.glyphicon.glyphicon-link
-                    |  Route Test
+                    |  Route
                 li
                   a(id='mocha-spec-link' href='#mocha-spec')
                     i.glyphicon.glyphicon-link
-                    |  End To End Test
+                    |  End To End
+                    img(id="sl-logo" src="images/sl.svg" alt="SL" popover-placement='right' popover-trigger='mouseenter' uib-popover-template='myPopoverTemplate')
+
+                  script(type="text/ng-template" id="myPopoverTemplate.html")
+                    |    <img id="sl-mat-pp" src="images/misterdevo.svg" alt="Sauce Test Status"/>
+
+
             li
               a(id='coverage-link', href='#coverage')
                 i.glyphicon.glyphicon-link
-                |  Istanbul
-            li
-              a(id='saucelabs-link', href='#saucelabs')
-                i.glyphicon.glyphicon-link
-                |   SauceLabs
+                |  Istanbul Cov. Code
+
+
 
     nav.navbar.navbar-default.navbar-fixed-bottom
       ul.nav.navbar-top-links.navbar-right
+        li(id='slmat' uib-dropdown auto-close='outsideClick' ng-show='displaySL')
+          a(id='sl-link' href uib-dropdown-toggle)
+            img(id="sl-logo" src="images/sl.svg" alt="SL")
+            i.fa.fa-caret-up
+          ul(uib-dropdown-menu)
+            img(id="sl-mat-dd" src="images/misterdevo.svg" alt="SL")
         li
           a(href='https://github.com/MisterDevo/TFTFT/releases')
             | #{version}
         li
           a(href='https://github.com/MisterDevo/TFTFT')
             i.fa.fa-github-alt
+
 
   #page-wrapper
     .row

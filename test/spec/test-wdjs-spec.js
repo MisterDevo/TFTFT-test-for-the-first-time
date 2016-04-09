@@ -17,7 +17,7 @@ var options = isLocalSeleniumServer ? option_local : travis ? require('./option-
 
 test.describe('TFTFT End To End tests', function() {
 
-    this.timeout(90000);
+    this.timeout(100000);
     var client = {};
 
     test.before(function(){
@@ -34,7 +34,7 @@ test.describe('TFTFT End To End tests', function() {
             client.get(options.baseUrl);
             client.wait(client.getTitle(), 10000)
               .then(function(title){
-                  assert.equal(title, 'TFTFT - Test For The First Time');
+                  assert.equal(title, 'TFTFT - Test First Test First Test');
               });
         });
 
@@ -112,11 +112,13 @@ test.describe('TFTFT End To End tests', function() {
                   });
             });
 
+            //client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-route-link')), 10000).click();
             test.it('should wait for loading mocha-route view', function () {
-              //client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-route-link')), 10000).click();
-
+              /*
+                  must find a solution to pass saucelabs android test
+                  stalenessOf is not use
+              */
               if(options.desiredCapabilities.browserName === 'android') {
-                  //must find a solution to pass saucelabs android test
                   client.findElement(webdriver.By.css('section'))
                     .getAttribute('class')
                     .then(function(attr){
@@ -133,9 +135,6 @@ test.describe('TFTFT End To End tests', function() {
                           });
                       });
               }
-
-
-
             });
 
         });
@@ -151,25 +150,28 @@ test.describe('TFTFT End To End tests', function() {
                   });
             });
 
+            //client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-spec-link')), 10000).click();
             test.it('should wait for loading mocha-spec view', function () {
-                //client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-spec-link')), 10000).click();
-                if(options.desiredCapabilities.browserName === 'android') {
-                    //must find a solution to pass saucelabs android test
-                    client.findElement(webdriver.By.css('section'))
-                      .getAttribute('class')
-                      .then(function(attr){
-                          assert.equal(attr, 'suite ng-scope');
+              /*
+                  must find a solution to pass saucelabs android test
+                  stalenessOf is not use
+              */
+              if(options.desiredCapabilities.browserName === 'android') {
+                  client.findElement(webdriver.By.css('section'))
+                    .getAttribute('class')
+                    .then(function(attr){
+                        assert.equal(attr, 'suite ng-scope');
+                    });
+              } else {
+                  client.wait(webdriver.until.stalenessOf(repTestedElem), 10000)
+                      .then(function(el){
+                        client.findElement(webdriver.By.css('section'))
+                          .getAttribute('class')
+                          .then(function(attr){
+                              assert.equal(attr, 'suite ng-scope');
+                          });
                       });
-                } else {
-                    client.wait(webdriver.until.stalenessOf(repTestedElem), 10000)
-                        .then(function(el){
-                          client.findElement(webdriver.By.css('section'))
-                            .getAttribute('class')
-                            .then(function(attr){
-                                assert.equal(attr, 'suite ng-scope');
-                            });
-                        });
-                }
+              }
             });
 
         });
@@ -212,19 +214,51 @@ test.describe('TFTFT End To End tests', function() {
     });
 
 
-    test.describe('Saucelabs menu', function() {
+    test.describe('Saucelabs dropdown and popup', function() {
 
-        test.it('should display correct saucelabs link', function () {
-            client.findElement(webdriver.By.id('saucelabs-link'))
-              .getAttribute('href')
-              .then(function(attr){
-                  assert.equal(attr,  options.baseUrl + '/#saucelabs');
-              });
+        test.it('should popup saucelabs matrix when mouse hover sl-logo if present (large device)', function () {
+
+          client.findElement(webdriver.By.className('navbar-toggle'))
+            .isDisplayed()
+            .then(function(displayed){
+                if(displayed){
+                  assert(true);
+                } else {
+                  /*
+                      must find a solution to pass saucelabs internet explorer and safari test
+                      Exception on mouseMove : replace by click on logo (not necessary in this test)
+                  */
+                  if(options.desiredCapabilities.browserName === 'internet explorer'
+                                  || options.desiredCapabilities.browserName === 'safari' ) {
+                      client.findElement(webdriver.By.css('#sl-logo[popover-placement]'))
+                        .click()
+                        .then(function(){
+                          client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-mat-pp')), 3000)
+                            .getAttribute('src')
+                            .then(function(attr){
+                                assert.equal(attr,  options.baseUrl + '/images/misterdevo.svg');
+                            });
+                        });
+                  } else {
+                      new webdriver.ActionSequence(client)
+                        .mouseMove(client.findElement(webdriver.By.css('#sl-logo[popover-placement]')))
+                        .perform()
+                        .then(function(){
+                          client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-mat-pp')), 3000)
+                            .getAttribute('src')
+                            .then(function(attr){
+                                assert.equal(attr,  options.baseUrl + '/images/misterdevo.svg');
+                            });
+                        });
+                  }
+                }
+            });
         });
 
-        test.it('should display correct url in the view', function () {
-            client.findElement(webdriver.By.id('saucelabs-link')).click();
-            client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-img')), 10000)
+        test.it('should display saucelabs matrix when click on sl-link present only in mocha-spec view', function () {
+            client.findElement(webdriver.By.id('mocha-spec-link')).click();
+            client.findElement(webdriver.By.id('sl-link')).click();
+            client.wait(webdriver.until.elementLocated(webdriver.By.id('sl-mat-dd')), 3000)
               .getAttribute('src')
               .then(function(attr){
                   assert.equal(attr,  options.baseUrl +  '/images/misterdevo.svg');
