@@ -3,10 +3,8 @@
   <img alt="TFTFT" src="https://raw.githubusercontent.com/MisterDevo/TFTFT/master/public/images/logo.png">
  </a>
 </p>
-
-[![TFTFT Version](https://img.shields.io/badge/Demo-Heroku_App-746cac.svg?style=flat-square)](https://tftft.herokuapp.com/)  ![GitHub version](https://badge.fury.io/gh/misterdevo%2Ftftft.svg)  [![Travis](https://img.shields.io/travis/MisterDevo/TFTFT/master.svg)](https://travis-ci.org/MisterDevo/TFTFT/branches)  [![Cov Status](https://api.shippable.com/projects/56a61fc31895ca4474728105/coverageBadge?branch=master)](https://app.shippable.com/projects/56a61fc31895ca4474728105) 
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/misterdevo.svg)](https://saucelabs.com/u/misterdevo)
 [![Run Status](https://api.shippable.com/projects/56a61fc31895ca4474728105/badge?branch=master)](https://app.shippable.com/projects/56a61fc31895ca4474728105) [![dockeri.co](http://dockeri.co/image/misterdevo/tftft)](https://hub.docker.com/r/misterdevo/tftft/)
+[![TFTFT Version](https://img.shields.io/badge/Demo-Heroku_App-746cac.svg?style=flat-square)](https://tftft.herokuapp.com/)![GitHub version](https://badge.fury.io/gh/misterdevo%2Ftftft.svg)  [![Travis](https://img.shields.io/travis/MisterDevo/TFTFT/master.svg)](https://travis-ci.org/MisterDevo/TFTFT/branches)[![Cov Status](https://api.shippable.com/projects/56a61fc31895ca4474728105/coverageBadge?branch=master)](https://app.shippable.com/projects/56a61fc31895ca4474728105)[![Sauce Test Status](https://saucelabs.com/browser-matrix/misterdevo.svg)](https://saucelabs.com/u/misterdevo)
 ---
 [![Stories in Ready](https://badge.waffle.io/MisterDevo/TFTFT.png?label=ready&title=Ready)](https://waffle.io/MisterDevo/TFTFT) [![Stories in progress](https://badge.waffle.io/MisterDevo/TFTFT.png?label=in%20progress&title=in%20progress)](https://waffle.io/MisterDevo/TFTFT)  
 [![Throughput Graph](https://graphs.waffle.io/MisterDevo/TFTFT/throughput.svg)](https://waffle.io/MisterDevo/TFTFT/metrics)  
