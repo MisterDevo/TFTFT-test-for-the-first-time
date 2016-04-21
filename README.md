@@ -12,7 +12,7 @@
 ---
 
 # Test First Test First Test ( TFTFT )  
-## _An application that show basic test reports_
+## _An application that show basic test reports (mocha istanbul)  with a max of cool stuff_
 
 _Run with NodeJs v4 or v5_  
 
