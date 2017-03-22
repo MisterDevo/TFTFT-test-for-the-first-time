@@ -21,7 +21,7 @@ block content
 
       ul.nav.navbar-top-links.navbar-right.navbar-collapse.collapse(uib-collapse='sideCollapsed')
         li
-          a(href='/#login')
+          a(href='/#!login')
             |  Login
 
 
@@ -34,25 +34,25 @@ block content
                 |  Mocha Test
               ul.nav.nav-second-level(uib-collapse='mochaCollapsed')
                 li
-                  a(id='mocha-unit-link' href='#mocha-unit')
+                  a(id='mocha-unit-link' href='#!mocha-unit')
                     i.glyphicon.glyphicon-link
                     |  Unit
                 li
-                  a(id='mocha-route-link' href='#mocha-route')
+                  a(id='mocha-route-link' href='#!mocha-route')
                     i.glyphicon.glyphicon-link
                     |  Route
                 li
-                  a(id='mocha-spec-link' href='#mocha-spec')
+                  a(id='mocha-spec-link' href='#!mocha-spec')
                     i.glyphicon.glyphicon-link
                     |  End To End
-                    img(id="sl-logo" src="images/sl.svg" alt="SL" popover-placement='right' popover-trigger='mouseenter' uib-popover-template='myPopoverTemplate')
+                    img(id="sl-logo" src="images/sl.svg" alt="SL" popover-placement='right' popover-trigger="'mouseenter'" uib-popover-template='myPopoverTemplate')
 
                   script(type="text/ng-template" id="myPopoverTemplate.html")
                     |    <img id="sl-mat-pp" src="images/misterdevo.svg" alt="Sauce Test Status"/>
 
 
             li
-              a(id='coverage-link', href='#coverage')
+              a(id='coverage-link', href='#!coverage')
                 i.glyphicon.glyphicon-link
                 |  Istanbul Cov. Code
 

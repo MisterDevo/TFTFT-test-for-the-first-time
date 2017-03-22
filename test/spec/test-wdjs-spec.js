@@ -82,7 +82,7 @@ test.describe('TFTFT End To End tests', function() {
                 client.findElement(webdriver.By.id('mocha-unit-link'))
                   .getAttribute('href')
                   .then(function(attr){
-                      assert.equal(attr,  options.baseUrl + '/#mocha-unit');
+                      assert.equal(attr,  options.baseUrl + '/#!mocha-unit');
                   });
             });
 
@@ -107,7 +107,7 @@ test.describe('TFTFT End To End tests', function() {
                 var btn = client.findElement(webdriver.By.id('mocha-route-link'));
                 btn.getAttribute('href')
                   .then(function(attr){
-                      assert.equal(attr,  options.baseUrl + '/#mocha-route');
+                      assert.equal(attr,  options.baseUrl + '/#!mocha-route');
                       btn.click();
                   });
             });
@@ -115,10 +115,11 @@ test.describe('TFTFT End To End tests', function() {
             //client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-route-link')), 10000).click();
             test.it('should wait for loading mocha-route view', function () {
               /*
-                  must find a solution to pass saucelabs android test
+                  must find a solution to pass saucelabs android and opera test
                   stalenessOf is not use
               */
-              if(options.desiredCapabilities.browserName === 'android') {
+              if(options.desiredCapabilities.browserName === 'android'
+                              || options.desiredCapabilities.browserName === 'opera') {
                   client.findElement(webdriver.By.css('section'))
                     .getAttribute('class')
                     .then(function(attr){
@@ -145,7 +146,7 @@ test.describe('TFTFT End To End tests', function() {
                 var btn = client.findElement(webdriver.By.id('mocha-spec-link'));
                 btn.getAttribute('href')
                   .then(function(attr){
-                      assert.equal(attr,  options.baseUrl + '/#mocha-spec');
+                      assert.equal(attr,  options.baseUrl + '/#!mocha-spec');
                       btn.click();
                   });
             });
@@ -153,10 +154,11 @@ test.describe('TFTFT End To End tests', function() {
             //client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-spec-link')), 10000).click();
             test.it('should wait for loading mocha-spec view', function () {
               /*
-                  must find a solution to pass saucelabs android test
+                  must find a solution to pass saucelabs android and opera test
                   stalenessOf is not use
               */
-              if(options.desiredCapabilities.browserName === 'android') {
+              if(options.desiredCapabilities.browserName === 'android'
+                        || options.desiredCapabilities.browserName === 'opera') {
                   client.findElement(webdriver.By.css('section'))
                     .getAttribute('class')
                     .then(function(attr){
@@ -185,7 +187,7 @@ test.describe('TFTFT End To End tests', function() {
             client.findElement(webdriver.By.id('coverage-link'))
               .getAttribute('href')
               .then(function(attr){
-                  assert.equal(attr,  options.baseUrl + '/#coverage');
+                  assert.equal(attr,  options.baseUrl + '/#!coverage');
               });
         });
 
@@ -201,7 +203,7 @@ test.describe('TFTFT End To End tests', function() {
          test.it('should be correct page loaded', function () {
             client.switchTo().frame(client.findElement(webdriver.By.id('frame-coverage')));
             client.findElement(webdriver.By.className('footer'))
-                .getInnerHtml()
+                .getAttribute("innerHTML")
                 .then(function(html){
                     assert.equal(html.split('\n  ')[1], 'Code coverage');
                 });
@@ -290,7 +292,7 @@ test.describe('TFTFT End To End tests', function() {
            mailmeForm.findElement(webdriver.By.css('input[type=submit]'))
                         .click();
            client.wait(webdriver.until.elementTextContains(mailmeForm.findElement(webdriver.By.className('txtstyle')),' '), 3000)
-                   .getInnerHtml()
+                   .getAttribute("innerHTML")
                    .then(function(html){
                        assert(html.length);
                    });
@@ -302,7 +304,7 @@ test.describe('TFTFT End To End tests', function() {
             mailmeForm.findElement(webdriver.By.css('input[type=submit]'))
                       .click();
             client.wait(webdriver.until.elementTextContains(mailmeForm.findElement(webdriver.By.className('txtstyle')),' '), 3000)
-                 .getInnerHtml()
+                 .getAttribute("innerHTML")
                  .then(function(html){
                      assert.equal(html, 'An error occurs.');
                  });
