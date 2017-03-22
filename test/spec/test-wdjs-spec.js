@@ -82,7 +82,7 @@ test.describe('TFTFT End To End tests', function() {
                 client.findElement(webdriver.By.id('mocha-unit-link'))
                   .getAttribute('href')
                   .then(function(attr){
-                      assert.equal(attr,  options.baseUrl + '/#mocha-unit');
+                      assert.equal(attr,  options.baseUrl + '/#!mocha-unit');
                   });
             });
 
@@ -107,7 +107,7 @@ test.describe('TFTFT End To End tests', function() {
                 var btn = client.findElement(webdriver.By.id('mocha-route-link'));
                 btn.getAttribute('href')
                   .then(function(attr){
-                      assert.equal(attr,  options.baseUrl + '/#mocha-route');
+                      assert.equal(attr,  options.baseUrl + '/#!mocha-route');
                       btn.click();
                   });
             });
@@ -145,7 +145,7 @@ test.describe('TFTFT End To End tests', function() {
                 var btn = client.findElement(webdriver.By.id('mocha-spec-link'));
                 btn.getAttribute('href')
                   .then(function(attr){
-                      assert.equal(attr,  options.baseUrl + '/#mocha-spec');
+                      assert.equal(attr,  options.baseUrl + '/#!mocha-spec');
                       btn.click();
                   });
             });
@@ -185,7 +185,7 @@ test.describe('TFTFT End To End tests', function() {
             client.findElement(webdriver.By.id('coverage-link'))
               .getAttribute('href')
               .then(function(attr){
-                  assert.equal(attr,  options.baseUrl + '/#coverage');
+                  assert.equal(attr,  options.baseUrl + '/#!coverage');
               });
         });
 
