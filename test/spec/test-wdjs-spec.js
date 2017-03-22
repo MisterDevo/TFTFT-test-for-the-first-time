@@ -201,7 +201,7 @@ test.describe('TFTFT End To End tests', function() {
          test.it('should be correct page loaded', function () {
             client.switchTo().frame(client.findElement(webdriver.By.id('frame-coverage')));
             client.findElement(webdriver.By.className('footer'))
-                .getInnerHtml()
+                .getAttribute("innerHTML")
                 .then(function(html){
                     assert.equal(html.split('\n  ')[1], 'Code coverage');
                 });
@@ -290,7 +290,7 @@ test.describe('TFTFT End To End tests', function() {
            mailmeForm.findElement(webdriver.By.css('input[type=submit]'))
                         .click();
            client.wait(webdriver.until.elementTextContains(mailmeForm.findElement(webdriver.By.className('txtstyle')),' '), 3000)
-                   .getInnerHtml()
+                   .getAttribute("innerHTML")
                    .then(function(html){
                        assert(html.length);
                    });
@@ -302,7 +302,7 @@ test.describe('TFTFT End To End tests', function() {
             mailmeForm.findElement(webdriver.By.css('input[type=submit]'))
                       .click();
             client.wait(webdriver.until.elementTextContains(mailmeForm.findElement(webdriver.By.className('txtstyle')),' '), 3000)
-                 .getInnerHtml()
+                 .getAttribute("innerHTML")
                  .then(function(html){
                      assert.equal(html, 'An error occurs.');
                  });
