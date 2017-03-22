@@ -115,10 +115,11 @@ test.describe('TFTFT End To End tests', function() {
             //client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-route-link')), 10000).click();
             test.it('should wait for loading mocha-route view', function () {
               /*
-                  must find a solution to pass saucelabs android test
+                  must find a solution to pass saucelabs android and opera test
                   stalenessOf is not use
               */
-              if(options.desiredCapabilities.browserName === 'android') {
+              if(options.desiredCapabilities.browserName === 'android'
+                              || options.desiredCapabilities.browserName === 'opera') {
                   client.findElement(webdriver.By.css('section'))
                     .getAttribute('class')
                     .then(function(attr){
@@ -153,10 +154,11 @@ test.describe('TFTFT End To End tests', function() {
             //client.wait(webdriver.until.elementLocated(webdriver.By.id('mocha-spec-link')), 10000).click();
             test.it('should wait for loading mocha-spec view', function () {
               /*
-                  must find a solution to pass saucelabs android test
+                  must find a solution to pass saucelabs android and opera test
                   stalenessOf is not use
               */
-              if(options.desiredCapabilities.browserName === 'android') {
+              if(options.desiredCapabilities.browserName === 'android'
+                        || options.desiredCapabilities.browserName === 'opera') {
                   client.findElement(webdriver.By.css('section'))
                     .getAttribute('class')
                     .then(function(attr){
