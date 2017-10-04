@@ -15,7 +15,7 @@ module.exports = {
 
         logLevel: 'silent',
 
-        baseUrl:'https://tftft-misterdevo.c9users.io',
+        baseUrl:'http://node21.codenvy.io:44291/',
 
         desiredCapabilities: {
             browserName: (process.env._BROWSER || '').replace(/_/g, ' '),
