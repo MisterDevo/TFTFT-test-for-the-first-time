@@ -90,7 +90,9 @@ _Mocha runner with config (`test/**/*.js`) and Istanbul auto-instrumented covera
         ```
 
       _Change baseUrl to address app in a cloud developpement environnement  
-      For this repo, **`baseUrl:'http://node22.codenvy.io:48389'`** on Cloud9_  
+
+      For this repo, **`baseUrl:'http://node22.codenvy.io:48389/'`** on Codenvy_  
+
 
 ### TFTFT Resources
 
