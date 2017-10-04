@@ -10,7 +10,7 @@
 [![Run Status](https://api.shippable.com/projects/56a61fc31895ca4474728105/badge?branch=master)](https://app.shippable.com/projects/56a61fc31895ca4474728105) [![dockeri.co](http://dockeri.co/image/misterdevo/tftft)](https://hub.docker.com/r/misterdevo/tftft/)
 
  [![Travis](https://img.shields.io/travis/MisterDevo/TFTFT/master.svg)](https://travis-ci.org/MisterDevo/TFTFT/branches)[![Cov Status](https://api.shippable.com/projects/56a61fc31895ca4474728105/coverageBadge?branch=master)](https://app.shippable.com/projects/56a61fc31895ca4474728105)
- 
+
  [![Sauce Test Status](https://saucelabs.com/browser-matrix/misterdevo.svg)](https://saucelabs.com/u/misterdevo)
 
 [![Code Climate](https://codeclimate.com/github/MisterDevo/TFTFT/badges/gpa.svg)](https://codeclimate.com/github/MisterDevo/TFTFT)[![Codacy Badge](https://api.codacy.com/project/badge/grade/a5046941e5224dba9984a773d32f82bd)](https://www.codacy.com/app/mister-devo/TFTFT)[![bitHound Code](https://www.bithound.io/github/MisterDevo/TFTFT/badges/code.svg)](https://www.bithound.io/github/MisterDevo/TFTFT) [![Dependency Status](https://img.shields.io/david/misterdevo/TFTFT.svg)](https://david-dm.org/misterdevo/TFTFT)[![devDependency Status](http://img.shields.io/david/dev/misterdevo/TFTFT.svg)](http://david-dm.org/misterdevo/tftft#info=devDependencies)[![bitHound Dependencies](https://www.bithound.io/github/MisterDevo/TFTFT/badges/dependencies.svg)](https://www.bithound.io/github/MisterDevo/TFTFT/master/dependencies/npm)
@@ -90,7 +90,7 @@ _Mocha runner with config (`test/**/*.js`) and Istanbul auto-instrumented covera
         ```
 
       _Change baseUrl to address app in a cloud developpement environnement  
-      For this repo, **`baseUrl:'http://node22.codenvy.io:48389/'`** on Cloud9_  
+      For this repo, **`baseUrl:'http://node22.codenvy.io:48389'`** on Cloud9_  
 
 ### TFTFT Resources
 
