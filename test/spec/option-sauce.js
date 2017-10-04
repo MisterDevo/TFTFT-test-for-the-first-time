@@ -15,7 +15,8 @@ module.exports = {
 
         logLevel: 'silent',
 
-        baseUrl:'http://node21.codenvy.io:44291/',
+
+        baseUrl:'http://node22.codenvy.io:48389',
 
         desiredCapabilities: {
             browserName: 'firefox',
