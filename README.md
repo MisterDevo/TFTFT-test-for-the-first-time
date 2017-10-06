@@ -103,6 +103,7 @@ _For app example  : Mocha test html reports + Coverage reports + saucelabs matri
 * TFTFT Saucelabs matrix : download the last remote tests badge to `public/images/misterdevo.svg`
 
 ### TFTFT Automation
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](https://gruntjs.com/)
 
 Tasks automation with Grunt for unit and route tests with Istanbul Coverage Test Report during developpement
 
