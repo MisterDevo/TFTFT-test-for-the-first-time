@@ -15,7 +15,8 @@ module.exports = {
 
         logLevel: 'silent',
 
-        baseUrl:'https://tftft-misterdevo.c9users.io',
+
+        baseUrl:'http://node22.codenvy.io:48389',
 
         desiredCapabilities: {
             browserName: 'firefox',

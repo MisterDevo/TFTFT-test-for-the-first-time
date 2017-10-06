@@ -1,6 +1,6 @@
 {
   "name": "tftft",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "TFTFT : Test For The First Time",
   "scripts": {
     "test-unit": "_mocha test/unit/*.js --reporter doc > public/report/test-unit.html",
@@ -15,7 +15,7 @@
     "test": "istanbul cover _mocha --report lcovonly -- test/**/*.js"
   },
   "engines": {
-    "node": "4.2.5"
+    "node": "6.10.0"
   },
   "repository": {
     "type": "git",
@@ -28,22 +28,27 @@
   },
   "homepage": "https://github.com/MisterDevo/TFTFT#readme",
   "dependencies": {
-    "body-parser": "~1.15.0",
-    "bower": "^1.7.7",
+    "body-parser": "^1.18.2",
+    "bower": "^1.8.2",
     "bower-requirejs": "^1.2.0",
-    "cookie-parser": "~1.4.1",
-    "debug": "~2.2.0",
-    "express": "~4.13.1",
-    "jade": "~1.11.0",
+    "cookie-parser": "^1.4.3",
+    "debug": "^3.1.0",
+    "express": "^4.16.1",
     "md-mailgun": "^1.0.1",
-    "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.0"
+    "morgan": "^1.9.0",
+    "pug": "^2.0.0-rc.4",
+    "serve-favicon": "^2.4.5"
   },
   "devDependencies": {
-    "istanbul": "^0.4.2",
-    "mocha": "^2.3.4",
-    "saucelabs": "^1.1.0",
-    "selenium-webdriver": "^2.52.0",
-    "supertest": "^1.1.0"
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-mocha-istanbul": "^5.0.2",
+    "istanbul": "^0.4.5",
+    "mocha": "^4.0.0",
+    "saucelabs": "^1.4.0",
+    "selenium-webdriver": "^3.5.0",
+    "supertest": "^3.0.0"
   }
 }

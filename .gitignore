@@ -9,8 +9,9 @@ pids
 *.seed
 
 # Coverage directory used by tools like istanbul
-# public/cov
 coverage
+public/cov/lcov.info
+public/cov/coverage.json
 
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
