@@ -16,7 +16,7 @@ module.exports = {
         logLevel: 'silent',
 
 
-        baseUrl:'http://node27.codenvy.io:32927',
+        baseUrl:'http://node23.codenvy.io:49213',
 
         desiredCapabilities: {
             browserName: (process.env._BROWSER || '').replace(/_/g, ' '),
