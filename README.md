@@ -18,10 +18,8 @@
 # Test First Test First Test ( TFTFT )  
 ## _An application that show basic test reports (mocha & istanbul) with a max of cool stuff_
 
-_Run with NodeJs v4 or v5_  
+_Run with NodeJs_  
 
-Download it ! or Clone it ! or Fork it ! or ...  
-Then Install it, Start it, Test it, Browse it, Containerize it ...
 
 ### TFTFT ExpressJs - TFTFT AngularJs :
 
@@ -90,8 +88,7 @@ _Mocha runner with config (`test/**/*.js`) and Istanbul auto-instrumented covera
         ```
 
       _Change baseUrl to address app in a cloud developpement environnement  
-
-      For this repo, **`baseUrl:'http://node22.codenvy.io:48389/'`** on Codenvy_  
+      For this repo, **`baseUrl:'http://nodeXX.codenvy.io:XXXXX/'`** on Codenvy_  
 
 
 ### TFTFT Resources
@@ -104,3 +101,14 @@ _For app example  : Mocha test html reports + Coverage reports + saucelabs matri
 * TFTFT Mocha doc reporter  _('one by one' in `public/report`)_
 * TFTFT Istanbul Coverage Test Report in `public/cov`
 * TFTFT Saucelabs matrix : download the last remote tests badge to `public/images/misterdevo.svg`
+
+### TFTFT Automation
+
+Tasks automation with Grunt for unit and route tests with Istanbul Coverage Test Report during developpement
+
+##### `grunt`
+
+* grunt-contrib-watch
+* grunt-contrib-clean
+* grunt-mocha-istanbul
+* grunt-contrib-jshint
